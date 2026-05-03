@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx/21"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.formbuilder.ui.QuestionBankController"
+      styleClass="panel-root" spacing="12">
+  <padding><Insets top="24" right="24" bottom="24" left="24"/></padding>
+
+  <Label text="Question Bank" styleClass="panel-title"/>
+  <Label text="Reuse questions across exams. Search by tag or exam name. Importing creates a copy — the bank is never modified."
+         styleClass="panel-subtitle" wrapText="true"/>
+  <Separator/>
+
+  <!-- Search bar -->
+  <HBox spacing="10" alignment="CENTER_LEFT">
+    <TextField fx:id="tfSearch" HBox.hgrow="ALWAYS"
+               promptText="Search by tag or exam name…"/>
+    <Button text="Search" onAction="#onSearch" styleClass="btn-primary"/>
+    <Button text="Clear"  onAction="#onClear"  styleClass="btn-secondary"/>
+  </HBox>
+
+  <!-- Results count -->
+  <Label fx:id="resultCountLabel" text="" styleClass="muted-label"/>
+
+  <!-- Results grid -->
+  <ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS" styleClass="thumbnail-scroll">
+    <FlowPane fx:id="bankResultsPane" hgap="12" vgap="12" styleClass="thumbnail-pane">
+      <padding><Insets top="12" right="12" bottom="12" left="12"/></padding>
+    </FlowPane>
+  </ScrollPane>
+
+  <!-- Import action -->
+  <HBox spacing="10" alignment="CENTER_RIGHT">
+    <Label fx:id="selectedCountLabel" text="0 selected" styleClass="muted-label"/>
+    <Button fx:id="btnImportSelected" text="Add selected to current project"
+            onAction="#onImportSelected" styleClass="btn-primary" disable="true"/>
+  </HBox>
+
+</VBox>

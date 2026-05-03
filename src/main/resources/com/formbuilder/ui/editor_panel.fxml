@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.shape.Rectangle?>
+
+<SplitPane xmlns="http://javafx.com/javafx/21"
+           xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="com.formbuilder.ui.QuestionEditorController"
+           dividerPositions="0.27"
+           styleClass="panel-root">
+
+  <!-- ══════════════════════════════════════
+       LEFT PANE — Question list
+       ══════════════════════════════════════ -->
+  <VBox minWidth="200" maxWidth="260" styleClass="list-pane" spacing="0">
+    <padding><Insets top="10" right="8" bottom="8" left="8"/></padding>
+
+    <!-- Header -->
+    <HBox alignment="CENTER_LEFT" spacing="6" style="-fx-padding:0 0 6 0;">
+      <Label text="Questions" styleClass="pane-heading" HBox.hgrow="ALWAYS"/>
+      <Label fx:id="counterLabel" text=""
+             style="-fx-font-size:11px; -fx-text-fill:#888;"/>
+    </HBox>
+
+    <!-- LIST — drag-drop is wired in the cell factory in code -->
+    <ListView fx:id="questionList" VBox.vgrow="ALWAYS" styleClass="question-list"/>
+
+    <!-- Action buttons -->
+    <VBox spacing="5" style="-fx-padding:8 0 0 0;">
+
+      <!-- Swap Mode toggle — orange; clicking activates/deactivates swap -->
+      <Button fx:id="btnSwapMode"
+              text="⇄ Swap Mode"
+              onAction="#onToggleSwapMode"
+              maxWidth="Infinity"
+              style="-fx-background-color:transparent; -fx-text-fill:#e67e22;
+                     -fx-border-color:#e67e22; -fx-border-width:1;
+                     -fx-background-radius:5; -fx-border-radius:5;
+                     -fx-cursor:hand; -fx-padding:7 10; -fx-font-size:12px;"/>
+
+      <!-- Insert after selection -->
+      <Button text="＋ Add After Selected" onAction="#onAddQuestion"
+              maxWidth="Infinity"
+              style="-fx-background-color:#2980b9; -fx-text-fill:white;
+                     -fx-background-radius:5; -fx-border-width:0;
+                     -fx-font-weight:bold; -fx-cursor:hand;
+                     -fx-padding:7 8; -fx-font-size:12px;"/>
+
+      <!-- Duplicate as sub-question sibling -->
+      <Button text="📋 Duplicate as Sub" onAction="#onDuplicateAsSub"
+              maxWidth="Infinity"
+              style="-fx-background-color:transparent; -fx-text-fill:#8e44ad;
+                     -fx-border-color:#8e44ad; -fx-border-width:1;
+                     -fx-background-radius:5; -fx-border-radius:5;
+                     -fx-cursor:hand; -fx-padding:7 8; -fx-font-size:12px;"/>
+
+      <!-- Move row -->
+      <HBox spacing="4">
+        <Button text="↑ Up"   onAction="#onMoveUp"
+                maxWidth="Infinity" HBox.hgrow="ALWAYS"
+                styleClass="btn-secondary"
+                style="-fx-padding:6 6; -fx-font-size:12px;"/>
+        <Button text="↓ Down" onAction="#onMoveDown"
+                maxWidth="Infinity" HBox.hgrow="ALWAYS"
+                styleClass="btn-secondary"
+                style="-fx-padding:6 6; -fx-font-size:12px;"/>
+      </HBox>
+
+      <!-- Move to specific position -->
+      <Button text="🔢 Move to Position…" onAction="#onMoveToPosition"
+              maxWidth="Infinity"
+              style="-fx-background-color:transparent; -fx-text-fill:#2980b9;
+                     -fx-border-color:#2980b9; -fx-border-width:1;
+                     -fx-background-radius:5; -fx-border-radius:5;
+                     -fx-cursor:hand; -fx-padding:7 8; -fx-font-size:12px;"/>
+
+      <!-- Prev / Next row -->
+      <HBox spacing="4">
+        <Button fx:id="btnPrev" text="◀ Prev" onAction="#onPrev"
+                maxWidth="Infinity" HBox.hgrow="ALWAYS"
+                styleClass="btn-secondary"
+                style="-fx-padding:6 6; -fx-font-size:12px;"/>
+        <Button fx:id="btnNext" text="Next ▶" onAction="#onNext"
+                maxWidth="Infinity" HBox.hgrow="ALWAYS"
+                styleClass="btn-secondary"
+                style="-fx-padding:6 6; -fx-font-size:12px;"/>
+      </HBox>
+
+      <Separator/>
+
+      <Button text="🗑 Delete Question" onAction="#onDeleteQuestion"
+              maxWidth="Infinity"
+              style="-fx-background-color:#e74c3c; -fx-text-fill:white;
+                     -fx-background-radius:5; -fx-border-width:0;
+                     -fx-cursor:hand; -fx-padding:7 8; -fx-font-size:12px;"/>
+
+      <Button text="💾 Save Changes" onAction="#onSaveChanges"
+              maxWidth="Infinity"
+              style="-fx-background-color:#27ae60; -fx-text-fill:white;
+                     -fx-background-radius:5; -fx-border-width:0;
+                     -fx-font-weight:bold; -fx-cursor:hand;
+                     -fx-padding:7 8; -fx-font-size:12px;"/>
+    </VBox>
+
+    <!-- Legend -->
+    <VBox spacing="3" style="-fx-padding:10 0 0 2;">
+      <Label text="● Uploaded  ● Ready  ● Low confidence  ● Failed"
+             style="-fx-font-size:10px; -fx-text-fill:#aaa;" wrapText="true"/>
+      <Label text="⠿ Drag row to reorder   ⇄ Swap two questions"
+             style="-fx-font-size:10px; -fx-text-fill:#aaa;" wrapText="true"/>
+      <Label text="↳ = sub-question"
+             style="-fx-font-size:10px; -fx-text-fill:#aaa;"/>
+    </VBox>
+  </VBox>
+
+  <!-- ══════════════════════════════════════
+       RIGHT PANE — Editor form
+       ══════════════════════════════════════ -->
+  <VBox>
+
+    <!-- Top bar: validation + confidence -->
+    <HBox spacing="10" alignment="CENTER_LEFT"
+          style="-fx-background-color:#f4f4f4; -fx-border-color:#dde1e5;
+                 -fx-border-width:0 0 1 0; -fx-padding:8 16;">
+      <Label fx:id="validationLabel" text=""
+             HBox.hgrow="ALWAYS"
+             style="-fx-font-size:12px; -fx-font-weight:bold;"/>
+      <Label fx:id="confidenceLabel" text=""
+             style="-fx-font-size:12px;"/>
+    </HBox>
+
+    <ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS"
+                style="-fx-background-color:white;">
+      <VBox spacing="14" style="-fx-background-color:white; -fx-padding:20 28;">
+
+        <!-- ── Question Image ── -->
+        <Label text="Question Image" styleClass="pane-heading"/>
+        <ImageView fx:id="questionImage" fitWidth="560"
+                   preserveRatio="true" styleClass="question-image-view"/>
+
+        <HBox spacing="10" alignment="CENTER_LEFT">
+          <Button text="Replace Image" onAction="#onReplaceImage"
+                  styleClass="btn-secondary"
+                  style="-fx-padding:6 14; -fx-font-size:12px;"/>
+          <Button text="📋 Paste" onAction="#onPasteImage"
+                  style="-fx-background-color:#f39c12; -fx-text-fill:white;
+                         -fx-background-radius:5; -fx-border-width:0;
+                         -fx-padding:6 14; -fx-font-size:12px; -fx-cursor:hand;"/>
+          <Button text="✂ Crop Image" onAction="#onCropImage"
+                  style="-fx-background-color:transparent; -fx-text-fill:#2980b9;
+                         -fx-border-color:#2980b9; -fx-border-width:1;
+                         -fx-background-radius:5; -fx-border-radius:5;
+                         -fx-padding:6 14; -fx-font-size:12px; -fx-cursor:hand;"/>
+          <Button text="✔ Confirm Manually" onAction="#onConfirmManually"
+                  style="-fx-background-color:#8e44ad; -fx-text-fill:white;
+                         -fx-background-radius:5; -fx-border-width:0;
+                         -fx-padding:6 14; -fx-font-size:12px; -fx-cursor:hand;"/>
+        </HBox>
+
+        <Label fx:id="sectionHintLabel" text=""
+               style="-fx-font-size:11px; -fx-text-fill:#888;"/>
+
+        <!-- ═══════════════════════════════════
+             WRITTEN QUESTION CARD PREVIEW
+             Shown only when type = PROBLEM
+             Mimics the exam card style with dots
+             ═══════════════════════════════════ -->
+        <VBox fx:id="writtenCardPreview" spacing="6" visible="false" managed="false"
+              style="-fx-background-color:#f4f9ff;
+                     -fx-border-color:#b5d4f4; -fx-border-width:1.5;
+                     -fx-border-radius:8; -fx-background-radius:8;
+                     -fx-padding:14 16;">
+
+          <Label text="Written question card (exam view)"
+                 style="-fx-font-size:11px; -fx-font-weight:bold;
+                        -fx-text-fill:#185fa5; -fx-padding:0 0 4 0;"/>
+
+          <!-- Circled number badge row -->
+          <HBox alignment="CENTER_LEFT" spacing="8">
+            <Label fx:id="writtenCardNumLabel" text="Q"
+                   style="-fx-background-color:#2980b9; -fx-text-fill:white;
+                          -fx-background-radius:50; -fx-min-width:26;
+                          -fx-min-height:26; -fx-alignment:CENTER;
+                          -fx-font-weight:bold; -fx-font-size:12px;"/>
+            <Label text="Question text is taken from the image above"
+                   style="-fx-font-size:12px; -fx-text-fill:#444;
+                          -fx-font-weight:bold;" wrapText="true"
+                   HBox.hgrow="ALWAYS"/>
+          </HBox>
+
+          <!-- Dot answer lines (like the exam cards in the screenshots) -->
+          <Label text="............................................................................
+............................................................................
+............................................................................
+............................................................................"
+                 style="-fx-font-size:11px; -fx-text-fill:#aac6e0;
+                        -fx-font-family:'Courier New'; -fx-padding:4 0 0 0;"
+                 wrapText="true"/>
+
+          <Label fx:id="writtenAnswerHint" text=""
+                 style="-fx-font-size:11px; -fx-text-fill:#888; -fx-font-style:italic;"
+                 wrapText="true"/>
+        </VBox>
+
+        <Separator/>
+
+        <!-- ── Type + Section + Points ── -->
+        <GridPane hgap="16" vgap="10">
+          <columnConstraints>
+            <ColumnConstraints minWidth="100" maxWidth="100"/>
+            <ColumnConstraints hgrow="ALWAYS"/>
+          </columnConstraints>
+
+          <Label text="Type:" styleClass="field-label"
+                 GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+          <ComboBox fx:id="typeCombo" prefWidth="180"
+                    GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+          <Label text="Section:" styleClass="field-label"
+                 GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+          <ComboBox fx:id="sectionCombo" prefWidth="240"
+                    GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+          <Label text="Points:" styleClass="field-label"
+                 GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+          <Spinner fx:id="pointSpinner" prefWidth="80" editable="true"
+                   GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+        </GridPane>
+
+        <Separator/>
+
+        <!-- ═══════════════════════════════════
+             SUB-QUESTION NUMBERING
+             Now with pill buttons + live preview
+             ═══════════════════════════════════ -->
+        <VBox spacing="8"
+              style="-fx-background-color:#f9f4ff; -fx-border-color:#d2b4f0;
+                     -fx-border-radius:6; -fx-background-radius:6; -fx-padding:12;">
+
+          <Label text="Sub-Question Numbering" styleClass="pane-heading"/>
+          <Label text="For groups like Q14-i, Q14-ii, Q14-iii or Q19-i … Q19-iv."
+                 styleClass="hint-label" wrapText="true"/>
+
+          <CheckBox fx:id="chkSubQuestion"
+                    text="This is a sub-question (e.g. part of Q14 or Q19)"
+                    style="-fx-font-size:12px; -fx-cursor:hand; -fx-font-weight:bold;"/>
+
+          <HBox spacing="10" alignment="CENTER_LEFT">
+            <Label text="Parent Q#:" styleClass="field-label" minWidth="75"/>
+            <Spinner fx:id="spnParentNumber" prefWidth="75" editable="true"/>
+            <Label text="Label:" styleClass="field-label" minWidth="38"/>
+            <ComboBox fx:id="cmbSubLabel" prefWidth="90" editable="true"
+                      promptText="i, ii, a…"/>
+            <Label text="→ " style="-fx-font-size:12px; -fx-text-fill:#8e44ad;"/>
+            <!-- Live preview label: shows "Q14-ii" as you edit -->
+            <Label fx:id="subPreviewLabel" text=""
+                   style="-fx-font-size:13px; -fx-font-weight:bold;
+                          -fx-text-fill:#8e44ad; -fx-font-style:italic;"/>
+          </HBox>
+
+          <!-- Pill buttons for common sub-labels — one click sets it -->
+          <Label text="Quick set label:"
+                 style="-fx-font-size:11px; -fx-text-fill:#8e44ad;"/>
+          <FlowPane fx:id="subLabelPillPane" hgap="5" vgap="5"
+                    style="-fx-padding:2 0 0 0;"/>
+
+          <Label text="💡 Tip: the list shows sub-questions indented with ↳ under their parent."
+                 style="-fx-font-size:11px; -fx-text-fill:#8e44ad;" wrapText="true"/>
+        </VBox>
+
+        <Separator/>
+
+        <!-- ═══════════════════════════════════
+             MCQ ANSWER CHOICES
+             Hidden when type = PROBLEM
+             ═══════════════════════════════════ -->
+        <VBox fx:id="choicesSection" spacing="10">
+          <Label text="Answer Choices" styleClass="pane-heading"/>
+          <Label text="Fill in all four choices. Mark the correct answer with the radio button."
+                 styleClass="panel-subtitle" wrapText="true"/>
+
+          <GridPane hgap="10" vgap="9">
+            <columnConstraints>
+              <ColumnConstraints minWidth="28" maxWidth="28"/>
+              <ColumnConstraints hgrow="ALWAYS"/>
+              <ColumnConstraints minWidth="90" maxWidth="90"/>
+            </columnConstraints>
+
+            <!-- Choice A -->
+            <Label text="A" styleClass="choice-letter"
+                   GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+            <TextField fx:id="tfChoiceA" promptText="Choice A…"
+                       styleClass="choice-field"
+                       GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+            <fx:define><ToggleGroup fx:id="answerGroup"/></fx:define>
+            <RadioButton fx:id="rbA" text="✔ Correct" toggleGroup="$answerGroup"
+                         style="-fx-cursor:hand; -fx-text-fill:#27ae60; -fx-font-weight:bold;"
+                         GridPane.rowIndex="0" GridPane.columnIndex="2"/>
+
+            <!-- Choice B -->
+            <Label text="B" styleClass="choice-letter"
+                   GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+            <TextField fx:id="tfChoiceB" promptText="Choice B…"
+                       styleClass="choice-field"
+                       GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+            <RadioButton fx:id="rbB" text="✔ Correct" toggleGroup="$answerGroup"
+                         style="-fx-cursor:hand; -fx-text-fill:#27ae60; -fx-font-weight:bold;"
+                         GridPane.rowIndex="1" GridPane.columnIndex="2"/>
+
+            <!-- Choice C -->
+            <Label text="C" styleClass="choice-letter"
+                   GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+            <TextField fx:id="tfChoiceC" promptText="Choice C…"
+                       styleClass="choice-field"
+                       GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+            <RadioButton fx:id="rbC" text="✔ Correct" toggleGroup="$answerGroup"
+                         style="-fx-cursor:hand; -fx-text-fill:#27ae60; -fx-font-weight:bold;"
+                         GridPane.rowIndex="2" GridPane.columnIndex="2"/>
+
+            <!-- Choice D -->
+            <Label text="D" styleClass="choice-letter"
+                   GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+            <TextField fx:id="tfChoiceD" promptText="Choice D…"
+                       styleClass="choice-field"
+                       GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+            <RadioButton fx:id="rbD" text="✔ Correct" toggleGroup="$answerGroup"
+                         style="-fx-cursor:hand; -fx-text-fill:#27ae60; -fx-font-weight:bold;"
+                         GridPane.rowIndex="3" GridPane.columnIndex="2"/>
+          </GridPane>
+
+          <Label text="💡 For image-based MCQ where choices are in the image, leave text blank and just mark the correct letter. Use the Answers panel to set all at once rapidly."
+                 styleClass="hint-label" wrapText="true"/>
+        </VBox>
+
+      </VBox>
+    </ScrollPane>
+  </VBox>
+
+</SplitPane>

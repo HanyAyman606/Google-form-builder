@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx/21"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.formbuilder.ui.AnswerPanelController"
+      styleClass="panel-root" spacing="0">
+
+  <!-- ── Top toolbar ── -->
+  <VBox style="-fx-background-color:white; -fx-border-color:#dde1e5;
+               -fx-border-width:0 0 1 0;" spacing="10">
+    <padding><Insets top="16" right="24" bottom="14" left="24"/></padding>
+
+    <Label text="Answer Entry" styleClass="panel-title"/>
+
+    <HBox spacing="12" alignment="CENTER_LEFT">
+      <Button fx:id="btnMcqMode"   text="MCQ Questions"           onAction="#onMcqMode"/>
+      <Button fx:id="btnEssayMode" text="Written / Essay Questions" onAction="#onEssayMode"/>
+    </HBox>
+
+    <Label fx:id="modeLabel" text="" styleClass="panel-subtitle" wrapText="true"/>
+
+    <HBox spacing="10" alignment="CENTER_LEFT">
+      <Label text="Progress:" styleClass="field-label"/>
+      <ProgressBar fx:id="answerProgress" prefWidth="320" prefHeight="12" progress="0"/>
+    </HBox>
+
+    <!-- Dashboard: answered count + missing Q list -->
+    <Label fx:id="dashboardLabel" text="" wrapText="true"
+           style="-fx-font-size:12px; -fx-padding:2 0 0 0;"/>
+  </VBox>
+
+  <!-- ── Navigation bar ── -->
+  <HBox spacing="12" alignment="CENTER_LEFT"
+        style="-fx-background-color:#f4f4f4; -fx-border-color:#dde1e5;
+               -fx-border-width:0 0 1 0; -fx-padding:8 24;">
+    <Button fx:id="btnPrevPage" text="◀ Prev" onAction="#onPrevPage"
+            styleClass="btn-secondary" style="-fx-padding:5 16;"/>
+    <Label fx:id="progressLabel" text="" styleClass="muted-label" HBox.hgrow="ALWAYS"/>
+    <Button fx:id="btnNextPage" text="Next ▶" onAction="#onNextPage"
+            styleClass="btn-secondary" style="-fx-padding:5 16;"/>
+    <Button fx:id="btnSaveAll" text="💾 Save Answers" onAction="#onSaveAll"
+            style="-fx-background-color:#27ae60; -fx-text-fill:white;
+                   -fx-background-radius:5; -fx-border-width:0;
+                   -fx-font-weight:bold; -fx-padding:6 20; -fx-cursor:hand;
+                   -fx-font-size:13px;"/>
+  </HBox>
+
+  <!-- ── Dynamic content area ── -->
+  <ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS"
+              style="-fx-background-color:#f4f4f4; -fx-background:#f4f4f4;">
+    <VBox fx:id="contentArea" spacing="14"
+          style="-fx-background-color:#f4f4f4;">
+      <padding><Insets top="20" right="24" bottom="20" left="24"/></padding>
+    </VBox>
+  </ScrollPane>
+
+</VBox>

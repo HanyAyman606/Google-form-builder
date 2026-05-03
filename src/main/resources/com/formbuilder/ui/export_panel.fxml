@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx/21"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.formbuilder.ui.ExportPanelController"
+      styleClass="panel-root" spacing="0">
+
+  <!-- Header -->
+  <VBox style="-fx-background-color:white; -fx-border-color:#dde1e5;
+               -fx-border-width:0 0 1 0;" spacing="6">
+    <padding><Insets top="16" right="24" bottom="16" left="24"/></padding>
+    <Label text="Export &amp; Publish" styleClass="panel-title"/>
+    <Label fx:id="validationSummary" text="" styleClass="muted-label"/>
+  </VBox>
+
+  <ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS"
+              style="-fx-background-color:#f4f4f4;">
+    <VBox spacing="14" style="-fx-padding:20 24;">
+
+      <!-- Step 1: Form details -->
+      <VBox styleClass="step-card" spacing="10">
+        <Label text="1 — Form Details" styleClass="step-heading"/>
+
+        <HBox spacing="12" alignment="CENTER_LEFT">
+          <Label text="Form title:" styleClass="field-label" minWidth="100"/>
+          <TextField fx:id="tfFormTitle" HBox.hgrow="ALWAYS"
+                     promptText="Title shown to students at the top of the form"/>
+        </HBox>
+
+        <HBox spacing="12" alignment="CENTER_LEFT">
+          <Label text="Description:" styleClass="field-label" minWidth="100"/>
+          <TextField fx:id="tfFormDescription" HBox.hgrow="ALWAYS"
+                     promptText="Optional description shown under the title"/>
+        </HBox>
+      </VBox>
+
+      <!-- Step 2: Section names (editable) -->
+      <VBox styleClass="step-card" spacing="10">
+        <Label text="2 — Section Names" styleClass="step-heading"/>
+        <Label text="Edit section titles as they will appear in the Google Form."
+               styleClass="panel-subtitle" wrapText="true"/>
+        <VBox fx:id="sectionEditArea" spacing="8"/>
+      </VBox>
+
+      <!-- Step 3: Answer key -->
+      <VBox styleClass="step-card" spacing="8">
+        <Label text="3 — Answer Key" styleClass="step-heading"/>
+        <Label text="Teacher-only. Never sent to Google Forms."
+               styleClass="panel-subtitle"/>
+        <HBox spacing="10">
+          <Button fx:id="btnAnswerKey" text="Save as PDF"
+                  onAction="#onSaveAnswerKeyPdf" styleClass="btn-secondary"/>
+          <Button text="Save as CSV"
+                  onAction="#onSaveAnswerKeyCsv" styleClass="btn-secondary"/>
+        </HBox>
+      </VBox>
+
+      <!-- Step 4: Preview -->
+      <VBox styleClass="step-card" spacing="8">
+        <Label text="4 — Preview" styleClass="step-heading"/>
+        <Label text="See exactly what students will see — opens in your browser."
+               styleClass="panel-subtitle"/>
+        <Button fx:id="btnPreview" text="Preview in Browser"
+                onAction="#onPreview" styleClass="btn-secondary"
+                style="-fx-padding:8 18;"/>
+      </VBox>
+
+      <!-- Step 5: Create Form -->
+      <VBox styleClass="step-card" spacing="10">
+        <Label text="5 — Create Google Form" styleClass="step-heading"/>
+        <Label text="Creates the form in your Google account. You will then open it in edit mode, review it, and click Send yourself in Google Forms — responses go to whichever account you use there."
+               styleClass="panel-subtitle" wrapText="true"/>
+        <Label fx:id="readinessLabel" text="" wrapText="true"
+               styleClass="muted-label"/>
+
+        <HBox spacing="10" alignment="CENTER_LEFT">
+          <Button fx:id="btnPublish" text="Create Form"
+                  onAction="#onPublish" styleClass="btn-primary"
+                  style="-fx-padding:10 24; -fx-font-size:14px;"/>
+          <Button fx:id="btnResume" text="Resume Upload"
+                  onAction="#onResume" styleClass="btn-accent"
+                  visible="false" style="-fx-padding:10 18;"/>
+        </HBox>
+
+        <ProgressBar fx:id="publishProgress" maxWidth="Infinity"
+                     prefHeight="14" visible="false"/>
+        <Label fx:id="statusLabel" text="" styleClass="muted-label" wrapText="true"/>
+
+        <Separator/>
+        <Label text="Form Edit URL" styleClass="field-label"/>
+        <Label text="After creating, open in edit mode to review then Send from Google Forms."
+               styleClass="hint-label" wrapText="true"/>
+        <HBox spacing="8" alignment="CENTER_LEFT">
+          <TextField fx:id="tfFormUrl" HBox.hgrow="ALWAYS" editable="false"
+                     promptText="Appears here after form is created"/>
+          <Button text="Copy URL" onAction="#onCopyUrl" styleClass="btn-secondary"/>
+          <Button text="Open in Edit Mode" onAction="#onOpenEditMode" styleClass="btn-accent"
+                  style="-fx-padding:8 16;"/>
+        </HBox>
+        <Label text="💡 To transfer ownership: open the form → in Google Drive right-click the file → Share → add organisation email as Editor → then Transfer ownership."
+               styleClass="hint-label" wrapText="true"/>
+      </VBox>
+
+    </VBox>
+  </ScrollPane>
+</VBox>

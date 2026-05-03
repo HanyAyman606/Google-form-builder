@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<!--
+  Import Panel v8 (fixed NPE)
+  KEY FIX: Do NOT set visible="false"/managed="false" on any node in FXML.
+  JavaFX may skip @FXML injection for nodes inside hidden containers.
+  All visibility is controlled exclusively in initialize() AFTER injection.
+-->
+<VBox xmlns="http://javafx.com/javafx/21"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.formbuilder.ui.ImportPanelController"
+      styleClass="panel-root" spacing="12">
+  <padding><Insets top="24" right="28" bottom="16" left="28"/></padding>
+
+  <!-- Header -->
+  <Label text="Import Questions" styleClass="panel-title"/>
+  <Label text="Pick a PDF, choose Full PDF or a specific page range, then crop."
+         styleClass="panel-subtitle" wrapText="true"/>
+  <Separator/>
+
+  <!-- Two columns -->
+  <HBox spacing="16" VBox.vgrow="NEVER">
+
+    <!-- PDF column -->
+    <VBox HBox.hgrow="ALWAYS" styleClass="step-card" spacing="10">
+      <Label text="From PDF" styleClass="step-heading"/>
+
+      <!-- Pick PDF row -->
+      <HBox spacing="10" alignment="CENTER_LEFT">
+        <Button fx:id="btnPickPdf" text="Pick PDF..."
+                onAction="#onPickPdf" styleClass="btn-secondary"/>
+        <Label fx:id="lblPdfName" text="No file selected"
+               styleClass="muted-label" HBox.hgrow="ALWAYS"/>
+        <Label fx:id="lblPageCount" text="" styleClass="muted-label"/>
+      </HBox>
+
+      <Separator/>
+
+      <!-- Mode radios — ToggleGroup wired in controller initialize() -->
+      <Label text="Crop mode:" styleClass="field-label"/>
+      <HBox spacing="24" alignment="CENTER_LEFT">
+        <RadioButton fx:id="rbFullPdf"    text="Full PDF (all pages)"/>
+        <RadioButton fx:id="rbSplitFirst" text="Page range only"/>
+      </HBox>
+
+      <!--
+        Page range controls.
+        NO visible/managed attributes here — controller sets them in initialize().
+        Spinner valueFactory also set in initialize() — NOT inline FXML.
+      -->
+      <VBox fx:id="splitOptionsBox" spacing="8" style="-fx-padding:8 0 0 0;">
+
+        <HBox spacing="12" alignment="CENTER_LEFT">
+          <Label text="From page:" styleClass="field-label" minWidth="72"/>
+          <Spinner fx:id="spnPageFrom" prefWidth="78" editable="true"/>
+          <Label text="to page:" styleClass="field-label"/>
+          <Spinner fx:id="spnPageTo"   prefWidth="78" editable="true"/>
+          <Button fx:id="btnPreviewPages" text="Preview Pages"
+                  onAction="#onPreviewPages" styleClass="btn-secondary"/>
+        </HBox>
+
+        <!-- Page preview thumbnails — visibility controlled in controller -->
+        <ScrollPane fx:id="previewScroll" prefHeight="195"
+                    fitToHeight="false" hbarPolicy="AS_NEEDED" vbarPolicy="NEVER"
+                    styleClass="thumbnail-scroll">
+          <HBox fx:id="previewStrip" spacing="8" alignment="CENTER_LEFT">
+            <padding><Insets top="6" right="8" bottom="6" left="8"/></padding>
+          </HBox>
+        </ScrollPane>
+
+      </VBox>
+
+      <!-- Crop button -->
+      <Button fx:id="btnCropFromPdf" text="Crop Full PDF"
+              onAction="#onCropFromPdf" styleClass="btn-primary"
+              disable="true" maxWidth="Infinity"/>
+
+      <ProgressBar fx:id="progressBar" prefHeight="10"
+                   maxWidth="Infinity" visible="false"/>
+      <Label fx:id="statusLabel" text="" styleClass="muted-label" wrapText="true"/>
+
+    </VBox>
+
+    <!-- Screenshots column -->
+    <VBox HBox.hgrow="NEVER" prefWidth="220" styleClass="step-card" spacing="10">
+      <Label text="From Screenshots" styleClass="step-heading"/>
+      <Label text="Already have images? Upload them directly."
+             styleClass="panel-subtitle" wrapText="true"/>
+      <Button fx:id="btnBrowseScreenshots" text="Browse Images..."
+              onAction="#onBrowseScreenshots" styleClass="btn-secondary"
+              maxWidth="Infinity"/>
+    </VBox>
+
+  </HBox>
+
+  <!-- Result count -->
+  <HBox alignment="CENTER_RIGHT">
+    <Label fx:id="countLabel" text="0 question(s) imported" styleClass="muted-label"/>
+  </HBox>
+
+  <!-- Thumbnail pool -->
+  <ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS" styleClass="thumbnail-scroll">
+    <FlowPane fx:id="thumbnailPane" hgap="10" vgap="10" styleClass="thumbnail-pane">
+      <padding><Insets top="10" right="10" bottom="10" left="10"/></padding>
+    </FlowPane>
+  </ScrollPane>
+
+  <!-- Hidden compat fields — controller references these in @FXML -->
+  <TextField fx:id="tfQuestionNumbers" visible="false" managed="false"/>
+  <Label     fx:id="lblSolutionPdfName" visible="false" managed="false"/>
+  <Button    fx:id="btnPickSolutionPdf" visible="false" managed="false"
+             onAction="#onPickSolutionPdf"/>
+  <Button    fx:id="btnAnalyze" visible="false" managed="false"
+             onAction="#onAnalyze"/>
+
+</VBox>

@@ -1,0 +1,2213 @@
+[TOP CROP] page=185 firstNum=1 saved=top_185.png
+[TOP CROP] page=186 firstNum=5 saved=top_186.png
+[TOP CROP] page=187 firstNum=8 saved=top_187.png
+[TOP CROP] page=188 firstNum=11 saved=top_188.png
+[TOP CROP] page=189 firstNum=13 saved=top_189.png
+[TOP CROP] page=190 firstNum=16 saved=top_190.png
+[TOP CROP] page=191 firstNum=21 saved=top_191.png
+[TOP CROP] page=192 firstNum=24 saved=top_192.png
+[TOP CROP] page=193 firstNum=28 saved=top_193.png
+[TOP CROP] page=194 firstNum=31 saved=top_194.png
+[TOP CROP] page=195 firstNum=34 saved=top_195.png
+[TOP CROP] page=196 firstNum=37 saved=top_196.png
+[TOP CROP] page=200 firstNum=42 saved=top_200.png
+[TOP CROP] page=201 firstNum=44 saved=top_201.png
+[TOP CROP] page=202 firstNum=47 saved=top_202.png
+[TOP CROP] page=203 firstNum=50 saved=top_203.png
+[TOP CROP] page=204 firstNum=54 saved=top_204.png
+[TOP CROP] page=205 firstNum=58 saved=top_205.png
+[TOP CROP] page=206 firstNum=62 saved=top_206.png
+[TOP CROP] page=207 firstNum=67 saved=top_207.png
+
+=== PAGE 185 ===
+[BROKEN TOP DETECTED] True
+
+--- TEXT SPLIT CHECK ---
+[BLOCK TEXT]
+185
+[BLOCK TEXT]
+Ch.7 : laser
+[BLOCK TEXT]
+The opposite figure represents the phenomenon of
+[BLOCK TEXT]
+The opposite figure shows two photons, each with energy 
+(E=E2-E1), falling separately on two atoms 
+[BLOCK TEXT]
+Which of the following figures represents the process of 
+stimulated 
+emission?
+[BLOCK TEXT]
+The following figures represent the waves accompanying the 
+motion of photons. The choice that repre
+[BLOCK TEXT]
+1
+[BLOCK TEXT]
+2
+[BLOCK TEXT]
+3
+[BLOCK TEXT]
+4
+[BLOCK TEXT]
+Black body radiation
+[BLOCK TEXT]
+Spontaneous emission
+[BLOCK TEXT]
+Stimulated emission
+[BLOCK TEXT]
+Absorption
+[BLOCK TEXT]
+Stimulated emission, spontaneous emission
+[BLOCK TEXT]
+Spontaneous emission, stimulated emission
+[BLOCK TEXT]
+Spontaneous emission, excitation
+[BLOCK TEXT]
+Excitation, stimulated emission
+[BLOCK TEXT]
+A
+[BLOCK TEXT]
+B
+[BLOCK TEXT]
+C
+[BLOCK TEXT]
+D
+[BLOCK TEXT]
+A
+[BLOCK TEXT]
+B
+[BLOCK TEXT]
+C
+[BLOCK TEXT]
+D
+[BLOCK TEXT]
+A
+B
+C
+D
+[BLOCK TEXT]
+A
+[BLOCK TEXT]
+B
+[BLOCK TEXT]
+C
+[BLOCK TEXT]
+D
+[SAVE] page=185 file=q_1 num=1
+[SAVE] page=185 file=q_2 num=2
+[SAVE] page=185 file=q_3 num=3
+[SAVE] page=185 file=q_4 num=4
+
+=== PAGE 186 ===
+[BROKEN TOP DETECTED] False
+
+--- TEXT SPLIT CHECK ---
+[BLOCK TEXT]
+186
+[BLOCK TEXT]
+If the wavelength of the laser produced by a laser device is 6500 
+Å, which of the following choices
+[BLOCK TEXT]
+The opposite figure shows four light sources (S1, S2, S3, S4) placed 
+in front of four slits in a sc
+[BLOCK TEXT]
+5
+[BLOCK TEXT]
+6
+[BLOCK TEXT]
+1.5 x 1014 Hz, before the end of the lifetime
+[BLOCK TEXT]
+4.6 x 1014 Hz, before the end of the lifetime
+[BLOCK TEXT]
+4.6 x 1014 Hz, after the end of the lifetime
+[BLOCK TEXT]
+1.5 x 1014 Hz, after the end of the lifetime
+[BLOCK TEXT]
+S1, S2
+S3, S4
+S2, S4
+S3, S2
+[BLOCK TEXT]
+A
+[BLOCK TEXT]
+B
+[BLOCK TEXT]
+C
+[BLOCK TEXT]
+D
+[BLOCK TEXT]
+A
+[BLOCK TEXT]
+B
+[BLOCK TEXT]
+C
+[BLOCK TEXT]
+D
+[BLOCK TEXT]
+Two laser devices (X and Y) produce beams with the same 
+frequency. If the intensity of light emitte
+[BLOCK TEXT]
+7
+[BLOCK TEXT]
+A
+B
+C
+D
+[SAVE] page=186 file=q_5 num=5
+[SAVE] page=186 file=q_6 num=6
+[SAVE] page=186 file=q_7 num=7
+
+=== PAGE 187 ===
+[BROKEN TOP DETECTED] False
+
+--- TEXT SPLIT CHECK ---
+[BLOCK TEXT]
+187
+[BLOCK TEXT]
+When the laser beam is incident on a triangular prism at minimum 
+deviation position, it
+9
+[BLOCK TEXT]
+Produces a spectrum with a wide range of wavelengths without
+[BLOCK TEXT]
+deviation.
+[BLOCK TEXT]
+Produces a spectrum with a wide range of wavelengths that
+[BLOCK TEXT]
+deviates from its path.
+[BLOCK TEXT]
+Produces a spectral line with a single wavelength without deviation.
+[BLOCK TEXT]
+Passes through the prism without divergence but deviates from its
+[BLOCK TEXT]
+path.
+[BLOCK TEXT]
+A
+[BLOCK TEXT]
+B
+[BLOCK TEXT]
+C
+[BLOCK TEXT]
+D
+[BLOCK TEXT]
+A red laser beam can reach a longer distance than a beam 
+of ordinary blue light, although both have
+[BLOCK TEXT]
+8
+[BLOCK TEXT]
+The photon energy of the red laser beam is greater than that of the
+[BLOCK TEXT]
+ordinary blue light beam
+[BLOCK TEXT]
+The mass of the red laser photon is greater than that of the blue light
+[BLOCK TEXT]
+photon
+[BLOCK TEXT]
+The speed of the red laser beam is greater than the speed of the blue
+[BLOCK TEXT]
+light beam
+[BLOCK TEXT]
+The divergence angle of the red laser beam is less than that of the
+[BLOCK TEXT]
+ordinary blue light beam
+[BLOCK TEXT]
+A
+[BLOCK TEXT]
+B
+[BLOCK TEXT]
+C
+[BLOCK TEXT]
+D
+[BLOCK TEXT]
+A light beam has a diameter of (0.2 cm) and an intensity of (I) 
+at its source. What will when its i
+[BLOCK TEXT]
+10
+[BLOCK TEXT]
+Both the diameter and the intensity remain Constant.
+[BLOCK TEXT]
+Both the diameter and the intensity increase.
+[BLOCK TEXT]
+Both the diameter and the intensity decrease.
+[BLOCK TEXT]
+The diameter increases while the intensity decreases.
+[BLOCK TEXT]
+A
+[BLOCK TEXT]
+B
+[BLOCK TEXT]
+C
+[BLOCK TEXT]
+D
+[SAVE] page=187 file=q_8 num=8
+[SAVE] page=187 file=q_9 num=9
+[SAVE] page=187 file=q_10 num=10
+
+=== PAGE 188 ===
+[BROKEN TOP DETECTED] False
+
+--- TEXT SPLIT CHECK ---
+[BLOCK TEXT]
+188
+[BLOCK TEXT]
+11
+[BLOCK TEXT]
+12
+[BLOCK TEXT]
+The two opposite Figures (A, B) represent two light sources. The
+[BLOCK TEXT]
+following table shows some properties of the beams emitted from each
+[BLOCK TEXT]
+source. The correct properties are
+[BLOCK TEXT]
+You have an ordinary light beam and a laser beam. If the light intensity
+[BLOCK TEXT]
+of each is (I) at a distance (d) from its source, then the light intensity
+[BLOCK TEXT]
+of each beam at a distance (2d) from its source becomes
+[BLOCK TEXT]
+(A)
+(B)
+[BLOCK TEXT]
+1
+obeys the inverse 
+square law
+Resulting from 
+stimulated emission
+[MATCHED Q] 1
+[BLOCK TEXT]
+2
+Resulting from 
+stimulated emission
+obeys the inverse 
+square law
+[MATCHED Q] 2
+[BLOCK TEXT]
+3
+[BLOCK TEXT]
+Has a wide range of 
+wavelengths
+The diameter of the 
+light beam is not 
+constant
+[BLOCK TEXT]
+4
+Resulting from 
+spontaneous emission
+Coherent and parallel
+[MATCHED Q] 4
+[BLOCK TEXT]
+For the ordinary light beam
+For the laser beam
+[BLOCK TEXT]
+A
+0.5 I
+0.25 I
+[BLOCK TEXT]
+B
+0.25 I
+I
+[BLOCK TEXT]
+C
+0.25 I
+0.25 I
+[BLOCK TEXT]
+D
+0.5 I
+I
+[BLOCK TEXT]
+1, 2
+[BLOCK TEXT]
+2, 4
+[BLOCK TEXT]
+2, 3
+[BLOCK TEXT]
+1, 4
+[BLOCK TEXT]
+A
+[BLOCK TEXT]
+B
+[BLOCK TEXT]
+C
+[BLOCK TEXT]
+D
+[TEXT SPLIT] Found 3 segments
+[SAVE] page=188 file=q_11 num=1
+[SAVE] page=188 file=q_12 num=2
+[SAVE] page=188 file=q_13 num=4
+
+=== PAGE 189 ===
+[BROKEN TOP DETECTED] False
+
+--- TEXT SPLIT CHECK ---
+[BLOCK TEXT]
+189
+[BLOCK TEXT]
+15
+The opposite figure shows two different light sources, each in front of
+[MATCHED Q] 15
+[BLOCK TEXT]
+an obstacle. If the intensity of light from the source (2) at the obstacle
+[BLOCK TEXT]
+is (I) and the intensity of light from the source (1) at the obstacle is (3
+[BLOCK TEXT]
+I), then when the obstacle is shifted to the right by a distance of (1.5 d)
+[BLOCK TEXT]
+the intensity of light from both sources (1, 2) at the obstacle becomes
+[BLOCK TEXT]
+I
+[BLOCK TEXT]
+I
+[BLOCK TEXT]
+1.5 I
+[BLOCK TEXT]
+The light intensity 
+of source (1) at the 
+obstacle
+[BLOCK TEXT]
+The light intensity 
+of source (2) at the 
+obstacle
+A
+[BLOCK TEXT]
+B
+[BLOCK TEXT]
+C
+[BLOCK TEXT]
+D
+[BLOCK TEXT]
+The opposite figure represents an 
+ordinary light source producing red 
+light, received on a screen 
+[BLOCK TEXT]
+Which of the following graphs represents the relation between 
+the intensity of a laser beam and the
+[BLOCK TEXT]
+13
+[BLOCK TEXT]
+14
+[BLOCK TEXT]
+A
+B
+C
+D
+[BLOCK TEXT]
+A
+B
+C
+D
+[BLOCK TEXT]
+4 I
+[BLOCK TEXT]
+9
+4 I
+[BLOCK TEXT]
+3
+2 I
+[BLOCK TEXT]
+9
+9 I
+[BLOCK TEXT]
+4
+1.5 I
+[SAVE] page=189 file=q_14 num=13
+[SAVE] page=189 file=q_15 num=14
+[SAVE] page=189 file=q_16 num=4
+
+=== PAGE 190 ===
+[BROKEN TOP DETECTED] False
+
+--- TEXT SPLIT CHECK ---
+[BLOCK TEXT]
+190
+[BLOCK TEXT]
+The following graph represents the relation between the intensity 
+(I) of ordinary light when it fal
+[BLOCK TEXT]
+A laser beam is used as a power source for the active medium in
+[BLOCK TEXT]
+The opposite figure represents a laser production tube. According 
+to the figure, the active medium 
+[BLOCK TEXT]
+The opposite figure represents two energy levels in the atoms of 
+the active medium in the populatio
+[BLOCK TEXT]
+16
+[BLOCK TEXT]
+18
+[BLOCK TEXT]
+19
+[BLOCK TEXT]
+20
+[BLOCK TEXT]
+9 I
+[BLOCK TEXT]
+4 I
+[BLOCK TEXT]
+3 I
+[BLOCK TEXT]
+I
+[BLOCK TEXT]
+Gas laser
+[BLOCK TEXT]
+Solid-state laser
+[BLOCK TEXT]
+Liquid dye laser
+[BLOCK TEXT]
+Semiconductor laser
+[BLOCK TEXT]
+Gas molecules
+[BLOCK TEXT]
+Crystals (solid)
+[BLOCK TEXT]
+Organic liquid dyes
+[BLOCK TEXT]
+An alloy of several metals
+[BLOCK TEXT]
+2 photons
+[BLOCK TEXT]
+3 photons
+[BLOCK TEXT]
+4 photons
+[BLOCK TEXT]
+6 photons
+[BLOCK TEXT]
+A
+[BLOCK TEXT]
+B
+[BLOCK TEXT]
+C
+[BLOCK TEXT]
+D
+[BLOCK TEXT]
+A
+[BLOCK TEXT]
+B
+[BLOCK TEXT]
+C
+[BLOCK TEXT]
+D
+[BLOCK TEXT]
+A
+[BLOCK TEXT]
+B
+[BLOCK TEXT]
+C
+[BLOCK TEXT]
+D
+[BLOCK TEXT]
+A
+[BLOCK TEXT]
+B
+[BLOCK TEXT]
+C
+[BLOCK TEXT]
+D
+[BLOCK TEXT]
+17
+The opposite figure represents the waves emitted from three different
+[MATCHED Q] 17
+[BLOCK TEXT]
+light sources. Therefore
+[BLOCK TEXT]
+Ordinary Light Source
+Laser Light Source
+[BLOCK TEXT]
+A
+A
+C
+[BLOCK TEXT]
+B
+B
+A
+[BLOCK TEXT]
+C
+C
+None
+[BLOCK TEXT]
+D
+None
+B
+[SAVE] page=190 file=q_17 num=9
+[SAVE] page=190 file=q_18 num=17
+[SAVE] page=190 file=q_19 num=18
+[SAVE] page=190 file=q_20 num=19
+[SAVE] page=190 file=q_21 num=2
+
+=== PAGE 191 ===
+[BROKEN TOP DETECTED] False
+
+--- TEXT SPLIT CHECK ---
+[BLOCK TEXT]
+191
+[BLOCK TEXT]
+22
+[BLOCK TEXT]
+Equal to one
+[BLOCK TEXT]
+Greater than one
+[BLOCK TEXT]
+Less than one
+[BLOCK TEXT]
+Difficult to determine
+[BLOCK TEXT]
+A
+[BLOCK TEXT]
+B
+[BLOCK TEXT]
+C
+[BLOCK TEXT]
+D
+[BLOCK TEXT]
+21
+[BLOCK TEXT]
+23
+[BLOCK TEXT]
+The opposite figures represent excited atoms (X, Y, Z, T) at the meta-
+[BLOCK TEXT]
+stable energy level (E2), with the time spent by the atom in the level
+[BLOCK TEXT]
+indicated. Assuming that photons with energy (E=E2-E1) fall on the
+[BLOCK TEXT]
+atoms at the excitation level (E2) after a time of 6 x 10-4 s, the atoms
+[BLOCK TEXT]
+that undergo spontaneous emission and the atoms that undergo
+[BLOCK TEXT]
+stimulated emission are
+[BLOCK TEXT]
+The opposite figure represents the energy levels of the atoms in the
+[BLOCK TEXT]
+active medium of a helium-neon laser. During the movement of photons
+[BLOCK TEXT]
+between the mirrors, the photons stimulate the atoms of … element.
+[BLOCK TEXT]
+Spontaneous 
+Emission
+Stimulated 
+Emission
+A
+X, Y, Z
+T
+[BLOCK TEXT]
+B
+X, Y, T
+Z
+[BLOCK TEXT]
+C
+Y, T
+X, Z
+[BLOCK TEXT]
+D
+X, Z
+Y, T
+[BLOCK TEXT]
+The stimulated 
+atoms
+Located at the 
+energy level
+A
+Neon
+E0
+B
+Neon
+E1
+[BLOCK TEXT]
+C
+Neon
+E2
+[BLOCK TEXT]
+D
+Helium
+E3
+[BLOCK TEXT]
+In a helium-neon laser, the ratio of 
+is
+Pumping Energy of one Atom
+Energy of the emitted laser phot
+[SAVE] page=191 file=q_22 num=21
+[SAVE] page=191 file=q_23 num=22
+[SAVE] page=191 file=q_24 num=23
+
+=== PAGE 192 ===
+[BROKEN TOP DETECTED] True
+
+--- TEXT SPLIT CHECK ---
+[BLOCK TEXT]
+192
+[BLOCK TEXT]
+Increasing the reflectivity of the semitransparent mirror slightly 
+will lead to all of the followin
+[BLOCK TEXT]
+24
+[BLOCK TEXT]
+Increasing the number of successive reflections inside the resonant
+[BLOCK TEXT]
+cavity
+[BLOCK TEXT]
+Increasing the path length of the photons inside the cavity
+[BLOCK TEXT]
+Increasing the intensity of laser radiation inside the cavity
+[BLOCK TEXT]
+Decreasing the thermal energy absorbed by the tube wall
+[BLOCK TEXT]
+A
+[BLOCK TEXT]
+B
+[BLOCK TEXT]
+C
+[BLOCK TEXT]
+D
+[BLOCK TEXT]
+In the opposite diagram, two atoms (x) and (y) of the same element 
+were excited to the same energy 
+[BLOCK TEXT]
+25
+[BLOCK TEXT]
+The energy of the emitted photon.
+[BLOCK TEXT]
+The time the atom spends at level (E1).
+[BLOCK TEXT]
+The speed of the emitted photon.
+[BLOCK TEXT]
+All of the above are identical for both atoms.
+[BLOCK TEXT]
+A
+[BLOCK TEXT]
+B
+[BLOCK TEXT]
+C
+[BLOCK TEXT]
+D
+[BLOCK TEXT]
+26
+Two atoms (1), (2) of the same element are excited to an energy level of
+[MATCHED Q] 26
+[BLOCK TEXT]
+lifetime 10-3 s, if a photon is emitted from each atom after being in that
+[BLOCK TEXT]
+level for an interval of 10-5 s, 10-3 s respectively, so the photon emitted
+[BLOCK TEXT]
+from:
+Atom (1)
+Atom (2)
+[BLOCK TEXT]
+A
+by an external photon
+by an external photon
+[BLOCK TEXT]
+B
+by an external photon
+without external stimulus
+[BLOCK TEXT]
+C
+without external stimulus
+by an external photon
+[BLOCK TEXT]
+D
+without external stimulus
+without external stimulus
+[BLOCK TEXT]
+Two spectra (x) and (y), spectrum (x) is laser, and spectrum (y) is 
+ordinary light. Each one is ana
+[BLOCK TEXT]
+27
+[BLOCK TEXT]
+A
+B
+C
+D
+[SAVE] page=192 file=q_25 num=24
+[SAVE] page=192 file=q_26 num=25
+[SAVE] page=192 file=q_27 num=26
+[SAVE] page=192 file=q_28 num=27
+
+=== PAGE 193 ===
+[BROKEN TOP DETECTED] False
+
+--- TEXT SPLIT CHECK ---
+[BLOCK TEXT]
+193
+[BLOCK TEXT]
+The following shapes represent the energy levels of an atom, 
+Which one represents
+i. Absorbent stat
+[BLOCK TEXT]
+ii. Stimulated Emission State
+[BLOCK TEXT]
+iii. Spontaneous Emission status
+[BLOCK TEXT]
+28
+[BLOCK TEXT]
+(A)
+[BLOCK TEXT]
+(B)
+[BLOCK TEXT]
+(C)
+[BLOCK TEXT]
+(D)
+[BLOCK TEXT]
+(A)
+[BLOCK TEXT]
+(B)
+[BLOCK TEXT]
+(C)
+[BLOCK TEXT]
+(D)
+[BLOCK TEXT]
+(A)
+[BLOCK TEXT]
+(B)
+[BLOCK TEXT]
+(C)
+[BLOCK TEXT]
+(D)
+[BLOCK TEXT]
+A
+[BLOCK TEXT]
+B
+[BLOCK TEXT]
+C
+[BLOCK TEXT]
+D
+[BLOCK TEXT]
+A
+[BLOCK TEXT]
+B
+[BLOCK TEXT]
+C
+[BLOCK TEXT]
+D
+[BLOCK TEXT]
+A
+[BLOCK TEXT]
+B
+[BLOCK TEXT]
+C
+[BLOCK TEXT]
+D
+[BLOCK TEXT]
+The opposite diagram shows the path of light rays from a regular 
+lamp. If the area (A1=A), then the
+[BLOCK TEXT]
+A
+[BLOCK TEXT]
+B
+[BLOCK TEXT]
+C
+[BLOCK TEXT]
+D
+[BLOCK TEXT]
+2
+3
+3
+4
+[BLOCK TEXT]
+A1
+A2
+[BLOCK TEXT]
+1
+3
+4
+9
+[BLOCK TEXT]
+The figure opposite shows the path of a laser beam. The relationship 
+between the intensity of the l
+[BLOCK TEXT]
+I1<I2
+I1=I2
+I1>I2
+There is no relation
+[BLOCK TEXT]
+A
+[BLOCK TEXT]
+B
+[BLOCK TEXT]
+C
+[BLOCK TEXT]
+D
+[SAVE] page=193 file=q_29 num=28
+[SAVE] page=193 file=q_30 num=28
+[SAVE] page=193 file=q_31 num=28
+[SAVE] page=193 file=q_32 num=29
+[SAVE] page=193 file=q_33 num=30
+
+=== PAGE 194 ===
+[BROKEN TOP DETECTED] False
+
+--- TEXT SPLIT CHECK ---
+[BLOCK TEXT]
+194
+[BLOCK TEXT]
+31
+[BLOCK TEXT]
+32
+[BLOCK TEXT]
+The opposite figure illustrates the relationship between radiation
+[BLOCK TEXT]
+intensity and wavelength for two light sources.
+[BLOCK TEXT]
+Which rows in the following table represent gas lasers and solid-crystal
+[BLOCK TEXT]
+lasers in terms of energy source and resonant cavity?
+[BLOCK TEXT]
+Curve (A)
+Curve (B)
+[BLOCK TEXT]
+A
+Ordinary lamp
+Laser
+[BLOCK TEXT]
+B
+Laser
+Ordinary lamp
+[BLOCK TEXT]
+C
+Ordinary lamp
+Ordinary lamp
+[BLOCK TEXT]
+D
+Laser
+Laser
+[BLOCK TEXT]
+Gas Laser
+Crystal Laser
+[BLOCK TEXT]
+Resonant 
+cavity
+Energy 
+Source
+Resonant 
+cavity
+Energy 
+Source
+A
+Internal
+Electrical
+External
+Light
+[BLOCK TEXT]
+B
+External
+Electrical
+Internal
+Light
+[BLOCK TEXT]
+C
+External
+Chemical
+External
+Thermal
+[BLOCK TEXT]
+D
+Internal
+Chemical
+Internal
+Thermal
+[BLOCK TEXT]
+The figure represents the beams emitted from a red laser light 
+source and a white glowing light sou
+[BLOCK TEXT]
+ii. Which light source that produces light obeys the inverse 
+square law?
+[BLOCK TEXT]
+33
+[BLOCK TEXT]
+Both sources produce beams of equal parallel.
+[BLOCK TEXT]
+White glowing light source
+[BLOCK TEXT]
+Red laser light source
+[BLOCK TEXT]
+Both sources produce beams of equal parallel.
+[BLOCK TEXT]
+White glowing light source
+[BLOCK TEXT]
+Red laser light source
+[BLOCK TEXT]
+A
+[BLOCK TEXT]
+B
+[BLOCK TEXT]
+C
+[BLOCK TEXT]
+A
+[BLOCK TEXT]
+B
+[BLOCK TEXT]
+C
+[SAVE] page=194 file=q_34 num=31
+[SAVE] page=194 file=q_35 num=32
+[SAVE] page=194 file=q_36 num=33
+[SAVE] page=194 file=q_37 num=33
+
+=== PAGE 195 ===
+[BROKEN TOP DETECTED] False
+
+--- TEXT SPLIT CHECK ---
+[BLOCK TEXT]
+195
+[BLOCK TEXT]
+The opposite figure shows an excited 
+atom at energy level E1 Which of 
+the 
+following 
+statements 
+
+[BLOCK TEXT]
+34
+[BLOCK TEXT]
+The atom spontaneously transitions from energy level E1 to
+[BLOCK TEXT]
+energy level E0 and produces a photon with energy E1-E0
+A photon with energy E1-E0 falls on the exci
+[BLOCK TEXT]
+it to emit a photon with energy greater than E1-E0 and absorb
+[BLOCK TEXT]
+the incident photon
+[BLOCK TEXT]
+A photon with energy E1-E0 falls on an excited atom, causing
+[BLOCK TEXT]
+it to emit a photon with energy equal to E1-E0, which moves in
+[BLOCK TEXT]
+phase with the incident photon.
+[BLOCK TEXT]
+A photon with energy E1-E0 falls on the excited atom, causing
+[BLOCK TEXT]
+it to emit a photon with energy lower than E1-E0, and it moves
+[BLOCK TEXT]
+in phase with the incident photon.
+[BLOCK TEXT]
+A
+[BLOCK TEXT]
+B
+[BLOCK TEXT]
+C
+[BLOCK TEXT]
+D
+[BLOCK TEXT]
+35
+The diagram illustrates four energy levels for the atoms of the active
+[MATCHED Q] 35
+[BLOCK TEXT]
+medium in a laser. If level E2 is the meta stable energy level, then the
+[BLOCK TEXT]
+possible combination that describes the lifetimes of the electrons in
+[BLOCK TEXT]
+energy levels E1, E2, and E3 for the laser system is
+[BLOCK TEXT]
+Lifetime
+E1
+E2
+E3
+A
+First group
+10-8 s
+10-6 s
+10-8 s
+[BLOCK TEXT]
+B
+Second 
+group
+10-3 s
+10-3 s
+10-8 s
+[BLOCK TEXT]
+C
+Third group
+10-2 s
+10-2 s
+10-8 s
+[BLOCK TEXT]
+D
+Forth group
+10-8 s
+10-3 s
+10-9 s
+[BLOCK TEXT]
+Helium atoms transition from the E0 energy level to the E3 energy 
+level due to
+36
+[BLOCK TEXT]
+Electrical energy
+[BLOCK TEXT]
+Thermal energy
+[BLOCK TEXT]
+Chemical energy
+[BLOCK TEXT]
+Light energy
+[BLOCK TEXT]
+A
+[BLOCK TEXT]
+B
+[BLOCK TEXT]
+C
+[BLOCK TEXT]
+D
+[SAVE] page=195 file=q_38 num=34
+[SAVE] page=195 file=q_39 num=35
+[SAVE] page=195 file=q_40 num=36
+
+=== PAGE 196 ===
+[BROKEN TOP DETECTED] True
+
+--- TEXT SPLIT CHECK ---
+[BLOCK TEXT]
+196
+[BLOCK TEXT]
+The diagram shows the components of a helium-neon (Ne-He) laser 
+device components 1, 2, 3, 4 and 5.
+[BLOCK TEXT]
+37
+[BLOCK TEXT]
+1, 2
+[BLOCK TEXT]
+4, 5
+[BLOCK TEXT]
+1, 4
+[BLOCK TEXT]
+3, 5
+[BLOCK TEXT]
+Reflective mirror
+[BLOCK TEXT]
+Semi-transparent mirror
+[BLOCK TEXT]
+Both mirrors
+[BLOCK TEXT]
+All directions
+[BLOCK TEXT]
+1
+[BLOCK TEXT]
+2
+[BLOCK TEXT]
+3
+[BLOCK TEXT]
+4
+[BLOCK TEXT]
+5
+[BLOCK TEXT]
+1
+[BLOCK TEXT]
+2
+[BLOCK TEXT]
+3
+[BLOCK TEXT]
+4
+[BLOCK TEXT]
+5
+[BLOCK TEXT]
+1
+[BLOCK TEXT]
+2
+[BLOCK TEXT]
+3
+[BLOCK TEXT]
+4
+[BLOCK TEXT]
+A
+[BLOCK TEXT]
+B
+[BLOCK TEXT]
+C
+[BLOCK TEXT]
+D
+[BLOCK TEXT]
+A
+[BLOCK TEXT]
+B
+[BLOCK TEXT]
+C
+[BLOCK TEXT]
+D
+[BLOCK TEXT]
+A
+[BLOCK TEXT]
+B
+[BLOCK TEXT]
+C
+[BLOCK TEXT]
+D
+[BLOCK TEXT]
+The opposite diagram shows the structure of a helium-neon laser 
+device where it emits a beam of
+i. 
+[BLOCK TEXT]
+The diagram illustrates the structure of a (helium-neon) laser 
+device.
+i. Which of the parts shown 
+[BLOCK TEXT]
+ii. Which of the component shown in the figure represents the 
+component through which the laser bea
+[BLOCK TEXT]
+ii. Which of the photons continues its movement between the two 
+mirrors and amplifies the laser bea
+[BLOCK TEXT]
+38
+[BLOCK TEXT]
+39
+[BLOCK TEXT]
+A
+[BLOCK TEXT]
+B
+[BLOCK TEXT]
+C
+[BLOCK TEXT]
+D
+[BLOCK TEXT]
+E
+[BLOCK TEXT]
+A
+[BLOCK TEXT]
+B
+[BLOCK TEXT]
+C
+[BLOCK TEXT]
+D
+[BLOCK TEXT]
+E
+[SAVE] page=196 file=q_41 num=37
+[SAVE] page=196 file=q_42 num=1
+[SAVE] page=196 file=q_43 num=1
+[SAVE] page=196 file=q_44 num=1
+[SAVE] page=196 file=q_45 num=1
+
+=== PAGE 197 ===
+[BROKEN TOP DETECTED] False
+
+--- TEXT SPLIT CHECK ---
+[BLOCK TEXT]
+197
+[BLOCK TEXT]
+Quartz Glass
+[BLOCK TEXT]
+Soda Glass
+[BLOCK TEXT]
+Feldspar Glass
+[BLOCK TEXT]
+Mica Glass
+[BLOCK TEXT]
+Collision of photons with (He) atoms
+[BLOCK TEXT]
+Collision of electric field electrons with (He) atoms
+[BLOCK TEXT]
+Collision of photon with Laser Photons
+[BLOCK TEXT]
+Collision of (He) atoms with (Ne) atoms
+[BLOCK TEXT]
+Neon
+[BLOCK TEXT]
+Helium
+[BLOCK TEXT]
+Helium and Neon
+[BLOCK TEXT]
+No correct answer
+[BLOCK TEXT]
+iii. What does the component (2) consist of?
+[BLOCK TEXT]
+iv. Helium atoms are excited by
+[BLOCK TEXT]
+v. The material responsible for producing the laser in a helium-
+neon laser is
+[BLOCK TEXT]
+vi. If the volume of helium and neon inside tube is H, then the 
+amount of helium inside the tube is
+[BLOCK TEXT]
+A
+[BLOCK TEXT]
+B
+[BLOCK TEXT]
+C
+[BLOCK TEXT]
+D
+[BLOCK TEXT]
+A
+[BLOCK TEXT]
+B
+[BLOCK TEXT]
+C
+[BLOCK TEXT]
+D
+[BLOCK TEXT]
+A
+[BLOCK TEXT]
+B
+[BLOCK TEXT]
+C
+[BLOCK TEXT]
+D
+[BLOCK TEXT]
+A
+[BLOCK TEXT]
+B
+[BLOCK TEXT]
+C
+[BLOCK TEXT]
+D
+[BLOCK TEXT]
+H
+10
+[BLOCK TEXT]
+H
+11
+10 H
+[BLOCK TEXT]
+11
+9 H
+[BLOCK TEXT]
+10
+[BLOCK TEXT]
+a
+[BLOCK TEXT]
+b
+[BLOCK TEXT]
+c
+[BLOCK TEXT]
+d
+[BLOCK TEXT]
+k
+[BLOCK TEXT]
+The figure opposite shows some transitions a, b, c, d and k in a 
+laser (Helium-Neon), the transitio
+[BLOCK TEXT]
+40
+[BLOCK TEXT]
+A
+[BLOCK TEXT]
+B
+[BLOCK TEXT]
+C
+[BLOCK TEXT]
+D
+[BLOCK TEXT]
+E
+[SAVE] page=197 file=q_46 num=10
+[SAVE] page=197 file=q_47 num=10
+[SAVE] page=197 file=q_48 num=10
+[SAVE] page=197 file=q_49 num=10
+[SAVE] page=197 file=q_50 num=40
+
+=== PAGE 198 ===
+[BROKEN TOP DETECTED] False
+
+--- TEXT SPLIT CHECK ---
+[BLOCK TEXT]
+198
+[BLOCK TEXT]
+a
+[BLOCK TEXT]
+b
+[BLOCK TEXT]
+c
+[BLOCK TEXT]
+d
+[BLOCK TEXT]
+k
+[BLOCK TEXT]
+a
+[BLOCK TEXT]
+b
+[BLOCK TEXT]
+c
+[BLOCK TEXT]
+d
+[BLOCK TEXT]
+k
+[BLOCK TEXT]
+ii. In neon after the laser beam exits
+[BLOCK TEXT]
+iii. After helium collides with neon
+[BLOCK TEXT]
+A
+[BLOCK TEXT]
+B
+[BLOCK TEXT]
+C
+[BLOCK TEXT]
+D
+[BLOCK TEXT]
+E
+[BLOCK TEXT]
+A
+[BLOCK TEXT]
+B
+[BLOCK TEXT]
+C
+[BLOCK TEXT]
+D
+[BLOCK TEXT]
+E
+[BLOCK TEXT]
+(1)
+[BLOCK TEXT]
+(2)
+[BLOCK TEXT]
+(3)
+[BLOCK TEXT]
+(4)
+[BLOCK TEXT]
+1
+[BLOCK TEXT]
+2
+[BLOCK TEXT]
+3
+[BLOCK TEXT]
+4
+[BLOCK TEXT]
+1
+[BLOCK TEXT]
+2
+[BLOCK TEXT]
+3
+[BLOCK TEXT]
+4
+[BLOCK TEXT]
+1
+[BLOCK TEXT]
+2
+[BLOCK TEXT]
+3
+[BLOCK TEXT]
+4
+[BLOCK TEXT]
+A
+[BLOCK TEXT]
+B
+[BLOCK TEXT]
+C
+[BLOCK TEXT]
+D
+[BLOCK TEXT]
+A
+[BLOCK TEXT]
+B
+[BLOCK TEXT]
+C
+[BLOCK TEXT]
+D
+[BLOCK TEXT]
+A
+[BLOCK TEXT]
+B
+[BLOCK TEXT]
+C
+[BLOCK TEXT]
+D
+[BLOCK TEXT]
+A
+[BLOCK TEXT]
+B
+[BLOCK TEXT]
+C
+[BLOCK TEXT]
+D
+[BLOCK TEXT]
+The following diagram illustrates the interaction of a photon or 
+electron incident on the surface o
+[BLOCK TEXT]
+ii. The photoelectric effect
+[BLOCK TEXT]
+iii. X-ray Production
+[BLOCK TEXT]
+iv. Laser Production
+[BLOCK TEXT]
+41
+[SAVE] page=198 file=q_51 num=0
+[SAVE] page=198 file=q_52 num=0
+[SAVE] page=198 file=q_53 num=1
+[SAVE] page=198 file=q_54 num=1
+[SAVE] page=198 file=q_55 num=1
+[SAVE] page=198 file=q_56 num=1
+
+=== PAGE 199 ===
+[BROKEN TOP DETECTED] True
+
+--- TEXT SPLIT CHECK ---
+[BLOCK TEXT]
+199
+[BLOCK TEXT]
+(1)
+[BLOCK TEXT]
+(2)
+[BLOCK TEXT]
+(3)
+[BLOCK TEXT]
+(4)
+[BLOCK TEXT]
+1
+[BLOCK TEXT]
+2
+[BLOCK TEXT]
+3
+[BLOCK TEXT]
+4
+[BLOCK TEXT]
+1
+[BLOCK TEXT]
+2
+[BLOCK TEXT]
+3
+[BLOCK TEXT]
+4
+[BLOCK TEXT]
+1
+[BLOCK TEXT]
+2
+[BLOCK TEXT]
+3
+[BLOCK TEXT]
+4
+[BLOCK TEXT]
+1
+[BLOCK TEXT]
+2
+[BLOCK TEXT]
+3
+[BLOCK TEXT]
+4
+[BLOCK TEXT]
+A
+[BLOCK TEXT]
+B
+[BLOCK TEXT]
+C
+[BLOCK TEXT]
+D
+[BLOCK TEXT]
+A
+[BLOCK TEXT]
+B
+[BLOCK TEXT]
+C
+[BLOCK TEXT]
+D
+[BLOCK TEXT]
+A
+[BLOCK TEXT]
+B
+[BLOCK TEXT]
+C
+[BLOCK TEXT]
+D
+[BLOCK TEXT]
+A
+[BLOCK TEXT]
+B
+[BLOCK TEXT]
+C
+[BLOCK TEXT]
+D
+[BLOCK TEXT]
+A
+[BLOCK TEXT]
+B
+[BLOCK TEXT]
+C
+[BLOCK TEXT]
+D
+[BLOCK TEXT]
+v. The medium is in a state of excitation
+[BLOCK TEXT]
+vi. The energy of the incident photon is in the X-ray range
+[BLOCK TEXT]
+vii. The energy of the incident photon is in the visible light range
+[BLOCK TEXT]
+vii. The energy of the incident photon is in the visible light range
+[BLOCK TEXT]
+viii. In which processes is the law of conservation of momentum 
+satisfied?
+[SAVE] page=199 file=q_57 num=1
+[SAVE] page=199 file=q_58 num=1
+[SAVE] page=199 file=q_59 num=1
+[SAVE] page=199 file=q_60 num=1
+[SAVE] page=199 file=q_61 num=1
+
+=== PAGE 200 ===
+[BROKEN TOP DETECTED] False
+
+--- TEXT SPLIT CHECK ---
+[BLOCK TEXT]
+200
+[BLOCK TEXT]
+The following figures represent a diagram of a helium-neon laser 
+device. Which one produces the hig
+[BLOCK TEXT]
+42
+[BLOCK TEXT]
+43
+The following figure illustrates the production of laser from (He-Ne)
+[MATCHED Q] 43
+[BLOCK TEXT]
+gas. Which of the following choices represents the atom that is excited
+[BLOCK TEXT]
+through collisions and the electronic transition resulting from the
+[BLOCK TEXT]
+electric discharge?
+[BLOCK TEXT]
+The atom 
+excited by 
+collisions
+[BLOCK TEXT]
+The transition 
+resulting from 
+electric discharge
+A
+Atom (X)
+Transition (1)
+[BLOCK TEXT]
+B
+Atom (Y)
+Transition (1)
+[BLOCK TEXT]
+C
+Atom (Y)
+Transition (3)
+[BLOCK TEXT]
+D
+Atom (X)
+Transition (3)
+[SAVE] page=200 file=q_62 num=42
+[SAVE] page=200 file=q_63 num=43
+
+=== PAGE 201 ===
+[BROKEN TOP DETECTED] False
+
+--- TEXT SPLIT CHECK ---
+[BLOCK TEXT]
+201
+[BLOCK TEXT]
+44
+The opposite figure illustrates the process of laser photon production
+[MATCHED Q] 44
+[BLOCK TEXT]
+from a (He, Ne) gas. Which choice can represent transitions (2) and (3)
+[BLOCK TEXT]
+when a photon falls on an excited neon atom?
+[BLOCK TEXT]
+Transition (2)
+Transition (3)
+[BLOCK TEXT]
+A
+Excitation of Neon 
+atoms
+production of 
+incoherent photons
+B
+Stimulated 
+emission of Neon 
+atoms
+[BLOCK TEXT]
+production of coherent 
+photons
+[BLOCK TEXT]
+C
+Stimulated 
+emission of Neon 
+atoms
+[BLOCK TEXT]
+production of 
+incoherent photons
+[BLOCK TEXT]
+D
+Excitation of Neon 
+atoms
+production of coherent 
+photons
+[BLOCK TEXT]
+Increasing the reflectivity of the semitransparent mirror slightly 
+will lead to all of the followin
+[BLOCK TEXT]
+The opposite figure represents 
+the 
+amplification 
+laser 
+photons. Which of the following 
+statemen
+[BLOCK TEXT]
+45
+[BLOCK TEXT]
+46
+[BLOCK TEXT]
+Increasing the number of successive reflections inside the
+[BLOCK TEXT]
+resonant cavity
+[BLOCK TEXT]
+Increasing the path length of the photons inside the cavity
+[BLOCK TEXT]
+Increasing the intensity of laser radiation inside the cavity
+[BLOCK TEXT]
+Decreasing the thermal energy absorbed by the tube wall
+[BLOCK TEXT]
+Each photon reflected by the mirrors generates a new photon with
+[BLOCK TEXT]
+the same frequency and direction.
+[BLOCK TEXT]
+The reflectivity of the semi-transparent mirror is effective in
+[BLOCK TEXT]
+determining the radiation intensity.
+[BLOCK TEXT]
+The photon emitted from the semi-transparent mirror has a higher
+[BLOCK TEXT]
+frequency than the reflected photon.
+[BLOCK TEXT]
+Spontaneous emission occurs for some atoms during the laser
+[BLOCK TEXT]
+production process.
+[BLOCK TEXT]
+A
+[BLOCK TEXT]
+B
+[BLOCK TEXT]
+C
+[BLOCK TEXT]
+D
+[BLOCK TEXT]
+A
+[BLOCK TEXT]
+B
+[BLOCK TEXT]
+C
+[BLOCK TEXT]
+D
+[SAVE] page=201 file=q_64 num=44
+[SAVE] page=201 file=q_65 num=45
+[SAVE] page=201 file=q_66 num=46
+
+=== PAGE 202 ===
+[BROKEN TOP DETECTED] False
+
+--- TEXT SPLIT CHECK ---
+[BLOCK TEXT]
+202
+[BLOCK TEXT]
+In the laser production process, four atoms are excited to the 
+energy level (N), which is a meta-st
+[BLOCK TEXT]
+47
+[BLOCK TEXT]
+The electron that spent t1 = 55 x 10-5 s in the meta-stable energy
+[BLOCK TEXT]
+level
+[BLOCK TEXT]
+The electron that spent t2 = 65 x 10-5 s in the meta-stable energy
+[BLOCK TEXT]
+level
+[BLOCK TEXT]
+The electron that spent t3 = 75 x 10-5 s in the meta -stable energy
+[BLOCK TEXT]
+level
+[BLOCK TEXT]
+The electron that spent t4 = 85 x 10-5 s in the meta -stable energy
+[BLOCK TEXT]
+level
+[BLOCK TEXT]
+A
+[BLOCK TEXT]
+B
+[BLOCK TEXT]
+C
+[BLOCK TEXT]
+D
+[BLOCK TEXT]
+The monochromaticity of laser rays is due to the fact that
+48
+[BLOCK TEXT]
+all the atoms of the active medium get excited to one unstable
+[BLOCK TEXT]
+energy level
+[BLOCK TEXT]
+all the atoms of the active medium are in the ground energy level
+[BLOCK TEXT]
+all the emitted photons by stimulated emission have the same
+[BLOCK TEXT]
+energy
+[BLOCK TEXT]
+all the emitted photons are amplified when they pass between the
+[BLOCK TEXT]
+two reflecting mirrors
+[BLOCK TEXT]
+A
+[BLOCK TEXT]
+B
+[BLOCK TEXT]
+C
+[BLOCK TEXT]
+D
+[BLOCK TEXT]
+The opposite diagram represents a helium-neon laser device. 
+Which component of the diagram represen
+[BLOCK TEXT]
+49
+[BLOCK TEXT]
+Component (1).
+[BLOCK TEXT]
+Component (2).
+[BLOCK TEXT]
+Component (3).
+[BLOCK TEXT]
+Components (1), (2).
+[BLOCK TEXT]
+A
+[BLOCK TEXT]
+B
+[BLOCK TEXT]
+C
+[BLOCK TEXT]
+D
+[SAVE] page=202 file=q_67 num=47
+[SAVE] page=202 file=q_68 num=48
+[SAVE] page=202 file=q_69 num=49
+
+=== PAGE 203 ===
+[BROKEN TOP DETECTED] True
+
+--- TEXT SPLIT CHECK ---
+[BLOCK TEXT]
+203
+[BLOCK TEXT]
+The opposite figure shows the structure of helium-neon laser, 
+if the laser beam is emitted from mir
+[BLOCK TEXT]
+The opposite figure represents a helium-neon laser, so when 
+component (x) stops working
+[BLOCK TEXT]
+The opposite schematic diagram shows a helium-neon gas laser in 
+which four photons (A, B, C and D) 
+[BLOCK TEXT]
+The opposite graph represents the relation between the path 
+difference and the phase difference for
+[BLOCK TEXT]
+50
+[BLOCK TEXT]
+51
+[BLOCK TEXT]
+52
+[BLOCK TEXT]
+53
+[BLOCK TEXT]
+greater
+[BLOCK TEXT]
+less
+[BLOCK TEXT]
+equal
+[BLOCK TEXT]
+cannot be determined
+[BLOCK TEXT]
+the emitted radiation intensity decreases
+[BLOCK TEXT]
+the radiation frequency decreases
+[BLOCK TEXT]
+the emitted radiation speed decreases
+[BLOCK TEXT]
+no laser beam is generated
+[BLOCK TEXT]
+Photon A
+[BLOCK TEXT]
+Photon B
+[BLOCK TEXT]
+Photon C
+[BLOCK TEXT]
+Photon D
+[BLOCK TEXT]
+694.7 nm
+[BLOCK TEXT]
+632.8 nm
+[BLOCK TEXT]
+347.3 nm
+[BLOCK TEXT]
+781.5 nm
+[BLOCK TEXT]
+A
+[BLOCK TEXT]
+B
+[BLOCK TEXT]
+C
+[BLOCK TEXT]
+D
+[BLOCK TEXT]
+A
+[BLOCK TEXT]
+B
+[BLOCK TEXT]
+C
+[BLOCK TEXT]
+D
+[BLOCK TEXT]
+A
+[BLOCK TEXT]
+B
+[BLOCK TEXT]
+C
+[BLOCK TEXT]
+D
+[BLOCK TEXT]
+A
+[BLOCK TEXT]
+B
+[BLOCK TEXT]
+C
+[BLOCK TEXT]
+D
+[SAVE] page=203 file=q_70 num=50
+[SAVE] page=203 file=q_71 num=51
+[SAVE] page=203 file=q_72 num=52
+[SAVE] page=203 file=q_73 num=53
+
+=== PAGE 204 ===
+[BROKEN TOP DETECTED] False
+
+--- TEXT SPLIT CHECK ---
+[BLOCK TEXT]
+204
+[BLOCK TEXT]
+From the basic components of the laser is using energy sources 
+to excite the atoms of the active me
+[BLOCK TEXT]
+54
+[BLOCK TEXT]
+Statement (1)
+[BLOCK TEXT]
+Statement (1, 2)
+[BLOCK TEXT]
+Statement (1, 3)
+[BLOCK TEXT]
+Statement (2, 3)
+[BLOCK TEXT]
+A
+[BLOCK TEXT]
+B
+[BLOCK TEXT]
+C
+[BLOCK TEXT]
+D
+[BLOCK TEXT]
+The opposite figure shows the structure of the helium-neon laser. 
+When the device is turned on, a l
+[BLOCK TEXT]
+The optical pumping process in the laser aims to achieve
+[BLOCK TEXT]
+The following statements are correct for producing a laser beam 
+except
+[BLOCK TEXT]
+55
+[BLOCK TEXT]
+57
+[BLOCK TEXT]
+56
+[BLOCK TEXT]
+A mirror with 99.5% reflectivity
+[BLOCK TEXT]
+A semi-transparent mirror with 98% reflectivity
+[BLOCK TEXT]
+A transparent glass plate
+[BLOCK TEXT]
+An opaque surface
+[BLOCK TEXT]
+the stable state
+[BLOCK TEXT]
+the population inversion state
+[BLOCK TEXT]
+the equilibrium state
+[BLOCK TEXT]
+the amplification of the laser beam
+[BLOCK TEXT]
+the spontaneous emission takes place in some atoms during the
+[BLOCK TEXT]
+production process
+[BLOCK TEXT]
+the intensity of a laser beam changes according to the refractive
+[BLOCK TEXT]
+index of the semi-transparent mirror
+[BLOCK TEXT]
+the production of laser doesn’t require an external source of energy
+[BLOCK TEXT]
+the active medium atoms in a laser contain a metastable state
+[BLOCK TEXT]
+A
+[BLOCK TEXT]
+B
+[BLOCK TEXT]
+C
+[BLOCK TEXT]
+D
+[BLOCK TEXT]
+A
+[BLOCK TEXT]
+B
+[BLOCK TEXT]
+C
+[BLOCK TEXT]
+D
+[BLOCK TEXT]
+A
+[BLOCK TEXT]
+B
+[BLOCK TEXT]
+C
+[BLOCK TEXT]
+D
+[SAVE] page=204 file=q_74 num=54
+[SAVE] page=204 file=q_75 num=0
+[SAVE] page=204 file=q_76 num=56
+[SAVE] page=204 file=q_77 num=57
+
+=== PAGE 205 ===
+[BROKEN TOP DETECTED] False
+
+--- TEXT SPLIT CHECK ---
+[BLOCK TEXT]
+205
+[BLOCK TEXT]
+In laser action, the step that follows the pumping process is the 
+achievement of
+[BLOCK TEXT]
+The opposite figure shows how the hologram 
+image is formed. From the figure, the image 
+formed on t
+[BLOCK TEXT]
+58
+[BLOCK TEXT]
+60
+[BLOCK TEXT]
+the stable state
+[BLOCK TEXT]
+the population inversion state
+[BLOCK TEXT]
+the equilibrium state of atoms
+[BLOCK TEXT]
+the amplification of the laser beam
+[BLOCK TEXT]
+A two-dimensional colored image
+[BLOCK TEXT]
+A Coded image in the form of interference fringes between
+[BLOCK TEXT]
+beams B and C
+[BLOCK TEXT]
+A Coded image in the form of interference fringes between
+[BLOCK TEXT]
+beams A and B
+[BLOCK TEXT]
+A three-dimensional colored image
+[BLOCK TEXT]
+A
+[BLOCK TEXT]
+B
+[BLOCK TEXT]
+C
+[BLOCK TEXT]
+D
+[BLOCK TEXT]
+A
+[BLOCK TEXT]
+B
+[BLOCK TEXT]
+C
+[BLOCK TEXT]
+D
+[BLOCK TEXT]
+59
+In holography, the reference beams and the reflected beams from the
+[MATCHED Q] 59
+[BLOCK TEXT]
+surface of the object
+[BLOCK TEXT]
+Similar in
+different
+[BLOCK TEXT]
+A
+Light intensity and phase
+Wavelength
+[BLOCK TEXT]
+B
+Wavelength
+Wavelength
+[BLOCK TEXT]
+C
+Light intensity and phase
+Light intensity and phase
+[BLOCK TEXT]
+D
+Wavelength
+Light intensity and phase
+[BLOCK TEXT]
+For a laser beam in holography, if the phase difference between 
+rays reflected from two points on t
+[BLOCK TEXT]
+61
+[BLOCK TEXT]
+A
+[BLOCK TEXT]
+B
+[BLOCK TEXT]
+C
+[BLOCK TEXT]
+D
+[BLOCK TEXT]
+λ
+4
+λ
+2
+[BLOCK TEXT]
+4λ
+[BLOCK TEXT]
+2λ
+[SAVE] page=205 file=q_78 num=58
+[SAVE] page=205 file=q_79 num=59
+[SAVE] page=205 file=q_80 num=60
+[SAVE] page=205 file=q_81 num=61
+
+=== PAGE 206 ===
+[BROKEN TOP DETECTED] True
+
+--- TEXT SPLIT CHECK ---
+[BLOCK TEXT]
+206
+[BLOCK TEXT]
+The opposite figure represents two rays reflected from the surface 
+of the object in holography. The
+[BLOCK TEXT]
+Laser beams are used in the treatment of retinal detachment 
+because the laser
+[BLOCK TEXT]
+The process of measuring long distances using laser rays depends 
+on the property
+[BLOCK TEXT]
+The laser is used in healing the retina detachment in the eye 
+depending on
+[BLOCK TEXT]
+62
+[BLOCK TEXT]
+63
+[BLOCK TEXT]
+64
+[BLOCK TEXT]
+65
+[BLOCK TEXT]
+2 π
+[BLOCK TEXT]
+3 π
+[BLOCK TEXT]
+4 π
+[BLOCK TEXT]
+8 π
+[BLOCK TEXT]
+Is monochromatic
+[BLOCK TEXT]
+obeys the inverse square law
+[BLOCK TEXT]
+Has the same phase
+[BLOCK TEXT]
+Has high energy
+[BLOCK TEXT]
+the spectral purity of the laser
+[BLOCK TEXT]
+the collimation of laser rays
+[BLOCK TEXT]
+the thermal effect of laser rays
+[BLOCK TEXT]
+the high speed of laser rays
+[BLOCK TEXT]
+the coherence of its photons
+[BLOCK TEXT]
+its thermal effect
+[BLOCK TEXT]
+its spectral purity
+[BLOCK TEXT]
+its high speed
+[BLOCK TEXT]
+A
+[BLOCK TEXT]
+B
+[BLOCK TEXT]
+C
+[BLOCK TEXT]
+D
+[BLOCK TEXT]
+A
+[BLOCK TEXT]
+B
+[BLOCK TEXT]
+C
+[BLOCK TEXT]
+D
+[BLOCK TEXT]
+A
+[BLOCK TEXT]
+B
+[BLOCK TEXT]
+C
+[BLOCK TEXT]
+D
+[BLOCK TEXT]
+A
+[BLOCK TEXT]
+B
+[BLOCK TEXT]
+C
+[BLOCK TEXT]
+D
+[BLOCK TEXT]
+The following diagrams show the distribution of active medium 
+atoms among their energy levels, whic
+[BLOCK TEXT]
+66
+[BLOCK TEXT]
+A
+B
+C
+D
+[SAVE] page=206 file=q_82 num=62
+[SAVE] page=206 file=q_83 num=63
+[SAVE] page=206 file=q_84 num=64
+[SAVE] page=206 file=q_85 num=65
+[SAVE] page=206 file=q_86 num=66
+
+=== PAGE 207 ===
+[BROKEN TOP DETECTED] False
+
+--- TEXT SPLIT CHECK ---
+[BLOCK TEXT]
+207
+[BLOCK TEXT]
+67
+In a helium-neon laser, the helium atoms and neon atoms are excited by
+[MATCHED Q] 67
+[BLOCK TEXT]
+Excitation Helium Atoms
+Excitation Neon Atoms
+[BLOCK TEXT]
+A
+Optical pumping
+Chemical Reactions
+[BLOCK TEXT]
+B
+Electric Discharge
+Chemical Reactions
+[BLOCK TEXT]
+C
+Optical pumping
+Collision with Helium Atoms
+[BLOCK TEXT]
+D
+Electric Discharge
+Collision with Helium Atoms
+[BLOCK TEXT]
+The following figures represent some steps for obtaining a laser 
+beam through the meta-stable level
+[BLOCK TEXT]
+68
+[BLOCK TEXT]
+2⟶3⟶4⟶1
+[BLOCK TEXT]
+3⟶2⟶1⟶4
+[BLOCK TEXT]
+3⟶2⟶4⟶1
+[BLOCK TEXT]
+2⟶3⟶1⟶4
+[BLOCK TEXT]
+A
+[BLOCK TEXT]
+B
+[BLOCK TEXT]
+C
+[BLOCK TEXT]
+D
+[SAVE] page=207 file=q_87 num=67
+[SAVE] page=207 file=q_88 num=68

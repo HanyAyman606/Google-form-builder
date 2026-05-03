@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<StackPane xmlns="http://javafx.com/javafx/21"
+           xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="com.formbuilder.ui.WelcomePanelController"
+           style="-fx-background-color: #1a2332;">
+
+  <VBox alignment="CENTER" spacing="40" maxWidth="480">
+
+    <!-- Logo / Title -->
+    <VBox alignment="CENTER" spacing="8">
+      <Label text="Perfection Forms Builder"
+             style="-fx-font-size:32px; -fx-font-weight:bold;
+                    -fx-text-fill:white; -fx-font-family:'Segoe UI';"/>
+      <Label text="Turn exam PDFs into Google Forms — fast."
+             style="-fx-font-size:15px; -fx-text-fill:#8899aa;
+                    -fx-font-family:'Segoe UI';"/>
+    </VBox>
+
+    <!-- Action buttons -->
+    <VBox spacing="14" alignment="CENTER">
+      <Button text="＋  New Project"
+              onAction="#onNew" maxWidth="320" prefHeight="52"
+              style="-fx-background-color:#2980b9; -fx-text-fill:white;
+                     -fx-font-size:16px; -fx-font-weight:bold;
+                     -fx-background-radius:8; -fx-cursor:hand;
+                     -fx-border-width:0;"/>
+      <Button text="📂  Open Existing Project"
+              onAction="#onOpen" maxWidth="320" prefHeight="52"
+              style="-fx-background-color:#2c3e50; -fx-text-fill:#ecf0f1;
+                     -fx-font-size:15px; -fx-background-radius:8;
+                     -fx-cursor:hand; -fx-border-width:0;"/>
+    </VBox>
+
+    <!-- Recent projects list -->
+    <VBox spacing="8" maxWidth="480">
+      <Label text="RECENT PROJECTS"
+             style="-fx-text-fill:#556677; -fx-font-size:11px;
+                    -fx-font-weight:bold; -fx-font-family:'Segoe UI';"/>
+      <ListView fx:id="recentList" prefHeight="160"
+                style="-fx-background-color:#243040;
+                       -fx-border-color:#334455; -fx-border-radius:6;
+                       -fx-background-radius:6;"/>
+    </VBox>
+
+  </VBox>
+</StackPane>

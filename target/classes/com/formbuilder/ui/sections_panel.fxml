@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx/21"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.formbuilder.ui.SectionBuilderController"
+      styleClass="panel-root" spacing="0">
+
+  <!-- ── Header ── -->
+  <VBox style="-fx-background-color:white; -fx-border-color:#dde1e5;
+               -fx-border-width:0 0 1 0;" spacing="8">
+    <padding><Insets top="16" right="24" bottom="14" left="24"/></padding>
+    <HBox alignment="CENTER_LEFT" spacing="16">
+      <VBox HBox.hgrow="ALWAYS" spacing="3">
+        <Label text="Sections" styleClass="panel-title"/>
+        <Label text="Questions are grouped by type automatically on import. Rename, reassign, or delete sections here."
+               styleClass="panel-subtitle" wrapText="true"/>
+      </VBox>
+      <Button text="⚡ Auto-Setup" onAction="#onAutoSetup"
+              style="-fx-background-color:#8e44ad; -fx-text-fill:white;
+                     -fx-background-radius:6; -fx-border-width:0;
+                     -fx-font-weight:bold; -fx-padding:10 18; -fx-cursor:hand;
+                     -fx-font-size:13px;"/>
+    </HBox>
+  </VBox>
+
+  <!-- ── Main two-column layout ── -->
+  <HBox VBox.vgrow="ALWAYS" spacing="0"
+        style="-fx-background-color:#f4f4f4; -fx-padding:16 20;">
+
+    <!-- LEFT: Unassigned questions -->
+    <VBox HBox.hgrow="NEVER" spacing="8" minWidth="220" maxWidth="240"
+          style="-fx-background-color:white; -fx-border-color:#dde1e5;
+                 -fx-border-radius:8; -fx-background-radius:8; -fx-padding:12;">
+      <HBox alignment="CENTER_LEFT" spacing="8">
+        <Label text="Unassigned" styleClass="pane-heading" HBox.hgrow="ALWAYS"/>
+        <Label fx:id="unassignedCountLabel" text="" styleClass="muted-label"/>
+      </HBox>
+      <!-- Filter buttons -->
+      <HBox spacing="4">
+        <Button text="All"     onAction="#onFilterAll"   styleClass="btn-secondary"
+                style="-fx-padding:3 10; -fx-font-size:11px;"/>
+        <Button text="MCQ"     onAction="#onFilterMcq"   styleClass="btn-secondary"
+                style="-fx-padding:3 10; -fx-font-size:11px;"/>
+        <Button text="Written" onAction="#onFilterEssay" styleClass="btn-secondary"
+                style="-fx-padding:3 10; -fx-font-size:11px;"/>
+      </HBox>
+      <!-- selectionMode set in controller, NOT in FXML (FXML attribute is invalid) -->
+      <ListView fx:id="unassignedList" VBox.vgrow="ALWAYS" styleClass="question-list"/>
+      <Label text="Hold Ctrl to multi-select" styleClass="hint-label"/>
+    </VBox>
+
+    <!-- CENTER: Action buttons — 3 assignment modes -->
+    <VBox spacing="8" minWidth="160" maxWidth="180" alignment="CENTER"
+          style="-fx-padding:0 12;">
+
+      <!-- Mode 1: List-selected assign (original) -->
+      <Button text="Assign →" onAction="#onAddToSection"
+              maxWidth="Infinity" styleClass="btn-primary"
+              style="-fx-padding:10 8;"/>
+
+      <Separator/>
+
+      <!-- Mode 2: Range assign (Q from → Q to) -->
+      <Button text="📐 Range Assign" onAction="#onAssignRange"
+              maxWidth="Infinity" styleClass="btn-accent"
+              style="-fx-padding:10 8; -fx-font-size:12px;"/>
+
+      <!-- Mode 3: Multi-select dialog -->
+      <Button text="☑ Multi-Select" onAction="#onAssignMultiSelect"
+              maxWidth="Infinity" styleClass="btn-accent"
+              style="-fx-padding:10 8; -fx-font-size:12px;"/>
+
+      <!-- Mode 4: Single assign -->
+      <Button text="➕ Single Assign" onAction="#onAssignSingle"
+              maxWidth="Infinity" styleClass="btn-accent"
+              style="-fx-padding:10 8; -fx-font-size:12px;"/>
+
+      <Separator/>
+
+      <Button text="+ New Section" onAction="#onNewSection"
+              maxWidth="Infinity" styleClass="btn-accent"
+              style="-fx-padding:10 8;"/>
+    </VBox>
+
+    <!-- RIGHT: Sections list -->
+    <VBox HBox.hgrow="ALWAYS" spacing="8">
+      <Label text="Sections" styleClass="pane-heading"/>
+      <ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS"
+                  style="-fx-background-color:transparent; -fx-background:transparent;">
+        <VBox fx:id="sectionsContainer" spacing="10">
+          <padding><Insets top="2" right="4" bottom="4" left="4"/></padding>
+        </VBox>
+      </ScrollPane>
+    </VBox>
+
+  </HBox>
+</VBox>

@@ -1,0 +1,336 @@
+/* ═══════════════════════════════════════════════════════
+   Perfection Forms Builder — Application Stylesheet
+   ═══════════════════════════════════════════════════════ */
+
+/* ── Base font ── */
+.root {
+    -fx-font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    -fx-font-size: 13px;
+    -fx-background-color: #f4f4f4;
+}
+
+/* ═══════════════════════════════════════
+   TITLE BAR
+   ═══════════════════════════════════════ */
+.title-bar {
+    -fx-background-color: #2c3e50;
+}
+.title-bar-label {
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}
+
+/* ═══════════════════════════════════════
+   SIDEBAR
+   ═══════════════════════════════════════ */
+.sidebar {
+    -fx-background-color: #34495e;
+    -fx-min-width: 162px;
+    -fx-pref-width: 162px;
+}
+.sidebar-section-label {
+    -fx-text-fill: #7f8c8d;
+    -fx-font-size: 10px;
+    -fx-padding: 4 4 6 6;
+}
+.sidebar-btn {
+    -fx-background-color: transparent;
+    -fx-text-fill: #ecf0f1;
+    -fx-font-size: 13px;
+    -fx-alignment: CENTER_LEFT;
+    -fx-padding: 9 12;
+    -fx-cursor: hand;
+    -fx-background-radius: 6;
+    -fx-border-width: 0;
+}
+.sidebar-btn:hover {
+    -fx-background-color: #3d566e;
+}
+.sidebar-active {
+    -fx-background-color: #2980b9 !important;
+    -fx-font-weight: bold;
+}
+
+/* ═══════════════════════════════════════
+   STATUS BAR
+   ═══════════════════════════════════════ */
+.status-bar {
+    -fx-background-color: #ecf0f1;
+    -fx-border-color: #bdc3c7;
+    -fx-border-width: 1 0 0 0;
+}
+.status-label {
+    -fx-font-size: 12px;
+    -fx-text-fill: #555;
+}
+
+/* ═══════════════════════════════════════
+   PANELS (shared)
+   ═══════════════════════════════════════ */
+.panel-root {
+    -fx-background-color: #f4f4f4;
+}
+.panel-title {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50;
+}
+.panel-subtitle {
+    -fx-font-size: 13px;
+    -fx-text-fill: #666;
+}
+.pane-heading {
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50;
+    -fx-padding: 0 0 4 0;
+}
+.muted-label {
+    -fx-font-size: 12px;
+    -fx-text-fill: #777;
+}
+.hint-label {
+    -fx-font-size: 12px;
+    -fx-text-fill: #888;
+    -fx-font-style: italic;
+}
+.field-label {
+    -fx-font-weight: bold;
+    -fx-font-size: 12px;
+    -fx-text-fill: #444;
+}
+
+/* ═══════════════════════════════════════
+   STEP CARDS  (export panel)
+   ═══════════════════════════════════════ */
+.step-card {
+    -fx-background-color: white;
+    -fx-border-color: #dde1e5;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-padding: 16;
+}
+.step-heading {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50;
+}
+
+/* ═══════════════════════════════════════
+   BUTTONS
+   ═══════════════════════════════════════ */
+.btn-primary {
+    -fx-background-color: #2980b9;
+    -fx-text-fill: white;
+    -fx-background-radius: 5;
+    -fx-border-radius: 5;
+    -fx-padding: 8 18;
+    -fx-cursor: hand;
+    -fx-font-weight: bold;
+    -fx-border-width: 0;
+}
+.btn-primary:hover   { -fx-background-color: #1a6fa0; }
+.btn-primary:pressed { -fx-background-color: #155d8a; }
+.btn-primary:disabled { -fx-opacity: 0.5; }
+
+.btn-secondary {
+    -fx-background-color: #6c757d;
+    -fx-text-fill: white;
+    -fx-background-radius: 5;
+    -fx-border-radius: 5;
+    -fx-padding: 8 18;
+    -fx-cursor: hand;
+    -fx-border-width: 0;
+}
+.btn-secondary:hover { -fx-background-color: #5a6268; }
+
+.btn-accent {
+    -fx-background-color: #8e44ad;
+    -fx-text-fill: white;
+    -fx-background-radius: 5;
+    -fx-border-radius: 5;
+    -fx-padding: 8 18;
+    -fx-cursor: hand;
+    -fx-font-weight: bold;
+    -fx-border-width: 0;
+}
+.btn-accent:hover   { -fx-background-color: #7d3c98; }
+.btn-accent:disabled { -fx-opacity: 0.5; }
+
+.btn-warn {
+    -fx-background-color: #e67e22;
+    -fx-text-fill: white;
+    -fx-background-radius: 5;
+    -fx-border-radius: 5;
+    -fx-padding: 8 18;
+    -fx-cursor: hand;
+    -fx-border-width: 0;
+}
+.btn-warn:hover { -fx-background-color: #ca6f1e; }
+
+/* ═══════════════════════════════════════
+   QUESTION LIST  (editor left pane)
+   ═══════════════════════════════════════ */
+.list-pane {
+    -fx-background-color: white;
+    -fx-border-color: #dde1e5;
+    -fx-border-width: 0 1 0 0;
+}
+.question-list {
+    -fx-background-color: white;
+    -fx-border-width: 0;
+}
+.question-list .list-cell {
+    -fx-padding: 8 10;
+    -fx-background-color: white;
+}
+.question-list .list-cell:odd {
+    -fx-background-color: #fafafa;
+}
+.question-list .list-cell:selected {
+    -fx-background-color: #d5e8f5;
+}
+.question-list .list-cell:hover {
+    -fx-background-color: #eef5fb;
+}
+
+/* ═══════════════════════════════════════
+   EDITOR FORM
+   ═══════════════════════════════════════ */
+.editor-scroll {
+    -fx-background-color: white;
+}
+.editor-form {
+    -fx-background-color: white;
+}
+.question-image-view {
+    -fx-border-color: #dde1e5;
+    -fx-border-radius: 4;
+    -fx-border-width: 1;
+}
+.choice-letter {
+    -fx-font-weight: bold;
+    -fx-font-size: 13px;
+    -fx-text-fill: #2980b9;
+}
+.choice-field {
+    -fx-background-radius: 4;
+    -fx-border-radius: 4;
+    -fx-border-color: #ccc;
+    -fx-border-width: 1;
+    -fx-padding: 5 8;
+}
+.choice-field:focused {
+    -fx-border-color: #2980b9;
+}
+
+/* ═══════════════════════════════════════
+   THUMBNAIL CARDS  (import + bank)
+   ═══════════════════════════════════════ */
+.thumbnail-scroll {
+    -fx-background-color: white;
+    -fx-border-color: #dde1e5;
+    -fx-border-width: 1;
+    -fx-border-radius: 6;
+}
+.thumbnail-pane {
+    -fx-background-color: white;
+}
+.thumbnail-card {
+    -fx-background-color: white;
+    -fx-border-color: #dde1e5;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-border-width: 1;
+    -fx-padding: 8;
+    -fx-cursor: hand;
+    -fx-alignment: CENTER;
+}
+.thumbnail-card:hover {
+    -fx-border-color: #2980b9;
+    -fx-border-width: 2;
+}
+.thumbnail-card-selected {
+    -fx-border-color: #2980b9;
+    -fx-border-width: 2;
+    -fx-background-color: #eef5fb;
+}
+
+/* ═══════════════════════════════════════
+   CONFIDENCE BADGES
+   ═══════════════════════════════════════ */
+.badge {
+    -fx-font-size: 10px;
+    -fx-font-weight: bold;
+    -fx-padding: 2 7;
+    -fx-background-radius: 10;
+    -fx-alignment: CENTER;
+}
+.badge-green  { -fx-background-color: #27ae60; -fx-text-fill: white; }
+.badge-amber  { -fx-background-color: #e67e22; -fx-text-fill: white; }
+.badge-red    { -fx-background-color: #e74c3c; -fx-text-fill: white; }
+.badge-grey   { -fx-background-color: #aaa;    -fx-text-fill: white; }
+
+/* ═══════════════════════════════════════
+   SECTIONS PANEL
+   ═══════════════════════════════════════ */
+.section-titled-pane > .title {
+    -fx-background-color: #eef2f7;
+    -fx-font-weight: bold;
+    -fx-font-size: 13px;
+}
+.section-titled-pane > .content {
+    -fx-background-color: #f9fbfd;
+    -fx-border-color: #dde1e5;
+    -fx-border-width: 0 1 1 1;
+}
+
+/* ═══════════════════════════════════════
+   PROGRESS BAR
+   ═══════════════════════════════════════ */
+.progress-bar > .track {
+    -fx-background-color: #e0e0e0;
+    -fx-background-radius: 6;
+}
+.progress-bar > .bar {
+    -fx-background-color: #2980b9;
+    -fx-background-radius: 6;
+    -fx-background-insets: 0;
+}
+
+/* ═══════════════════════════════════════
+   TEXT FIELD (global)
+   ═══════════════════════════════════════ */
+.text-field {
+    -fx-background-radius: 4;
+    -fx-border-radius: 4;
+    -fx-border-color: #ccc;
+    -fx-border-width: 1;
+    -fx-padding: 5 8;
+}
+.text-field:focused {
+    -fx-border-color: #2980b9;
+    -fx-border-width: 1;
+}
+
+/* ═══════════════════════════════════════
+   COMBO BOX
+   ═══════════════════════════════════════ */
+.combo-box {
+    -fx-background-radius: 4;
+    -fx-border-radius: 4;
+    -fx-border-color: #ccc;
+    -fx-border-width: 1;
+}
+.combo-box:focused {
+    -fx-border-color: #2980b9;
+}
+
+/* ═══════════════════════════════════════
+   SEPARATOR
+   ═══════════════════════════════════════ */
+.separator .line {
+    -fx-border-color: #e0e0e0;
+    -fx-border-width: 1 0 0 0;
+}
