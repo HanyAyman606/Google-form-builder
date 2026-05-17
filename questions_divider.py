@@ -56,7 +56,6 @@ import sys
 import io
 from pathlib import Path
 
-from matplotlib import image
 
 # ── Windows UTF-8 fix ────────────────────────────────────────────────────────
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8", errors="replace")
@@ -65,6 +64,526 @@ sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding="utf-8", errors="repla
 import fitz          # PyMuPDF
 import cv2
 import numpy as np
+
+# ==============================
+# SECTION DETECTOR (NEW)
+# ==============================
+
+USE_STRUCTURAL_PIPELINE = True
+ENABLE_EMERGENCY_RECOVERY = False
+
+def classify_page_layout(image):
+    h, w = image.shape[:2]
+    image_area = h * w
+    
+    border_mask = build_border_mask(image)
+    box_density = int(border_mask.sum()) // 255
+    
+    green_lines = detect_green_lines(image)
+    green_line_count = len(green_lines) if green_lines else 0
+    
+    dynamic_box_thresh = image_area * 0.0025
+    
+    is_box = box_density > dynamic_box_thresh
+    is_green = green_line_count > 0
+    
+    if is_box and is_green:
+        return "MIXED_LAYOUT"
+    elif is_box:
+        return "BOX_LAYOUT"
+    elif is_green:
+        return "GREEN_LAYOUT"
+    else:
+        return "UNKNOWN_LAYOUT"
+
+
+def split_merged_container_if_needed(container, page_img, median_height, page):
+    h_page, w_page = page_img.shape[:2]
+    ch = container["h"]
+    cw = container["w"]
+    cx = container["x"]
+    cy = container["y"]
+    orig_conf = container.get("confidence", 1.0)
+    
+    if ch > median_height * 1.8 or ch > h_page * 0.45:
+        debug_log(f"[MERGE CHECK] Suspicious container detected (h={ch}, median={median_height})")
+        
+        search_start = int(ch * 0.25)
+        if search_start >= ch:
+            return [container]
+            
+        lower_roi = page_img[cy + search_start : cy + ch, cx : cx + cw]
+        search_h = min(int(ch * 0.35), 450)
+        header_info = detect_header_assembly(lower_roi, page, cx, cy + search_start, override_roi_h=search_h)
+        
+        if header_info["oval_detected"] and header_info["circle_detected"]:
+            # Rule A: Secondary header width
+            sec_oval_x = header_info["oval_box"]["x"]
+            sec_oval_w = header_info["oval_box"]["w"]
+            sec_circle_x = header_info["circle_box"]["x"]
+            sec_circle_w = header_info["circle_box"]["w"]
+            sec_min_x = min(sec_oval_x, sec_circle_x)
+            sec_max_x = max(sec_oval_x + sec_oval_w, sec_circle_x + sec_circle_w)
+            secondary_header_width = sec_max_x - sec_min_x
+            
+            if secondary_header_width <= cw * 0.08:
+                return [container]
+                
+            sec_oval_y = header_info["oval_box"]["y"]
+            sec_circle_y = header_info["circle_box"]["y"]
+            header_y = min(sec_oval_y, sec_circle_y) + search_start
+            
+            # Rule B: Not too close to bottom
+            if header_y > ch * 0.90:
+                return [container]
+            
+            # Check first question number
+            top_roi = page_img[cy : cy + ch, cx : cx + cw]
+            first_header_info = detect_header_assembly(top_roi, page, cx, cy)
+            
+            first_num = first_header_info["circle_box"]["text"] if first_header_info["circle_detected"] else "UNKNOWN1"
+            second_num = header_info["circle_box"]["text"]
+            
+            if header_y > ch * 0.30 and first_num != second_num:
+                debug_log(f"[SECONDARY HEADER FOUND] First: {first_num}, Second: {second_num}")
+                
+                split_y = max(0, header_y - 20)
+                
+                if 0 < split_y < ch:
+                    # WHITESPACE VALIDATION
+                    gray_top_roi = cv2.cvtColor(top_roi, cv2.COLOR_BGR2GRAY)
+                    row_darkness = np.mean(gray_top_roi < 240, axis=1)
+                    
+                    scan_top = max(0, split_y - 20)
+                    scan_bot = min(ch, split_y + 20)
+                    
+                    if scan_bot > scan_top:
+                        region_darkness = row_darkness[scan_top:scan_bot]
+                        clean_rows = np.sum(region_darkness < 0.03)
+                        
+                        if clean_rows < 3:
+                            debug_log("[MERGE CHECK] Rejected split due to lack of whitespace band.")
+                            return [container]
+                            
+                    upper_container = {
+                        "x": cx,
+                        "y": cy,
+                        "w": cw,
+                        "h": split_y,
+                        "contour": None,
+                        "confidence": orig_conf * 0.90,
+                        "splitFromMerged": True
+                    }
+                    lower_container = {
+                        "x": cx,
+                        "y": cy + split_y,
+                        "w": cw,
+                        "h": ch - split_y,
+                        "contour": None,
+                        "confidence": orig_conf * 0.90,
+                        "splitFromMerged": True
+                    }
+                    debug_log("[CONTAINER SPLIT] Successfully split merged container")
+                    return [upper_container, lower_container]
+                    
+    return [container]
+
+
+def extract_structural_containers(image, page):
+    h, w = image.shape[:2]
+    image_area = h * w
+    mask = build_border_mask(image)
+    
+    kernel_h = (max(20, w // 80), 1)
+    kernel_v = (1, max(6, h // 300))
+    kh = cv2.getStructuringElement(cv2.MORPH_RECT, kernel_h)
+    kv = cv2.getStructuringElement(cv2.MORPH_RECT, kernel_v)
+    
+    closed = cv2.morphologyEx(mask, cv2.MORPH_CLOSE, kh)
+    closed = cv2.morphologyEx(closed, cv2.MORPH_CLOSE, kv)
+    
+    contours, _ = cv2.findContours(closed, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+    
+    containers = []
+    for cnt in contours:
+        area = cv2.contourArea(cnt)
+        if area < image_area * 0.02:
+            continue
+            
+        bx, by, bw, bh = cv2.boundingRect(cnt)
+        
+        if bw < w * 0.50:
+            continue
+            
+        if not (0.05 < bh / h < 0.60):
+            continue
+            
+        if bh > h * 0.75:
+            continue
+            
+        containers.append({
+            "x": bx,
+            "y": by,
+            "w": bw,
+            "h": bh,
+            "contour": cnt,
+            "confidence": 1.0
+        })
+        
+    containers.sort(key=lambda c: c["y"])
+    
+    if containers:
+        heights = [c["h"] for c in containers]
+        median_height = np.median(heights)
+        
+        final_containers = []
+        for c in containers:
+            splits = split_merged_container_if_needed(c, image, median_height, page)
+            final_containers.extend(splits)
+            
+        final_containers.sort(key=lambda c: c["y"])
+        return final_containers
+        
+    return containers
+
+
+def detect_header_assembly(container_crop, page, bx_px, by_px, override_roi_h=None):
+    h, w = container_crop.shape[:2]
+    roi_h = override_roi_h if override_roi_h is not None else max(int(h * 0.18), 120)
+    roi_w = max(int(w * 0.35), 220)
+    
+    if roi_h == 0 or roi_w == 0:
+        return {"oval_detected": False, "circle_detected": False, "header_roi_h": int(h * 0.12), "header_roi_w": roi_w}
+        
+    roi_area = roi_h * roi_w
+    header_roi = container_crop[0:roi_h, 0:roi_w]
+    
+    def extract_semantic_anchors(contours, log_prefix):
+        oval_c = None
+        circle_c = None
+        best_o_area = 0
+        best_c_area = 0
+        
+        for cnt in contours:
+            area = cv2.contourArea(cnt)
+            x, y, cw, ch = cv2.boundingRect(cnt)
+            if ch == 0: continue
+            aspect_ratio = cw / ch
+            
+            if 1.8 < aspect_ratio < 4.5 and area > roi_area * 0.01:
+                oval_rect_pt = px_rect_to_pt_rect(page, bx_px + x, by_px + y, cw, ch)
+                oval_text = page.get_text("text", clip=oval_rect_pt).strip().lower()
+                valid_keywords = ["exp", "egypt", "test", "hw", "exam", "chapter", "lesson"]
+                if any(kw in oval_text for kw in valid_keywords) or re.search(r'\bexp\b', oval_text):
+                    digit_count = sum(c.isdigit() for c in oval_text)
+                    symbol_count = len(re.findall(r'[^a-z0-9\s]', oval_text))
+                    if digit_count <= 4 and symbol_count <= 3:
+                        if area > best_o_area:
+                            oval_c = {"x": x, "y": y, "w": cw, "h": ch, "text": oval_text}
+                            best_o_area = area
+                            debug_log(f"{log_prefix} OVAL FOUND: {oval_text}")
+                
+            if 0.75 < aspect_ratio < 1.25 and 15 <= cw <= 120:  
+                circle_rect_pt = px_rect_to_pt_rect(page, bx_px + x, by_px + y, cw, ch)
+                circle_text = page.get_text("text", clip=circle_rect_pt).strip()
+                num_match = re.search(r'\d{1,3}', circle_text)
+                if num_match:
+                    parsed_num = int(num_match.group())
+                    if 1 <= parsed_num <= 999:
+                        if area > best_c_area:
+                            circle_c = {"x": x, "y": y, "w": cw, "h": ch, "text": str(parsed_num)}
+                            best_c_area = area
+                            debug_log(f"{log_prefix} CIRCLE FOUND: {parsed_num}")
+                            
+        return oval_c, circle_c
+
+    debug_log("[HSV HEADER DETECTION] Starting structural mask scan")
+    hsv = cv2.cvtColor(header_roi, cv2.COLOR_BGR2HSV)
+    combined_mask = np.zeros(header_roi.shape[:2], dtype=np.uint8)
+    for lo, hi, _ in BOX_BORDER_COLORS:
+        combined_mask = cv2.bitwise_or(combined_mask, cv2.inRange(hsv, lo, hi))
+        
+    kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (2, 2))
+    clean_mask = cv2.morphologyEx(combined_mask, cv2.MORPH_OPEN, kernel)
+    clean_mask = cv2.morphologyEx(clean_mask, cv2.MORPH_CLOSE, kernel)
+    
+    contours, _ = cv2.findContours(clean_mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+    
+    oval_contour, number_circle_contour = extract_semantic_anchors(contours, "[HSV]")
+    
+    if not oval_contour and not number_circle_contour:
+        debug_log("[HSV FALLBACK TO EDGE] No structural mask found, using old Canny detection")
+        gray = cv2.cvtColor(header_roi, cv2.COLOR_BGR2GRAY)
+        blurred = cv2.GaussianBlur(gray, (5, 5), 0)
+        edges = cv2.Canny(blurred, 50, 150)
+        edges = cv2.dilate(edges, kernel, iterations=1)
+        edge_contours, _ = cv2.findContours(edges, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
+        
+        oval_contour, number_circle_contour = extract_semantic_anchors(edge_contours, "[EDGE]")
+
+    return {
+        "oval_detected": oval_contour is not None,
+        "circle_detected": number_circle_contour is not None,
+        "oval_box": oval_contour,
+        "circle_box": number_circle_contour,
+        "header_roi_h": roi_h,
+        "header_roi_w": roi_w
+    }
+
+
+def partition_regions(container_crop, header_info):
+    h, w = container_crop.shape[:2]
+    
+    header_h = int(h * 0.15)
+    if header_info["oval_detected"] and header_info["oval_box"]:
+        oval_bottom = header_info["oval_box"]["y"] + header_info["oval_box"]["h"]
+        padding = 10
+        header_h = max(oval_bottom + padding, int(h * 0.15))
+    elif header_info["circle_detected"] and header_info["circle_box"]:
+        circle_bottom = header_info["circle_box"]["y"] + header_info["circle_box"]["h"]
+        padding = 10
+        header_h = max(circle_bottom + padding, int(h * 0.15))
+        
+    footer_start = int(h * 0.94)
+    
+    dot_top = _find_dot_region_top(container_crop)
+    if dot_top is not None:
+        answer_start = dot_top
+    else:
+        answer_start = int(h * 0.40)
+        
+    answer_start = max(header_h, min(answer_start, footer_start))
+    
+    return {
+        "header": {"y0": 0, "y1": header_h},
+        "body": {"y0": header_h, "y1": answer_start},
+        "answer": {"y0": answer_start, "y1": footer_start},
+        "footer": {"y0": footer_start, "y1": h}
+    }
+
+
+
+
+def process_structural_container(crop, page, rect_pt, rect_px, page_num, file_idx, out_dir, results, is_top_question=False, visual_order=1, override_q_num=0, is_continuation=False):
+    global GLOBAL_VISUAL_ORDER
+    header_info = detect_header_assembly(crop, page, rect_px["x"], rect_px["y"])
+    regions = partition_regions(crop, header_info)
+    
+    # Calculate pt heights using ZOOM
+    mat = fitz.Matrix(ZOOM, ZOOM)
+    pix = page.get_pixmap(matrix=mat, alpha=False)
+    sy = page.rect.height / pix.height
+    
+    header_pt_h = regions["header"]["y1"] * sy
+    body_pt_h = (regions["body"]["y1"] - regions["header"]["y0"]) * sy
+    
+    answer_start_pt = rect_pt.y0 + regions["answer"]["y0"] * sy
+    
+    header_y1_pt = rect_pt.y0 + header_pt_h
+    sub_crops = split_box_by_roman_fitz(page, rect_pt, crop, header_y1_pt, answer_start_pt)
+    has_roman = sub_crops is not None
+    
+    header_rect = fitz.Rect(rect_pt.x0, rect_pt.y0, rect_pt.x1, rect_pt.y0 + header_pt_h)
+    body_rect = fitz.Rect(rect_pt.x0, rect_pt.y0 + header_pt_h, rect_pt.x1, rect_pt.y0 + body_pt_h)
+    
+    if is_continuation:
+        header_text = ""
+        body_text = ""
+    else:
+        header_text = page.get_text("text", clip=header_rect).strip()
+        body_text = page.get_text("text", clip=body_rect).strip()
+    
+    if override_q_num > 0:
+
+        # Continuation pages inherit parent number
+        real_q_num = override_q_num
+
+    else:
+
+        real_q_num = extract_question_number_from_text(header_text) or 0
+
+        if real_q_num == 0:
+            real_q_num = extract_question_number_from_text(body_text) or 0
+        
+    oval_text = header_info["oval_box"]["text"] if header_info["oval_detected"] else ""
+        
+    q_type = classify_question(crop, body_text)
+    
+    GLOBAL_VISUAL_ORDER += 1
+    
+    entry = {
+        "id": f"q_{file_idx}",
+        "page": page_num + 1,
+        "visualOrder": GLOBAL_VISUAL_ORDER,
+        "questionNumber": real_q_num,
+        "layoutType": "oval_header_box" if header_info["oval_detected"] else "plain_box",
+        "questionType": q_type,
+        "hasOval": header_info["oval_detected"],
+        "ovalText": oval_text,
+        "isTopQuestion": is_top_question,
+        "regions": {
+            "questionBoxPx": {"x": rect_px["x"], "y": rect_px["y"], "w": rect_px["w"], "h": rect_px["h"]},
+            "questionBoxPt": {"x": rect_pt.x0, "y": rect_pt.y0, "w": rect_pt.width, "h": rect_pt.height},
+            "headerRegion": regions["header"],
+            "bodyRegion": regions["body"],
+            "answerRegion": regions["answer"]
+        },
+        "features": {
+            "hasGraph": False,
+            "hasTable": False,
+            "hasRomanParts": has_roman,
+            "hasChoices": q_type == "mcq"
+        },
+        "confidence": {
+            "container": 0.95,
+            "header": 0.90 if header_info["oval_detected"] else 0.50,
+            "number": 0.95 if header_info["circle_detected"] else 0.50
+        },
+        "headerOCR": {
+            "ovalText": oval_text,
+            "numberText": header_info["circle_box"]["text"] if header_info["circle_detected"] else str(real_q_num)
+        },
+        "ocr": {
+            "headerText": header_text,
+            "bodyText": body_text,
+            "answerText": ""
+        },
+        "subparts": [],
+        "detectedBy": ["box_contour", "structural_pipeline"],
+        "image": str(out_dir / f"q_{file_idx}.png"),
+        "parentNumber": 0,
+        "subLabel": "",
+        "orderY": int(rect_pt.y0)
+    }
+    if has_roman:
+        import copy
+
+        for sub_index, (sub_crop, label, sub_rect_pt) in enumerate(sub_crops):
+
+            child_entry = copy.deepcopy(entry)
+
+            # ==================================================
+            # Use direct PyMuPDF text extraction per sub-rectangle
+            # NOT OCR — the PDF is digitally generated
+            # ==================================================
+
+            sub_text = page.get_text(
+                "text",
+                clip=sub_rect_pt
+            ).strip()
+
+            sub_lines = [
+                ln.strip()
+                for ln in sub_text.splitlines()
+                if ln.strip()
+            ]
+
+            header_text = sub_lines[0] if sub_lines else ""
+
+            body_text = "\n".join(sub_lines[1:]).strip()
+
+            child_entry["ocr"] = {
+                "headerText": header_text,
+                "bodyText": body_text,
+                "answerText": ""
+            }
+
+            # Roman children are not top-level containers
+            child_entry["isTopQuestion"] = False
+
+            # Preserve stable ordering
+            GLOBAL_VISUAL_ORDER += 1
+            child_entry["visualOrder"] = GLOBAL_VISUAL_ORDER
+
+            child_entry["id"] = f"q_{file_idx}"
+
+            # Parent ownership
+            child_entry["parentNumber"] = real_q_num
+
+            # Roman child keeps parent question number
+            child_entry["questionNumber"] = real_q_num
+
+            # Roman index (i / ii / iii / iv)
+            child_entry["subLabel"] = label
+
+            child_entry["image"] = str(out_dir / f"q_{file_idx}.png")
+            child_entry["subparts"] = []
+            
+            out_path = out_dir / f"q_{file_idx}.png"
+            cv2.imwrite(str(out_path), sub_crop)
+            
+            results.append(child_entry)
+            debug_log(f"[STRUCTURAL SAVE ROMAN] Q{real_q_num} {label} on page {page_num+1} order={visual_order}")
+            file_idx += 1
+            
+        return file_idx
+    else:
+        out_path = out_dir / f"q_{file_idx}.png"
+        cv2.imwrite(str(out_path), crop)
+        
+        results.append(entry)
+        debug_log(f"[STRUCTURAL SAVE] Q{real_q_num} on page {page_num+1} order={visual_order}")
+        
+        return file_idx + 1
+
+
+def detect_section_header(page):
+    blocks = page.get_text("dict")["blocks"]
+
+    page_height = page.rect.height
+    top_limit = page_height * 0.30
+
+    candidates = []
+
+    for b in blocks:
+        if "lines" not in b:
+            continue
+
+        for line in b["lines"]:
+            spans = line["spans"]
+            if not spans:
+                continue
+
+            span = spans[0]
+
+            text = span["text"].strip()
+            size = span["size"]
+            y0   = span["bbox"][1]
+
+            # only top area
+            if y0 > top_limit:
+                continue
+
+            if not text:
+                continue
+
+            # ignore junk
+            t = text.lower()
+            if "perfection" in t or "final revision" in t or "eng ahmed" in t:
+                continue
+
+            if len(text) < 5 or len(text) > 60:
+                continue
+
+            if any(c.isdigit() for c in text):
+                continue
+
+            words = text.split()
+            if not (2 <= len(words) <= 6):
+                continue
+
+            candidates.append({
+                "text": text,
+                "size": size,
+                "y": y0
+            })
+
+    if not candidates:
+        return None
+
+    # biggest font wins
+    candidates.sort(key=lambda x: (-x["size"], x["y"]))
+    return candidates[0]["text"]
 
 # ═══════════════════════════════════════════════════════════════════════
 # DEBUG LOGGER
@@ -135,6 +654,9 @@ DOT_ROW_MIN_DOTS  = 8
 DOT_ROW_HEIGHT    = 10
 DOT_MIN_ROWS      = 2
 DOT_SCAN_TOP_FRAC = 0.45
+
+ACTIVE_PARENT_QUESTION = None
+GLOBAL_VISUAL_ORDER = 0
 
 # ═══════════════════════════════════════════════════════════════════════
 # REAL NUMBER EXTRACTION HELPERS
@@ -275,23 +797,121 @@ def _normalise_roman(raw: str) -> str:
     return re.sub(r'[.)\\s]+$', '', raw.strip()).lower()
 
 
+def detect_continuation_page(page):
+    """
+    Detect pages that begin with roman subquestions
+    but do not begin with a new main question number.
+
+    Example:
+        ii. Holes Concentration
+
+    without:
+        27 ...
+    """
+
+    top_clip = fitz.Rect(
+        0,
+        0,
+        page.rect.width,
+        page.rect.height * 0.25
+    )
+
+    top_text = page.get_text("text", clip=top_clip)
+
+    starts_with_roman = re.search(
+        r'^\s*(i|ii|iii|iv|v|vi|vii|viii|ix|x)[.)\s]',
+        top_text,
+        re.I | re.M
+    )
+
+    has_main_question = re.search(
+        r'^\s*\d{1,3}\s+[A-Za-z(]',
+        top_text,
+        re.M
+    )
+
+    return bool(starts_with_roman and not has_main_question)
+
+
+
+
 def find_roman_splits_fitz(page, box_rect_pt):
-    blocks = page.get_text("blocks", clip=fitz.Rect(box_rect_pt), sort=True)
-    splits = []
+    blocks = page.get_text("dict", clip=fitz.Rect(box_rect_pt))["blocks"]
+    
+    # Collect all lines with their bounding boxes first
+    all_lines = []
+    min_x = 9999
+    max_x = 0
+    
     for b in blocks:
-        y0_pt = b[1]
-        for line in b[4].splitlines():
-            line_stripped = line.strip()
-            m = ROMAN_PAT.match(line_stripped)
-            if m and line_stripped:
-                label = _normalise_roman(m.group(1))
-                splits.append((y0_pt, label))
-                break
-    return splits
+        if "lines" not in b:
+            continue
+        for line in b["lines"]:
+            text = "".join([s["text"] for s in line["spans"]]).strip()
+            if not text:
+                continue
+            x0, y0, x1, y1 = line["bbox"]
+            if x0 < min_x:
+                min_x = x0
+            if x1 > max_x:
+                max_x = x1
+            all_lines.append({
+                "text": text,
+                "x0": x0, "y0": y0, "x1": x1, "y1": y1
+            })
+    
+    # Sort all lines vertically
+    all_lines.sort(key=lambda ln: ln["y0"])
+    
+    candidates = []
+    prev_line_bottom = box_rect_pt.y0  # default: box top
+    
+    for idx, ln in enumerate(all_lines):
+        m = ROMAN_PAT.match(ln["text"])
+        if m:
+            label = _normalise_roman(m.group(1))
+
+            relative_y = ln["y0"] - box_rect_pt.y0
+            box_h = box_rect_pt.height
+
+            if relative_y < box_h * 0.03:
+                prev_line_bottom = ln["y1"]
+                continue
+
+            if relative_y > box_h * 0.92:
+                continue
+
+            candidates.append({
+                "label": label,
+                "x": ln["x0"],
+                "y": ln["y0"],
+                "stem_end_y": prev_line_bottom,
+                "lineText": ln["text"],
+                "wordCount": len(ln["text"].split())
+            })
+        else:
+            # Non-roman line: update prev_line_bottom
+            prev_line_bottom = ln["y1"]
+                
+    return candidates, min_x, max_x
 
 
-def split_box_by_roman_fitz(page, box_rect_pt, box_img):
-    roman_splits = find_roman_splits_fitz(page, box_rect_pt)
+def split_box_by_roman_fitz(page, box_rect_pt, box_img, header_y1_pt=0, answer_y0_pt=99999):
+    res = find_roman_splits_fitz(page, box_rect_pt)
+    if not res:
+        return None
+        
+    candidates, min_x, max_x = res
+    if not candidates:
+        return None
+
+    roman_splits = [
+        (c["y"], c["label"])
+        for c in candidates
+    ]
+
+    roman_splits.sort(key=lambda x: x[0])
+
     if not roman_splits:
         return None
 
@@ -301,21 +921,74 @@ def split_box_by_roman_fitz(page, box_rect_pt, box_img):
     box_h_px   = box_img.shape[0]
     scale      = box_h_px / box_h_pt if box_h_pt > 0 else ZOOM
 
-    stem_bot_pt = max(box_top_pt, roman_splits[0][0] - STEM_PAD_PT)
+    # Use the bottom of the last non-roman line before the first anchor
+    first_roman = candidates[0]
+    stem_end_y = first_roman.get("stem_end_y", box_top_pt)
+    stem_bot_pt = max(box_top_pt, stem_end_y + 4)
     stem_bot_px = int((stem_bot_pt - box_top_pt) * scale)
-    stem_crop   = box_img[:stem_bot_px, :]
+
+    header_bottom_px = 0
+
+    stem_crop = box_img[
+        header_bottom_px:stem_bot_px,
+        :
+    ]
 
     boundaries_pt = [y for y, _ in roman_splits] + [box_bot_pt]
     result = []
+    PAD = 4
     for i in range(len(roman_splits)):
-        top_px = max(0, int((roman_splits[i][0]   - box_top_pt) * scale))
-        bot_px = min(box_h_px, int((boundaries_pt[i+1] - box_top_pt) * scale))
-        sub    = box_img[top_px:bot_px, :]
+        top_px = max(
+            0,
+            int((roman_splits[i][0] - box_top_pt) * scale)
+        )
+
+        if i == 0:
+            top_px = max(0, top_px - 10)
+
+        if i + 1 < len(roman_splits):
+            bot_px = min(
+                box_h_px,
+                int((boundaries_pt[i+1] - box_top_pt) * scale) - PAD
+            )
+        else:
+            bot_px = min(
+                box_h_px,
+                int((boundaries_pt[i+1] - box_top_pt) * scale)
+            )
+
+        sub = box_img[top_px:bot_px, :]
         if sub.shape[0] < 20:
             continue
-        combined = np.vstack([stem_crop, sub]) if stem_crop.shape[0] > 0 else sub
-        label    = roman_splits[i][1]
-        result.append((combined, label))
+
+        if i == 0:
+            combined = (
+                np.vstack([stem_crop, sub])
+                if stem_crop.shape[0] > 0
+                else sub
+            )
+        else:
+            combined = sub
+
+        # Compute the exact PDF rectangle for this roman child
+        sub_top_pt = roman_splits[i][0]
+        if i + 1 < len(roman_splits):
+            sub_bot_pt = boundaries_pt[i + 1]
+        else:
+            sub_bot_pt = box_bot_pt
+
+        LEFT_PAD_PT = 8
+        RIGHT_PAD_PT = 12
+
+        sub_rect_pt = fitz.Rect(
+            max(box_rect_pt.x0, min_x - LEFT_PAD_PT),
+            sub_top_pt,
+            min(box_rect_pt.x1, max_x + RIGHT_PAD_PT),
+            sub_bot_pt
+        )
+
+        label = roman_splits[i][1]
+        result.append((combined, label, sub_rect_pt))
 
     return result if result else None
 
@@ -367,24 +1040,30 @@ def count_written_subparts(text):
 # ═══════════════════════════════════════════════════════════════════════
 
 def _save(crop, file_idx, q_type, out_dir, results, page_num,
-          real_q_num=0, parent_number=0, sub_label=""):
+          real_q_num=0, parent_number=0, sub_label="", order_y=0):
+    global GLOBAL_VISUAL_ORDER
     """
     file_idx        – sequential file counter (q_1.png, q_2.png …)
     real_q_num      – actual question number from PDF (7, 10, 33 …)
     parent_number   – for sub-questions: the parent's real number; 0 for standalone
     sub_label       – "i", "ii", … or "" for standalone
+    order_y         – physical vertical position of the crop for sorting
     """
     filename = f"q_{file_idx}.png"
     out_path  = out_dir / filename
     cv2.imwrite(str(out_path), crop)
+    GLOBAL_VISUAL_ORDER += 1
+
     entry = {
         "id":             f"q_{file_idx}",
         "type":           q_type,
         "image":          str(out_path),
         "page":           page_num + 1,
+        "visualOrder":    GLOBAL_VISUAL_ORDER,
         "questionNumber": real_q_num,    # ← NEW: real number from PDF
         "parentNumber":   parent_number,
         "subLabel":       sub_label,
+        "orderY":         order_y,
     }
     results.append(entry)
     sub_info = f" [{parent_number}-{sub_label}]" if parent_number > 0 else f" [Q{real_q_num}]"
@@ -419,12 +1098,14 @@ def process_question_crop(crop, page, box_rect_pt, page_num,
 
     q_type = classify_question(crop, fitz_text)
 
+    order_y = int(box_rect_pt.y0) if box_rect_pt is not None else 0
+
     if q_type == "written":
         clean = remove_answer_region(crop)
         n_sub = count_written_subparts(fitz_text)
         for _ in range(n_sub):
             _save(clean, file_idx, "written", out_dir, results, page_num,
-                  real_q_num=real_q_num, parent_number=0, sub_label="")
+                  real_q_num=real_q_num, parent_number=0, sub_label="", order_y=order_y)
             file_idx += 1
     else:
         # Try roman numeral sub-questions
@@ -435,14 +1116,14 @@ def process_question_crop(crop, page, box_rect_pt, page_num,
         if sub_crops:
             # Parent number = the real question number of this box
             parent_num = real_q_num
-            for sub_crop, sub_label in sub_crops:
+            for sub_crop, sub_label, _ in sub_crops:
                 _save(sub_crop, file_idx, "mcq", out_dir, results, page_num,
                       real_q_num=parent_num, parent_number=parent_num,
-                      sub_label=sub_label)
+                      sub_label=sub_label, order_y=order_y)
                 file_idx += 1
         else:
             _save(crop, file_idx, "mcq", out_dir, results, page_num,
-                  real_q_num=real_q_num, parent_number=0, sub_label="")
+                  real_q_num=real_q_num, parent_number=0, sub_label="", order_y=order_y)
             file_idx += 1
 
     return file_idx
@@ -607,37 +1288,7 @@ def has_badge(text):
 
 
 # ═══════════════════════════════════════════════════════════════════════
-# BROKEN TOP QUESTION DETECTION
-# ═══════════════════════════════════════════════════════════════════════
 
-def detect_broken_top_questions(page):
-    blocks = page.get_text("blocks")
-
-    top_limit = page.rect.height * 0.30
-
-    numbers = []
-    texts = []
-
-    for b in blocks:
-        text = b[4].strip()
-        y = b[1]
-
-        if y > top_limit:
-            continue
-
-        # detect standalone numbers
-        if re.fullmatch(r'\d{1,3}', text):
-            numbers.append((int(text), y))
-
-        # 🔥 IMPORTANT: relax condition
-        elif len(text) > 20 and re.search(r'[A-Za-z]', text):
-            texts.append((text, y))
-
-    # 🔥 NEW LOGIC
-    if len(numbers) >= 2:
-        return True
-
-    return False
 
 # ═══════════════════════════════════════════════════════════════════════
 # BOX FORMAT
@@ -692,33 +1343,8 @@ def process_box_page(image, page, page_num, file_idx, out_dir, results, page_has
         box_text = page.get_text("text", clip=box_rect_pt).strip()
         debug_log(f"[BOX TEXT]\n{box_text[:200]}")
 
-        # ── Badge detection on TOP REGION ONLY
-        top_region_height = int(box_crop.shape[0] * 0.15)
-        top_rect_pt = px_rect_to_pt_rect(page, bx, box_top, bw, top_region_height)
-        top_text = page.get_text("text", clip=top_rect_pt).strip()
-        debug_log(f"[TOP TEXT]\n{top_text}")
-
-        # ── SAFE badge removal (FIXED)
-        badge_flag = has_badge(top_text)
-        debug_log(f"[BADGE DETECTED] {badge_flag}")
-
-        if badge_flag or page_has_oval:
-            shift = int(box_crop.shape[0] * 0.08)
-
-            # 🔍 Check if cutting is safe (very important)
-            test_rect = px_rect_to_pt_rect(page, bx, box_top + shift, bw, 60)
-            test_text = page.get_text("text", clip=test_rect).strip()
-            debug_log(f"[SHIFT TEST TEXT]\n{test_text}")
-
-            test_num = extract_question_number_from_text(test_text)
-            debug_log(f"[SHIFT SAFE?] {test_num is not None}")
-
-            # Only cut if question number still exists after cut
-            if test_num:
-                debug_log(f"[APPLY SHIFT] {shift}px")
-                box_crop = box_crop[shift:, :]
-            else:
-                debug_log("[SKIP SHIFT]")
+        # ── SAFE: Never physically crop the header geometry anymore.
+        # Destructive shift cropping has been removed.
 
         # ── Extract real question number (from original full text)
         real_q_num = extract_question_number_from_text(box_text) or 0
@@ -861,7 +1487,6 @@ def is_skip_page(image):
 
 def extract_top_question_only(page, image, page_num, out_dir):
     h, w = image.shape[:2]
-
     scan_h = int(h * 0.25)
     crop = image[0:scan_h, :]
 
@@ -892,9 +1517,9 @@ def extract_top_question_only(page, image, page_num, out_dir):
 
     if len(ys) >= 2:
         second_y = ys[1]
+  
         cut_px = int(second_y * ZOOM)
         crop = image[0:cut_px, :]
-
     filename = f"top_{page_num+1}.png"
     path = out_dir / filename
     cv2.imwrite(str(path), crop)
@@ -902,166 +1527,18 @@ def extract_top_question_only(page, image, page_num, out_dir):
     debug_log(f"[TOP CROP] page={page_num+1} firstNum={first_num} saved={filename}")
 
     return {
+        "id": "",
+        "type": "mcq",
+        "image": str(path),
         "page": page_num + 1,
         "questionNumber": first_num,
-        "image": str(path)
+        "parentNumber": 0,
+        "subLabel": "",
+        "orderY": 0,
     }
 
 
-# ═══════════════════════════════════════════════════════════════════════
-# STAGE 3 — MERGE ENGINE
-# Compares results_main and results_top; inserts any missing first
-# question at the correct position, re-sequencing IDs as needed.
-# ═══════════════════════════════════════════════════════════════════════
 
-def merge_first_questions(results_main, results_top):
-    """
-    ONLY:
-    - Ensure top question is FIRST in its page
-    - No duplicates
-    - Keep everything else unchanged
-    """
-
-    # group main results by page
-    pages = {}
-    for q in results_main:
-        pages.setdefault(q["page"], []).append(q)
-
-    # process each page
-    for top_q in results_top:
-        page = top_q["page"]
-        qnum = top_q["questionNumber"]
-
-        page_list = pages.setdefault(page, [])
-
-        # check if already exists (same questionNumber)
-        exists = any(q["questionNumber"] == qnum for q in page_list)
-
-        if exists:
-            continue
-
-        # 🔥 JUST ADD IT (no shifting, no ID tricks)
-        page_list.append({
-            "id": "",  # temporary
-            "type": "mcq",
-            "image": top_q["image"],
-            "page": page,
-            "questionNumber": qnum,
-            "parentNumber": 0,
-            "subLabel": ""
-        })
-
-    # 🔥 NOW FIX ORDER (THIS IS THE KEY PART)
-    final = []
-
-    for page in sorted(pages.keys()):
-        page_qs = pages[page]
-
-        # sort by vertical position (image names reflect order already)
-        page_qs.sort(key=lambda x: x["image"])
-
-        # 🔥 FORCE top question to be FIRST if exists
-        top_candidates = [q for q in page_qs if "top_" in q["image"]]
-
-        if top_candidates:
-            top_q = top_candidates[0]
-            page_qs.remove(top_q)
-            page_qs.insert(0, top_q)
-
-        final.extend(page_qs)
-
-    # 🔥 rebuild IDs cleanly
-    for i, q in enumerate(final, start=1):
-        q["id"] = f"q_{i}"
-
-    return final
-# ═══════════════════════════════════════════════════════════════════════
-# OVAL RECOVERY (unchanged)
-# ═══════════════════════════════════════════════════════════════════════
-
-def recover_oval_first_question(page, image, page_num, file_idx, out_dir, results):
-    """
-    Called ONLY when page_has_oval=True and text-split already ran.
-    Checks if the first question on this page is missing, recovers it.
-    """
-    page_results = [r for r in results if r["page"] == page_num + 1]
-    if not page_results:
-        return file_idx
-
-    saved_nums = sorted(r["questionNumber"] for r in page_results if r["questionNumber"] > 0)
-    if not saved_nums:
-        return file_idx
-
-    expected_first = saved_nums[0] - 1
-    if expected_first < 1:
-        return file_idx
-
-    debug_log(f"[OVAL RECOVERY] Looking for Q{expected_first} on page {page_num+1}")
-
-    blocks = page.get_text("blocks", sort=True)
-    page_h = page.rect.height
-
-    # Find the standalone number block for expected_first
-    num_block = None
-    for b in blocks:
-        text = b[4].strip()
-        if re.fullmatch(r'\d{1,3}', text) and int(text) == expected_first:
-            num_block = b
-            break
-
-    if num_block is None:
-        debug_log(f"[OVAL RECOVERY] Number block {expected_first} not found")
-        return file_idx
-
-    num_y0 = num_block[1]
-
-    # Find nearest valid text block within 80pt
-    best_text_block = None
-    best_dist = 999
-    for b in blocks:
-        text = b[4].strip()
-        if not is_valid_question_block(text, b[1], page_h):
-            continue
-        dist = abs(b[1] - num_y0)
-        if dist < best_dist and dist < 80:
-            best_dist = dist
-            best_text_block = b
-
-    if best_text_block is None:
-        debug_log(f"[OVAL RECOVERY] No text block found near Q{expected_first}")
-        return file_idx
-
-    anchor_y = min(num_y0, best_text_block[1])
-
-    # Bottom = y of the first saved question's number block
-    first_saved_block_y = None
-    for b in blocks:
-        text = b[4].strip()
-        if re.fullmatch(r'\d{1,3}', text) and int(text) == saved_nums[0]:
-            first_saved_block_y = b[1]
-            break
-    if first_saved_block_y is None:
-        first_saved_block_y = anchor_y + page_h * 0.25
-
-    img_h = image.shape[0]
-    top_px = max(0, int(anchor_y * ZOOM) - int(img_h * 0.02))
-    bot_px = min(img_h, int(first_saved_block_y * ZOOM) + 10)
-
-    if bot_px - top_px < 40:
-        debug_log(f"[OVAL RECOVERY] Crop too small, skip")
-        return file_idx
-
-    crop = image[top_px:bot_px, :]
-    rect = fitz.Rect(0, anchor_y, page.rect.width, first_saved_block_y)
-
-    debug_log(f"[OVAL RECOVERY] Recovering Q{expected_first} top={top_px} bot={bot_px}")
-
-    file_idx = process_question_crop(
-        crop, page, rect, page_num,
-        file_idx, out_dir, results,
-        real_q_num=expected_first
-    )
-    return file_idx
 
 # ═══════════════════════════════════════════════════════════════════════
 # MAIN PROCESSING LOOP
@@ -1072,6 +1549,8 @@ def process_pdf(pdf_path, out_dir, page_from=None, page_to=None):
     """
     page_from, page_to: 1-based inclusive page numbers (None = process all).
     """
+    global ACTIVE_PARENT_QUESTION
+    global GLOBAL_VISUAL_ORDER
     pdf_path = Path(pdf_path)
     out_dir  = Path(out_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
@@ -1080,6 +1559,8 @@ def process_pdf(pdf_path, out_dir, page_from=None, page_to=None):
     total   = len(doc)
     results = []
     file_idx = 1   # sequential file counter — always 1, 2, 3, …
+    sections = []
+    current_section = None
 
     # Convert to 0-based
     p_from = (page_from - 1) if page_from else 0
@@ -1092,35 +1573,74 @@ def process_pdf(pdf_path, out_dir, page_from=None, page_to=None):
     # Clear debug log at start
     open(DEBUG_FILE, "w").close()
 
-    # ── STAGE 2: build top_results (one entry per page, first Q only) ──
-    top_results = []
-    for page_num in range(p_from, p_to + 1):
-        page = doc[page_num]
-        img  = page_to_image(page)
-        if is_skip_page(img):
-            continue
-        top_q = extract_top_question_only(page, img, page_num, out_dir)
-        if top_q:
-            top_results.append(top_q)
+    # STAGE 2: Removed top_results global pass entirely.
 
     # ── STAGE 1: main pipeline (unchanged) ─────────────────────────────
     for page_num in range(p_from, p_to + 1):
         page = doc[page_num]
+
+        # ===== SECTION DETECTION =====
+        header = detect_section_header(page)
+
+        if header:
+            if current_section:
+                current_section["end_page"] = page_num
+
+            current_section = {
+                "section": header,
+                "start_page": page_num + 1,
+                "end_page": page_num + 1
+            }
+            sections.append(current_section)
+
         print(f"─── Page {page_num + 1} ───────────────────────")
         debug_log(f"\n=== PAGE {page_num+1} ===")
 
         img = page_to_image(page)
 
-        page_has_oval = detect_broken_top_questions(page)
-        debug_log(f"[BROKEN TOP DETECTED] {page_has_oval}")
-
         if is_skip_page(img):
             print("  Skipped")
             continue
 
-        # ── Try text-based split first (best: gives real numbers) ──
+        continuation_page = detect_continuation_page(page)
+        if continuation_page:
+            debug_log(f"[CONTINUATION] Page {page_num+1} detected as continuation")
+
+        if USE_STRUCTURAL_PIPELINE:
+            layout = classify_page_layout(img)
+            debug_log(f"[LAYOUT] {layout}")
+            
+            containers = []
+            if layout in ("BOX_LAYOUT", "MIXED_LAYOUT"):
+                containers = extract_structural_containers(img, page)
+                if containers:
+                    # Handle continuation pages: inherit parent question number
+                    cont_q_num = 0
+                    if continuation_page:
+                        if ACTIVE_PARENT_QUESTION is not None:
+                            cont_q_num = ACTIVE_PARENT_QUESTION
+                            debug_log(f"[CONTINUATION] Inheriting Q{cont_q_num} from active parent")
+
+                    print(f"  → structural container split ({len(containers)} containers)")
+                    for i, c in enumerate(containers):
+                        crop = img[c["y"]:c["y"]+c["h"], c["x"]:c["x"]+c["w"]]
+                        rect = px_rect_to_pt_rect(page, c["x"], c["y"], c["w"], c["h"])
+                        file_idx = process_structural_container(
+                            crop, page, rect, c, page_num,
+                            file_idx, out_dir, results,
+                            is_top_question=(i == 0),
+                            override_q_num=cont_q_num if continuation_page else 0,
+                            is_continuation=continuation_page)
+
+                    continue
+            elif layout == "GREEN_LAYOUT":
+                print("  → green layout split")
+                file_idx = process_green_page(img, page, page_num, file_idx, out_dir, results)
+                continue
+
+        # ── EMERGENCY FALLBACK: Try text-based split ──
+        debug_log("[FALLBACK] Using text split")
         segments = split_by_question_numbers(page, img)
-        # validate_segments now handles 3-tuples
         if segments:
             valid = [s for s in segments if s[0].shape[0] > img.shape[0] * 0.04]
             segments = valid if valid else None
@@ -1136,12 +1656,11 @@ def process_pdf(pdf_path, out_dir, page_from=None, page_to=None):
                     file_idx, out_dir, results,
                     real_q_num=real_q_num)
 
-            if page_has_oval:
-                file_idx = recover_oval_first_question(
-                    page, img, page_num, file_idx, out_dir, results)
+
             continue
 
-        # ── Try line-based split ───────────────────────────────────
+        # ── FINAL FALLBACK: Try line-based split ──
+        debug_log("[FALLBACK] Using line split")
         line_segs = split_by_horizontal_lines(img, page)
         if line_segs:
             valid = [s for s in line_segs if s[0].shape[0] > img.shape[0] * 0.04]
@@ -1157,28 +1676,52 @@ def process_pdf(pdf_path, out_dir, page_from=None, page_to=None):
                     file_idx, out_dir, results,
                     real_q_num=real_q_num)
             continue
+            
+        if ENABLE_EMERGENCY_RECOVERY:
+            file_idx = recover_top_question(
+                page, img, page_num,
+                file_idx, out_dir, results
+            )
 
-        # ── Fallback: box or green ─────────────────────────────────
-        debug_log("[FALLBACK] Using BOX or GREEN")
-        if is_box_format(img):
-            print("  → box fallback")
-            file_idx = process_box_page(img, page, page_num, file_idx, out_dir, results, page_has_oval)
-        else:
-            print("  → green fallback")
-            file_idx = process_green_page(img, page, page_num, file_idx, out_dir, results)
+        # Update active parent question tracking (State tracking for continuation pages)
+        if not continuation_page:
+            if results:
+                last = results[-1]
+                if last.get("questionNumber"):
+                    ACTIVE_PARENT_QUESTION = last["questionNumber"]
 
-        file_idx = recover_top_question(
-            page, img, page_num,
-            file_idx, out_dir, results
-        )
-
-    # ── STAGE 3: merge — insert any missing first questions ────────────
-    print(f"\n── Merging top-question pass ({len(top_results)} entries) …")
-    results = merge_first_questions(results, top_results)
+    # ── STAGE 3: removed top-question merge ────────────
 
     print(f"\n✓ Done — {len(results)} question images saved\n")
-    return results
+    # finalize last section
+    if current_section:
+        current_section["end_page"] = p_to + 1
 
+    return results, sections
+
+
+# ═══════════════════════════════════════════════════════════════════════
+# OUTPUT FORMATTING
+# ═══════════════════════════════════════════════════════════════════════
+
+def finalize_results(results):
+    seen = set()
+    out = []
+
+    for q in sorted(results, key=lambda x: (x["page"], x.get("orderY", 0), x["id"])):
+        key = (q["image"], q["subLabel"], q["parentNumber"])
+
+        # remove only true duplicates on the same page
+        if key in seen:
+            continue
+
+        seen.add(key)
+        out.append(q)
+
+    for i, q in enumerate(out, start=1):
+        q["id"] = f"q_{i}"
+
+    return out
 
 # ═══════════════════════════════════════════════════════════════════════
 # ENTRY POINT
@@ -1196,14 +1739,23 @@ if __name__ == "__main__":
                         help="Last page to process (1-based, inclusive)")
     args = parser.parse_args()
 
-    results = process_pdf(
+    results, sections = process_pdf(
         args.pdf, args.out,
         page_from=args.page_from,
         page_to=args.page_to
     )
+
+    results = finalize_results(results)
 
     output_json_path = Path(args.out) / "output.json"
     with open(output_json_path, "w") as f:
         json.dump(results, f, indent=2)
 
     print(f"JSON manifest saved → {output_json_path}")
+
+    sections_path = Path(args.out) / "sections.json"
+
+    with open(sections_path, "w", encoding="utf-8") as f:
+        json.dump(sections, f, indent=2, ensure_ascii=False)
+
+    print(f"Sections saved → {sections_path}")

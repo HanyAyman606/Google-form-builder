@@ -18,6 +18,14 @@ public class QuestionData {
     public String type;
     public String image;
     public int    page;
+    public int    visualOrder = 0;
+
+    /**
+     * v9: Vertical coordinate used for physical ordering within/across pages.
+     * Computed as (page * 10000) + y_position.  Used only for sorting;
+     * safe to ignore in application logic.
+     */
+    public double orderY = 0;
 
     /**
      * v8: The REAL question number from the PDF text (7, 8, 9, 10, 33 …).
@@ -45,6 +53,7 @@ public class QuestionData {
                 + ", type='" + type + '\''
                 + ", image='" + image + '\''
                 + ", page=" + page
+                + ", visualOrder=" + visualOrder
                 + qn
                 + sub
                 + '}';

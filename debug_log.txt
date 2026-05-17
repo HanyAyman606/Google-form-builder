@@ -1,68 +1,69 @@
-[TOP CROP] page=185 firstNum=1 saved=top_185.png
-[TOP CROP] page=186 firstNum=5 saved=top_186.png
-[TOP CROP] page=187 firstNum=8 saved=top_187.png
-[TOP CROP] page=188 firstNum=11 saved=top_188.png
-[TOP CROP] page=189 firstNum=13 saved=top_189.png
-[TOP CROP] page=190 firstNum=16 saved=top_190.png
-[TOP CROP] page=191 firstNum=21 saved=top_191.png
-[TOP CROP] page=192 firstNum=24 saved=top_192.png
-[TOP CROP] page=193 firstNum=28 saved=top_193.png
-[TOP CROP] page=194 firstNum=31 saved=top_194.png
-[TOP CROP] page=195 firstNum=34 saved=top_195.png
-[TOP CROP] page=196 firstNum=37 saved=top_196.png
-[TOP CROP] page=200 firstNum=42 saved=top_200.png
-[TOP CROP] page=201 firstNum=44 saved=top_201.png
-[TOP CROP] page=202 firstNum=47 saved=top_202.png
-[TOP CROP] page=203 firstNum=50 saved=top_203.png
-[TOP CROP] page=204 firstNum=54 saved=top_204.png
-[TOP CROP] page=205 firstNum=58 saved=top_205.png
-[TOP CROP] page=206 firstNum=62 saved=top_206.png
-[TOP CROP] page=207 firstNum=67 saved=top_207.png
 
-=== PAGE 185 ===
-[BROKEN TOP DETECTED] True
+=== PAGE 25 ===
+[LAYOUT] UNKNOWN_LAYOUT
+[FALLBACK] Using text split
 
 --- TEXT SPLIT CHECK ---
 [BLOCK TEXT]
-185
+25
+Final Revision ch . 1
 [BLOCK TEXT]
-Ch.7 : laser
+An electric circuit contains two identical metal rings where an electric 
+current passe through them
 [BLOCK TEXT]
-The opposite figure represents the phenomenon of
+The opposite figure represents a part of a closed electric circuit, so the 
+current intensity (I) is
 [BLOCK TEXT]
-The opposite figure shows two photons, each with energy 
-(E=E2-E1), falling separately on two atoms 
+The opposite figure represents part of an electric circuit the value of the 
+resistance R is ……
 [BLOCK TEXT]
-Which of the following figures represents the process of 
-stimulated 
-emission?
+In the opposite electric circuit, if the electric potential difference 
+between the points (a , b) i
 [BLOCK TEXT]
-The following figures represent the waves accompanying the 
-motion of photons. The choice that repre
+20
 [BLOCK TEXT]
-1
+21
 [BLOCK TEXT]
-2
+22
 [BLOCK TEXT]
-3
+23
 [BLOCK TEXT]
-4
+I1>I2>I3
+I2>I1>I3
+I3>I1>I2
+I1>I3>I2
 [BLOCK TEXT]
-Black body radiation
+0.6 A
 [BLOCK TEXT]
-Spontaneous emission
+0.7 A
 [BLOCK TEXT]
-Stimulated emission
+0.9 A
 [BLOCK TEXT]
-Absorption
+1.1 A
 [BLOCK TEXT]
-Stimulated emission, spontaneous emission
+15 Ω
 [BLOCK TEXT]
-Spontaneous emission, stimulated emission
+25 Ω
 [BLOCK TEXT]
-Spontaneous emission, excitation
+30 Ω
 [BLOCK TEXT]
-Excitation, stimulated emission
+40 Ω
+[BLOCK TEXT]
+2 Ω
+[BLOCK TEXT]
+3 Ω
+[BLOCK TEXT]
+4 Ω
+[BLOCK TEXT]
+5 Ω
+[BLOCK TEXT]
+A
+[BLOCK TEXT]
+B
+[BLOCK TEXT]
+C
+[BLOCK TEXT]
+D
 [BLOCK TEXT]
 A
 [BLOCK TEXT]
@@ -81,105 +82,42 @@ C
 D
 [BLOCK TEXT]
 A
-B
-C
-D
-[BLOCK TEXT]
-A
 [BLOCK TEXT]
 B
 [BLOCK TEXT]
 C
 [BLOCK TEXT]
 D
-[SAVE] page=185 file=q_1 num=1
-[SAVE] page=185 file=q_2 num=2
-[SAVE] page=185 file=q_3 num=3
-[SAVE] page=185 file=q_4 num=4
+[FALLBACK] Using line split
+[SAVE] page=25 file=q_1 num=20
+[SAVE] page=25 file=q_2 num=21
+[SAVE] page=25 file=q_3 num=22
+[SAVE] page=25 file=q_4 num=23
 
-=== PAGE 186 ===
-[BROKEN TOP DETECTED] False
-
---- TEXT SPLIT CHECK ---
-[BLOCK TEXT]
-186
-[BLOCK TEXT]
-If the wavelength of the laser produced by a laser device is 6500 
-Å, which of the following choices
-[BLOCK TEXT]
-The opposite figure shows four light sources (S1, S2, S3, S4) placed 
-in front of four slits in a sc
-[BLOCK TEXT]
-5
-[BLOCK TEXT]
-6
-[BLOCK TEXT]
-1.5 x 1014 Hz, before the end of the lifetime
-[BLOCK TEXT]
-4.6 x 1014 Hz, before the end of the lifetime
-[BLOCK TEXT]
-4.6 x 1014 Hz, after the end of the lifetime
-[BLOCK TEXT]
-1.5 x 1014 Hz, after the end of the lifetime
-[BLOCK TEXT]
-S1, S2
-S3, S4
-S2, S4
-S3, S2
-[BLOCK TEXT]
-A
-[BLOCK TEXT]
-B
-[BLOCK TEXT]
-C
-[BLOCK TEXT]
-D
-[BLOCK TEXT]
-A
-[BLOCK TEXT]
-B
-[BLOCK TEXT]
-C
-[BLOCK TEXT]
-D
-[BLOCK TEXT]
-Two laser devices (X and Y) produce beams with the same 
-frequency. If the intensity of light emitte
-[BLOCK TEXT]
-7
-[BLOCK TEXT]
-A
-B
-C
-D
-[SAVE] page=186 file=q_5 num=5
-[SAVE] page=186 file=q_6 num=6
-[SAVE] page=186 file=q_7 num=7
-
-=== PAGE 187 ===
-[BROKEN TOP DETECTED] False
+=== PAGE 26 ===
+[CONTINUATION] Page 26 detected as continuation
+[LAYOUT] UNKNOWN_LAYOUT
+[FALLBACK] Using text split
 
 --- TEXT SPLIT CHECK ---
 [BLOCK TEXT]
-187
+26
+Final Revision ch . 1
 [BLOCK TEXT]
-When the laser beam is incident on a triangular prism at minimum 
-deviation position, it
-9
+In the electric circuit shown in the figure, the resistances of lightbulbs 
+x and y are R and 2R res
 [BLOCK TEXT]
-Produces a spectrum with a wide range of wavelengths without
+consumed by the two lightbulbs       is equal to…..
 [BLOCK TEXT]
-deviation.
+24
 [BLOCK TEXT]
-Produces a spectrum with a wide range of wavelengths that
+2/1
 [BLOCK TEXT]
-deviates from its path.
+1/2
 [BLOCK TEXT]
-Produces a spectral line with a single wavelength without deviation.
+4/1
 [BLOCK TEXT]
-Passes through the prism without divergence but deviates from its
-[BLOCK TEXT]
-path.
+¼
 [BLOCK TEXT]
 A
 [BLOCK TEXT]
@@ -189,139 +127,77 @@ C
 [BLOCK TEXT]
 D
 [BLOCK TEXT]
-A red laser beam can reach a longer distance than a beam 
-of ordinary blue light, although both have
+(PW)x
+(PW)y
 [BLOCK TEXT]
-8
+In the opposite electric circuit, several 
+resistors are connected to a battery of 
+negligible 
+inte
 [BLOCK TEXT]
-The photon energy of the red laser beam is greater than that of the
+25
 [BLOCK TEXT]
-ordinary blue light beam
-[BLOCK TEXT]
-The mass of the red laser photon is greater than that of the blue light
-[BLOCK TEXT]
-photon
-[BLOCK TEXT]
-The speed of the red laser beam is greater than the speed of the blue
-[BLOCK TEXT]
-light beam
-[BLOCK TEXT]
-The divergence angle of the red laser beam is less than that of the
-[BLOCK TEXT]
-ordinary blue light beam
+The largest electric 
+power
+The smallest electric 
+power
 [BLOCK TEXT]
 A
+2R
+R
 [BLOCK TEXT]
 B
+2R
+6R
 [BLOCK TEXT]
 C
+6R
+R
 [BLOCK TEXT]
-D
+d
+6R
+6R
 [BLOCK TEXT]
-A light beam has a diameter of (0.2 cm) and an intensity of (I) 
-at its source. What will when its i
+In the opposite electric circuit, the value of I and the electric potential 
+of point x respectively
 [BLOCK TEXT]
-10
-[BLOCK TEXT]
-Both the diameter and the intensity remain Constant.
-[BLOCK TEXT]
-Both the diameter and the intensity increase.
-[BLOCK TEXT]
-Both the diameter and the intensity decrease.
-[BLOCK TEXT]
-The diameter increases while the intensity decreases.
-[BLOCK TEXT]
-A
-[BLOCK TEXT]
-B
-[BLOCK TEXT]
-C
-[BLOCK TEXT]
-D
-[SAVE] page=187 file=q_8 num=8
-[SAVE] page=187 file=q_9 num=9
-[SAVE] page=187 file=q_10 num=10
-
-=== PAGE 188 ===
-[BROKEN TOP DETECTED] False
-
---- TEXT SPLIT CHECK ---
-[BLOCK TEXT]
-188
-[BLOCK TEXT]
-11
-[BLOCK TEXT]
-12
-[BLOCK TEXT]
-The two opposite Figures (A, B) represent two light sources. The
-[BLOCK TEXT]
-following table shows some properties of the beams emitted from each
-[BLOCK TEXT]
-source. The correct properties are
-[BLOCK TEXT]
-You have an ordinary light beam and a laser beam. If the light intensity
-[BLOCK TEXT]
-of each is (I) at a distance (d) from its source, then the light intensity
-[BLOCK TEXT]
-of each beam at a distance (2d) from its source becomes
-[BLOCK TEXT]
-(A)
-(B)
-[BLOCK TEXT]
-1
-obeys the inverse 
-square law
-Resulting from 
-stimulated emission
+1 A and -10 V
 [MATCHED Q] 1
 [BLOCK TEXT]
+A and 10 V
+[BLOCK TEXT]
+A and -5 V
+[BLOCK TEXT]
+1A and 5 V
+[BLOCK TEXT]
+26
+[BLOCK TEXT]
+A
+[BLOCK TEXT]
+B
+[BLOCK TEXT]
+C
+[BLOCK TEXT]
+D
+[BLOCK TEXT]
+1
+[BLOCK TEXT]
 2
-Resulting from 
-stimulated emission
-obeys the inverse 
-square law
-[MATCHED Q] 2
 [BLOCK TEXT]
-3
+1
 [BLOCK TEXT]
-Has a wide range of 
-wavelengths
-The diameter of the 
-light beam is not 
-constant
+2
 [BLOCK TEXT]
-4
-Resulting from 
-spontaneous emission
-Coherent and parallel
-[MATCHED Q] 4
+In the opposite electric circuit , the voltmeter reading is …..
+27
 [BLOCK TEXT]
-For the ordinary light beam
-For the laser beam
+10 V
 [BLOCK TEXT]
-A
-0.5 I
-0.25 I
+6 V
 [BLOCK TEXT]
-B
-0.25 I
-I
+8 V
 [BLOCK TEXT]
-C
-0.25 I
-0.25 I
-[BLOCK TEXT]
-D
-0.5 I
-I
-[BLOCK TEXT]
-1, 2
-[BLOCK TEXT]
-2, 4
-[BLOCK TEXT]
-2, 3
-[BLOCK TEXT]
-1, 4
+4 V
 [BLOCK TEXT]
 A
 [BLOCK TEXT]
@@ -330,43 +206,34 @@ B
 C
 [BLOCK TEXT]
 D
-[TEXT SPLIT] Found 3 segments
-[SAVE] page=188 file=q_11 num=1
-[SAVE] page=188 file=q_12 num=2
-[SAVE] page=188 file=q_13 num=4
+[FALLBACK] Using line split
+[SAVE] page=26 file=q_5 num=24
+[SAVE] page=26 file=q_6 num=25
+[SAVE] page=26 file=q_7 num=1
+[SAVE] page=26 file=q_8 num=10
 
-=== PAGE 189 ===
-[BROKEN TOP DETECTED] False
+=== PAGE 27 ===
+[LAYOUT] UNKNOWN_LAYOUT
+[FALLBACK] Using text split
 
 --- TEXT SPLIT CHECK ---
 [BLOCK TEXT]
-189
+27
+Final Revision ch . 1
 [BLOCK TEXT]
-15
-The opposite figure shows two different light sources, each in front of
-[MATCHED Q] 15
+The opposite figure represents a part of an electric circuit that carries 
+a current, if the voltmet
 [BLOCK TEXT]
-an obstacle. If the intensity of light from the source (2) at the obstacle
+29
 [BLOCK TEXT]
-is (I) and the intensity of light from the source (1) at the obstacle is (3
+10 Ω
 [BLOCK TEXT]
-I), then when the obstacle is shifted to the right by a distance of (1.5 d)
+8 Ω
 [BLOCK TEXT]
-the intensity of light from both sources (1, 2) at the obstacle becomes
+6 Ω
 [BLOCK TEXT]
-I
+4 Ω
 [BLOCK TEXT]
-I
-[BLOCK TEXT]
-1.5 I
-[BLOCK TEXT]
-The light intensity 
-of source (1) at the 
-obstacle
-[BLOCK TEXT]
-The light intensity 
-of source (2) at the 
-obstacle
 A
 [BLOCK TEXT]
 B
@@ -376,390 +243,35 @@ C
 D
 [BLOCK TEXT]
 The opposite figure represents an 
-ordinary light source producing red 
-light, received on a screen 
-[BLOCK TEXT]
-Which of the following graphs represents the relation between 
-the intensity of a laser beam and the
-[BLOCK TEXT]
-13
-[BLOCK TEXT]
-14
-[BLOCK TEXT]
-A
-B
-C
-D
-[BLOCK TEXT]
-A
-B
-C
-D
-[BLOCK TEXT]
-4 I
-[BLOCK TEXT]
-9
-4 I
-[BLOCK TEXT]
-3
-2 I
-[BLOCK TEXT]
-9
-9 I
-[BLOCK TEXT]
-4
-1.5 I
-[SAVE] page=189 file=q_14 num=13
-[SAVE] page=189 file=q_15 num=14
-[SAVE] page=189 file=q_16 num=4
-
-=== PAGE 190 ===
-[BROKEN TOP DETECTED] False
-
---- TEXT SPLIT CHECK ---
-[BLOCK TEXT]
-190
-[BLOCK TEXT]
-The following graph represents the relation between the intensity 
-(I) of ordinary light when it fal
-[BLOCK TEXT]
-A laser beam is used as a power source for the active medium in
-[BLOCK TEXT]
-The opposite figure represents a laser production tube. According 
-to the figure, the active medium 
-[BLOCK TEXT]
-The opposite figure represents two energy levels in the atoms of 
-the active medium in the populatio
-[BLOCK TEXT]
-16
-[BLOCK TEXT]
-18
-[BLOCK TEXT]
-19
-[BLOCK TEXT]
-20
-[BLOCK TEXT]
-9 I
-[BLOCK TEXT]
-4 I
-[BLOCK TEXT]
-3 I
-[BLOCK TEXT]
-I
-[BLOCK TEXT]
-Gas laser
-[BLOCK TEXT]
-Solid-state laser
-[BLOCK TEXT]
-Liquid dye laser
-[BLOCK TEXT]
-Semiconductor laser
-[BLOCK TEXT]
-Gas molecules
-[BLOCK TEXT]
-Crystals (solid)
-[BLOCK TEXT]
-Organic liquid dyes
-[BLOCK TEXT]
-An alloy of several metals
-[BLOCK TEXT]
-2 photons
-[BLOCK TEXT]
-3 photons
-[BLOCK TEXT]
-4 photons
-[BLOCK TEXT]
-6 photons
-[BLOCK TEXT]
-A
-[BLOCK TEXT]
-B
-[BLOCK TEXT]
-C
-[BLOCK TEXT]
-D
-[BLOCK TEXT]
-A
-[BLOCK TEXT]
-B
-[BLOCK TEXT]
-C
-[BLOCK TEXT]
-D
-[BLOCK TEXT]
-A
-[BLOCK TEXT]
-B
-[BLOCK TEXT]
-C
-[BLOCK TEXT]
-D
-[BLOCK TEXT]
-A
-[BLOCK TEXT]
-B
-[BLOCK TEXT]
-C
-[BLOCK TEXT]
-D
-[BLOCK TEXT]
-17
-The opposite figure represents the waves emitted from three different
-[MATCHED Q] 17
-[BLOCK TEXT]
-light sources. Therefore
-[BLOCK TEXT]
-Ordinary Light Source
-Laser Light Source
-[BLOCK TEXT]
-A
-A
-C
-[BLOCK TEXT]
-B
-B
-A
-[BLOCK TEXT]
-C
-C
-None
-[BLOCK TEXT]
-D
-None
-B
-[SAVE] page=190 file=q_17 num=9
-[SAVE] page=190 file=q_18 num=17
-[SAVE] page=190 file=q_19 num=18
-[SAVE] page=190 file=q_20 num=19
-[SAVE] page=190 file=q_21 num=2
-
-=== PAGE 191 ===
-[BROKEN TOP DETECTED] False
-
---- TEXT SPLIT CHECK ---
-[BLOCK TEXT]
-191
-[BLOCK TEXT]
-22
-[BLOCK TEXT]
-Equal to one
-[BLOCK TEXT]
-Greater than one
-[BLOCK TEXT]
-Less than one
-[BLOCK TEXT]
-Difficult to determine
-[BLOCK TEXT]
-A
-[BLOCK TEXT]
-B
-[BLOCK TEXT]
-C
-[BLOCK TEXT]
-D
-[BLOCK TEXT]
-21
-[BLOCK TEXT]
-23
-[BLOCK TEXT]
-The opposite figures represent excited atoms (X, Y, Z, T) at the meta-
-[BLOCK TEXT]
-stable energy level (E2), with the time spent by the atom in the level
-[BLOCK TEXT]
-indicated. Assuming that photons with energy (E=E2-E1) fall on the
-[BLOCK TEXT]
-atoms at the excitation level (E2) after a time of 6 x 10-4 s, the atoms
-[BLOCK TEXT]
-that undergo spontaneous emission and the atoms that undergo
-[BLOCK TEXT]
-stimulated emission are
-[BLOCK TEXT]
-The opposite figure represents the energy levels of the atoms in the
-[BLOCK TEXT]
-active medium of a helium-neon laser. During the movement of photons
-[BLOCK TEXT]
-between the mirrors, the photons stimulate the atoms of … element.
-[BLOCK TEXT]
-Spontaneous 
-Emission
-Stimulated 
-Emission
-A
-X, Y, Z
-T
-[BLOCK TEXT]
-B
-X, Y, T
-Z
-[BLOCK TEXT]
-C
-Y, T
-X, Z
-[BLOCK TEXT]
-D
-X, Z
-Y, T
-[BLOCK TEXT]
-The stimulated 
-atoms
-Located at the 
-energy level
-A
-Neon
-E0
-B
-Neon
-E1
-[BLOCK TEXT]
-C
-Neon
-E2
-[BLOCK TEXT]
-D
-Helium
-E3
-[BLOCK TEXT]
-In a helium-neon laser, the ratio of 
-is
-Pumping Energy of one Atom
-Energy of the emitted laser phot
-[SAVE] page=191 file=q_22 num=21
-[SAVE] page=191 file=q_23 num=22
-[SAVE] page=191 file=q_24 num=23
-
-=== PAGE 192 ===
-[BROKEN TOP DETECTED] True
-
---- TEXT SPLIT CHECK ---
-[BLOCK TEXT]
-192
-[BLOCK TEXT]
-Increasing the reflectivity of the semitransparent mirror slightly 
-will lead to all of the followin
-[BLOCK TEXT]
-24
-[BLOCK TEXT]
-Increasing the number of successive reflections inside the resonant
-[BLOCK TEXT]
-cavity
-[BLOCK TEXT]
-Increasing the path length of the photons inside the cavity
-[BLOCK TEXT]
-Increasing the intensity of laser radiation inside the cavity
-[BLOCK TEXT]
-Decreasing the thermal energy absorbed by the tube wall
-[BLOCK TEXT]
-A
-[BLOCK TEXT]
-B
-[BLOCK TEXT]
-C
-[BLOCK TEXT]
-D
-[BLOCK TEXT]
-In the opposite diagram, two atoms (x) and (y) of the same element 
-were excited to the same energy 
-[BLOCK TEXT]
-25
-[BLOCK TEXT]
-The energy of the emitted photon.
-[BLOCK TEXT]
-The time the atom spends at level (E1).
-[BLOCK TEXT]
-The speed of the emitted photon.
-[BLOCK TEXT]
-All of the above are identical for both atoms.
-[BLOCK TEXT]
-A
-[BLOCK TEXT]
-B
-[BLOCK TEXT]
-C
-[BLOCK TEXT]
-D
-[BLOCK TEXT]
-26
-Two atoms (1), (2) of the same element are excited to an energy level of
-[MATCHED Q] 26
-[BLOCK TEXT]
-lifetime 10-3 s, if a photon is emitted from each atom after being in that
-[BLOCK TEXT]
-level for an interval of 10-5 s, 10-3 s respectively, so the photon emitted
-[BLOCK TEXT]
-from:
-Atom (1)
-Atom (2)
-[BLOCK TEXT]
-A
-by an external photon
-by an external photon
-[BLOCK TEXT]
-B
-by an external photon
-without external stimulus
-[BLOCK TEXT]
-C
-without external stimulus
-by an external photon
-[BLOCK TEXT]
-D
-without external stimulus
-without external stimulus
-[BLOCK TEXT]
-Two spectra (x) and (y), spectrum (x) is laser, and spectrum (y) is 
-ordinary light. Each one is ana
-[BLOCK TEXT]
-27
-[BLOCK TEXT]
-A
-B
-C
-D
-[SAVE] page=192 file=q_25 num=24
-[SAVE] page=192 file=q_26 num=25
-[SAVE] page=192 file=q_27 num=26
-[SAVE] page=192 file=q_28 num=27
-
-=== PAGE 193 ===
-[BROKEN TOP DETECTED] False
-
---- TEXT SPLIT CHECK ---
-[BLOCK TEXT]
-193
-[BLOCK TEXT]
-The following shapes represent the energy levels of an atom, 
-Which one represents
-i. Absorbent stat
-[BLOCK TEXT]
-ii. Stimulated Emission State
-[BLOCK TEXT]
-iii. Spontaneous Emission status
+electric circuit containing two lamps 
+(x , y) if the filament of
 [BLOCK TEXT]
 28
 [BLOCK TEXT]
-(A)
+Ammeter reading 
+(A1)
+Ammeter reading (A2)
 [BLOCK TEXT]
-(B)
+A
+Decreases
+Decreases
 [BLOCK TEXT]
-(C)
+B
+Decreases
+Remains constant
 [BLOCK TEXT]
-(D)
+C
+Remains constant
+Increases
 [BLOCK TEXT]
-(A)
+d
+Increases
+Increases
 [BLOCK TEXT]
-(B)
+The opposite figure represents an electric circuit. If the conductors (X, 
+Y) are made of the same m
 [BLOCK TEXT]
-(C)
-[BLOCK TEXT]
-(D)
-[BLOCK TEXT]
-(A)
-[BLOCK TEXT]
-(B)
-[BLOCK TEXT]
-(C)
-[BLOCK TEXT]
-(D)
+30
 [BLOCK TEXT]
 A
 [BLOCK TEXT]
@@ -769,271 +281,129 @@ C
 [BLOCK TEXT]
 D
 [BLOCK TEXT]
-A
-[BLOCK TEXT]
-B
-[BLOCK TEXT]
-C
-[BLOCK TEXT]
-D
+L
+2A
+ρeL
 [BLOCK TEXT]
 A
+3ρeL
 [BLOCK TEXT]
-B
-[BLOCK TEXT]
-C
-[BLOCK TEXT]
-D
-[BLOCK TEXT]
-The opposite diagram shows the path of light rays from a regular 
-lamp. If the area (A1=A), then the
+2A
+3ρeL
 [BLOCK TEXT]
 A
 [BLOCK TEXT]
-B
+V
 [BLOCK TEXT]
-C
-[BLOCK TEXT]
-D
-[BLOCK TEXT]
-2
-3
-3
-4
-[BLOCK TEXT]
-A1
-A2
-[BLOCK TEXT]
-1
-3
-4
-9
-[BLOCK TEXT]
-The figure opposite shows the path of a laser beam. The relationship 
-between the intensity of the l
-[BLOCK TEXT]
-I1<I2
-I1=I2
-I1>I2
-There is no relation
-[BLOCK TEXT]
-A
-[BLOCK TEXT]
-B
-[BLOCK TEXT]
-C
-[BLOCK TEXT]
-D
-[SAVE] page=193 file=q_29 num=28
-[SAVE] page=193 file=q_30 num=28
-[SAVE] page=193 file=q_31 num=28
-[SAVE] page=193 file=q_32 num=29
-[SAVE] page=193 file=q_33 num=30
+I
+[FALLBACK] Using line split
+[SAVE] page=27 file=q_9 num=28
+[SAVE] page=27 file=q_10 num=29
+[SAVE] page=27 file=q_11 num=30
 
-=== PAGE 194 ===
-[BROKEN TOP DETECTED] False
+=== PAGE 28 ===
+[LAYOUT] UNKNOWN_LAYOUT
+[FALLBACK] Using text split
 
 --- TEXT SPLIT CHECK ---
 [BLOCK TEXT]
-194
+28
+Final Revision ch . 1
+[BLOCK TEXT]
+The opposite figure represents a section of a closed electric circuit 
+with a set of identical resis
 [BLOCK TEXT]
 31
 [BLOCK TEXT]
+1
+[BLOCK TEXT]
+2
+[BLOCK TEXT]
+3
+[BLOCK TEXT]
+4
+[BLOCK TEXT]
+A
+[BLOCK TEXT]
+B
+[BLOCK TEXT]
+C
+[BLOCK TEXT]
+D
+[BLOCK TEXT]
+v1
+v2
+[BLOCK TEXT]
+Which of the following graphs represents 
+the relation between the reading of the 
+voltmeter and the
+[BLOCK TEXT]
+In the opposite electric circuit, which 
+of the following graphs represents the 
+relationship 
+betwe
+[BLOCK TEXT]
 32
-[BLOCK TEXT]
-The opposite figure illustrates the relationship between radiation
-[BLOCK TEXT]
-intensity and wavelength for two light sources.
-[BLOCK TEXT]
-Which rows in the following table represent gas lasers and solid-crystal
-[BLOCK TEXT]
-lasers in terms of energy source and resonant cavity?
-[BLOCK TEXT]
-Curve (A)
-Curve (B)
-[BLOCK TEXT]
-A
-Ordinary lamp
-Laser
-[BLOCK TEXT]
-B
-Laser
-Ordinary lamp
-[BLOCK TEXT]
-C
-Ordinary lamp
-Ordinary lamp
-[BLOCK TEXT]
-D
-Laser
-Laser
-[BLOCK TEXT]
-Gas Laser
-Crystal Laser
-[BLOCK TEXT]
-Resonant 
-cavity
-Energy 
-Source
-Resonant 
-cavity
-Energy 
-Source
-A
-Internal
-Electrical
-External
-Light
-[BLOCK TEXT]
-B
-External
-Electrical
-Internal
-Light
-[BLOCK TEXT]
-C
-External
-Chemical
-External
-Thermal
-[BLOCK TEXT]
-D
-Internal
-Chemical
-Internal
-Thermal
-[BLOCK TEXT]
-The figure represents the beams emitted from a red laser light 
-source and a white glowing light sou
-[BLOCK TEXT]
-ii. Which light source that produces light obeys the inverse 
-square law?
 [BLOCK TEXT]
 33
 [BLOCK TEXT]
-Both sources produce beams of equal parallel.
-[BLOCK TEXT]
-White glowing light source
-[BLOCK TEXT]
-Red laser light source
-[BLOCK TEXT]
-Both sources produce beams of equal parallel.
-[BLOCK TEXT]
-White glowing light source
-[BLOCK TEXT]
-Red laser light source
+A
+B
+C
+D
 [BLOCK TEXT]
 A
-[BLOCK TEXT]
 B
-[BLOCK TEXT]
 C
-[BLOCK TEXT]
-A
-[BLOCK TEXT]
-B
-[BLOCK TEXT]
-C
-[SAVE] page=194 file=q_34 num=31
-[SAVE] page=194 file=q_35 num=32
-[SAVE] page=194 file=q_36 num=33
-[SAVE] page=194 file=q_37 num=33
+D
+[FALLBACK] Using line split
+[SAVE] page=28 file=q_12 num=31
+[SAVE] page=28 file=q_13 num=32
+[SAVE] page=28 file=q_14 num=33
 
-=== PAGE 195 ===
-[BROKEN TOP DETECTED] False
+=== PAGE 29 ===
+[LAYOUT] UNKNOWN_LAYOUT
+[FALLBACK] Using text split
 
 --- TEXT SPLIT CHECK ---
 [BLOCK TEXT]
-195
+29
+Final Revision ch . 1
 [BLOCK TEXT]
-The opposite figure shows an excited 
-atom at energy level E1 Which of 
-the 
-following 
-statements 
-
-[BLOCK TEXT]
-34
-[BLOCK TEXT]
-The atom spontaneously transitions from energy level E1 to
-[BLOCK TEXT]
-energy level E0 and produces a photon with energy E1-E0
-A photon with energy E1-E0 falls on the exci
-[BLOCK TEXT]
-it to emit a photon with energy greater than E1-E0 and absorb
-[BLOCK TEXT]
-the incident photon
-[BLOCK TEXT]
-A photon with energy E1-E0 falls on an excited atom, causing
-[BLOCK TEXT]
-it to emit a photon with energy equal to E1-E0, which moves in
-[BLOCK TEXT]
-phase with the incident photon.
-[BLOCK TEXT]
-A photon with energy E1-E0 falls on the excited atom, causing
-[BLOCK TEXT]
-it to emit a photon with energy lower than E1-E0, and it moves
-[BLOCK TEXT]
-in phase with the incident photon.
+In which of the following electric circuits does the voltmeter reading 
+increase when the variable r
 [BLOCK TEXT]
 A
-[BLOCK TEXT]
 B
-[BLOCK TEXT]
 C
-[BLOCK TEXT]
 D
+[BLOCK TEXT]
+Which of the following electric circuits 
+represents the relation between the 
+reading of the ammete
 [BLOCK TEXT]
 35
-The diagram illustrates four energy levels for the atoms of the active
-[MATCHED Q] 35
 [BLOCK TEXT]
-medium in a laser. If level E2 is the meta stable energy level, then the
-[BLOCK TEXT]
-possible combination that describes the lifetimes of the electrons in
-[BLOCK TEXT]
-energy levels E1, E2, and E3 for the laser system is
-[BLOCK TEXT]
-Lifetime
-E1
-E2
-E3
 A
-First group
-10-8 s
-10-6 s
-10-8 s
-[BLOCK TEXT]
 B
-Second 
-group
-10-3 s
-10-3 s
-10-8 s
-[BLOCK TEXT]
 C
-Third group
-10-2 s
-10-2 s
-10-8 s
-[BLOCK TEXT]
 D
-Forth group
-10-8 s
-10-3 s
-10-9 s
 [BLOCK TEXT]
-Helium atoms transition from the E0 energy level to the E3 energy 
-level due to
+In the opposite electric circuit, if the ratio between the two current
+[BLOCK TEXT]
+intensities (    =   ) , the ratio between the readings of the two voltmeters
+[BLOCK TEXT]
+(    ) equals…
+[BLOCK TEXT]
 36
 [BLOCK TEXT]
-Electrical energy
+1/2
 [BLOCK TEXT]
-Thermal energy
+1/4
 [BLOCK TEXT]
-Chemical energy
+3/8
 [BLOCK TEXT]
-Light energy
+5/8
 [BLOCK TEXT]
 A
 [BLOCK TEXT]
@@ -1042,117 +412,96 @@ B
 C
 [BLOCK TEXT]
 D
-[SAVE] page=195 file=q_38 num=34
-[SAVE] page=195 file=q_39 num=35
-[SAVE] page=195 file=q_40 num=36
-
-=== PAGE 196 ===
-[BROKEN TOP DETECTED] True
-
---- TEXT SPLIT CHECK ---
 [BLOCK TEXT]
-196
+I1
+I2
 [BLOCK TEXT]
-The diagram shows the components of a helium-neon (Ne-He) laser 
-device components 1, 2, 3, 4 and 5.
+3
+4
+v1
+v2
+[BLOCK TEXT]
+In the opposite electric circuit, how will the brightness of the lightbulb 
+and the reading of the  
 [BLOCK TEXT]
 37
 [BLOCK TEXT]
-1, 2
-[BLOCK TEXT]
-4, 5
-[BLOCK TEXT]
-1, 4
-[BLOCK TEXT]
-3, 5
-[BLOCK TEXT]
-Reflective mirror
-[BLOCK TEXT]
-Semi-transparent mirror
-[BLOCK TEXT]
-Both mirrors
-[BLOCK TEXT]
-All directions
-[BLOCK TEXT]
-1
-[BLOCK TEXT]
-2
-[BLOCK TEXT]
-3
-[BLOCK TEXT]
-4
-[BLOCK TEXT]
-5
-[BLOCK TEXT]
-1
-[BLOCK TEXT]
-2
-[BLOCK TEXT]
-3
-[BLOCK TEXT]
-4
-[BLOCK TEXT]
-5
-[BLOCK TEXT]
-1
-[BLOCK TEXT]
-2
-[BLOCK TEXT]
-3
-[BLOCK TEXT]
-4
+the brightness of 
+the bulb
+ the reading of the  
+voltmeter
 [BLOCK TEXT]
 A
+Increases 
+Decreases
 [BLOCK TEXT]
 B
+Increases
+Increases
 [BLOCK TEXT]
 C
+Remains unchanged 
+Decreases
 [BLOCK TEXT]
-D
+d
+Remains unchanged
+Increases
+[FALLBACK] Using line split
+[SAVE] page=29 file=q_15 num=34
+[SAVE] page=29 file=q_16 num=35
+[SAVE] page=29 file=q_17 num=36
+[SAVE] page=29 file=q_18 num=37
+
+=== PAGE 30 ===
+[LAYOUT] UNKNOWN_LAYOUT
+[FALLBACK] Using text split
+
+--- TEXT SPLIT CHECK ---
 [BLOCK TEXT]
-A
+30
+Final Revision ch . 1
 [BLOCK TEXT]
-B
-[BLOCK TEXT]
-C
-[BLOCK TEXT]
-D
-[BLOCK TEXT]
-A
-[BLOCK TEXT]
-B
-[BLOCK TEXT]
-C
-[BLOCK TEXT]
-D
-[BLOCK TEXT]
-The opposite diagram shows the structure of a helium-neon laser 
-device where it emits a beam of
-i. 
-[BLOCK TEXT]
-The diagram illustrates the structure of a (helium-neon) laser 
-device.
-i. Which of the parts shown 
-[BLOCK TEXT]
-ii. Which of the component shown in the figure represents the 
-component through which the laser bea
-[BLOCK TEXT]
-ii. Which of the photons continues its movement between the two 
-mirrors and amplifies the laser bea
+In the opposite electric circuit, the resistors R1 , R2 , R3 and R4 are 
+different, and the voltmete
 [BLOCK TEXT]
 38
+[BLOCK TEXT]
+R1R4= R2R3
+[BLOCK TEXT]
+R1R2 = R3R4
+R1R3 = R2R4
+[BLOCK TEXT]
+All the previous.
+[BLOCK TEXT]
+A
+[BLOCK TEXT]
+B
+[BLOCK TEXT]
+C
+[BLOCK TEXT]
+D
+[BLOCK TEXT]
+In which of the following electric circuits is the ammeter reading the 
+largest? 
+(Knowing that: All
 [BLOCK TEXT]
 39
 [BLOCK TEXT]
 A
-[BLOCK TEXT]
 B
-[BLOCK TEXT]
 C
-[BLOCK TEXT]
 D
 [BLOCK TEXT]
-E
+In the opposite electric circuit, the ratio between the readings
+of the two ammeters (   )equals……..
+[BLOCK TEXT]
+1/2
+[BLOCK TEXT]
+4/5
+[BLOCK TEXT]
+1/1
+[BLOCK TEXT]
+5/4
 [BLOCK TEXT]
 A
 [BLOCK TEXT]
@@ -1162,657 +511,151 @@ C
 [BLOCK TEXT]
 D
 [BLOCK TEXT]
-E
-[SAVE] page=196 file=q_41 num=37
-[SAVE] page=196 file=q_42 num=1
-[SAVE] page=196 file=q_43 num=1
-[SAVE] page=196 file=q_44 num=1
-[SAVE] page=196 file=q_45 num=1
-
-=== PAGE 197 ===
-[BROKEN TOP DETECTED] False
-
---- TEXT SPLIT CHECK ---
-[BLOCK TEXT]
-197
-[BLOCK TEXT]
-Quartz Glass
-[BLOCK TEXT]
-Soda Glass
-[BLOCK TEXT]
-Feldspar Glass
-[BLOCK TEXT]
-Mica Glass
-[BLOCK TEXT]
-Collision of photons with (He) atoms
-[BLOCK TEXT]
-Collision of electric field electrons with (He) atoms
-[BLOCK TEXT]
-Collision of photon with Laser Photons
-[BLOCK TEXT]
-Collision of (He) atoms with (Ne) atoms
-[BLOCK TEXT]
-Neon
-[BLOCK TEXT]
-Helium
-[BLOCK TEXT]
-Helium and Neon
-[BLOCK TEXT]
-No correct answer
-[BLOCK TEXT]
-iii. What does the component (2) consist of?
-[BLOCK TEXT]
-iv. Helium atoms are excited by
-[BLOCK TEXT]
-v. The material responsible for producing the laser in a helium-
-neon laser is
-[BLOCK TEXT]
-vi. If the volume of helium and neon inside tube is H, then the 
-amount of helium inside the tube is
-[BLOCK TEXT]
-A
-[BLOCK TEXT]
-B
-[BLOCK TEXT]
-C
-[BLOCK TEXT]
-D
-[BLOCK TEXT]
-A
-[BLOCK TEXT]
-B
-[BLOCK TEXT]
-C
-[BLOCK TEXT]
-D
-[BLOCK TEXT]
-A
-[BLOCK TEXT]
-B
-[BLOCK TEXT]
-C
-[BLOCK TEXT]
-D
-[BLOCK TEXT]
-A
-[BLOCK TEXT]
-B
-[BLOCK TEXT]
-C
-[BLOCK TEXT]
-D
-[BLOCK TEXT]
-H
-10
-[BLOCK TEXT]
-H
-11
-10 H
-[BLOCK TEXT]
-11
-9 H
-[BLOCK TEXT]
-10
-[BLOCK TEXT]
-a
-[BLOCK TEXT]
-b
-[BLOCK TEXT]
-c
-[BLOCK TEXT]
-d
-[BLOCK TEXT]
-k
-[BLOCK TEXT]
-The figure opposite shows some transitions a, b, c, d and k in a 
-laser (Helium-Neon), the transitio
-[BLOCK TEXT]
-40
-[BLOCK TEXT]
-A
-[BLOCK TEXT]
-B
-[BLOCK TEXT]
-C
-[BLOCK TEXT]
-D
-[BLOCK TEXT]
-E
-[SAVE] page=197 file=q_46 num=10
-[SAVE] page=197 file=q_47 num=10
-[SAVE] page=197 file=q_48 num=10
-[SAVE] page=197 file=q_49 num=10
-[SAVE] page=197 file=q_50 num=40
-
-=== PAGE 198 ===
-[BROKEN TOP DETECTED] False
-
---- TEXT SPLIT CHECK ---
-[BLOCK TEXT]
-198
-[BLOCK TEXT]
-a
-[BLOCK TEXT]
-b
-[BLOCK TEXT]
-c
-[BLOCK TEXT]
-d
-[BLOCK TEXT]
-k
-[BLOCK TEXT]
-a
-[BLOCK TEXT]
-b
-[BLOCK TEXT]
-c
-[BLOCK TEXT]
-d
-[BLOCK TEXT]
-k
-[BLOCK TEXT]
-ii. In neon after the laser beam exits
-[BLOCK TEXT]
-iii. After helium collides with neon
-[BLOCK TEXT]
-A
-[BLOCK TEXT]
-B
-[BLOCK TEXT]
-C
-[BLOCK TEXT]
-D
-[BLOCK TEXT]
-E
-[BLOCK TEXT]
-A
-[BLOCK TEXT]
-B
-[BLOCK TEXT]
-C
-[BLOCK TEXT]
-D
-[BLOCK TEXT]
-E
-[BLOCK TEXT]
-(1)
-[BLOCK TEXT]
-(2)
-[BLOCK TEXT]
-(3)
-[BLOCK TEXT]
-(4)
-[BLOCK TEXT]
-1
-[BLOCK TEXT]
-2
-[BLOCK TEXT]
-3
-[BLOCK TEXT]
-4
-[BLOCK TEXT]
-1
-[BLOCK TEXT]
-2
-[BLOCK TEXT]
-3
-[BLOCK TEXT]
-4
-[BLOCK TEXT]
-1
-[BLOCK TEXT]
-2
-[BLOCK TEXT]
-3
-[BLOCK TEXT]
-4
-[BLOCK TEXT]
-A
-[BLOCK TEXT]
-B
-[BLOCK TEXT]
-C
-[BLOCK TEXT]
-D
-[BLOCK TEXT]
-A
-[BLOCK TEXT]
-B
-[BLOCK TEXT]
-C
-[BLOCK TEXT]
-D
-[BLOCK TEXT]
-A
-[BLOCK TEXT]
-B
-[BLOCK TEXT]
-C
-[BLOCK TEXT]
-D
-[BLOCK TEXT]
-A
-[BLOCK TEXT]
-B
-[BLOCK TEXT]
-C
-[BLOCK TEXT]
-D
-[BLOCK TEXT]
-The following diagram illustrates the interaction of a photon or 
-electron incident on the surface o
-[BLOCK TEXT]
-ii. The photoelectric effect
-[BLOCK TEXT]
-iii. X-ray Production
-[BLOCK TEXT]
-iv. Laser Production
+A1
+A2
+[BLOCK TEXT]
+In the opposite electric circuit, a current of intensity I1 passes through 
+the battery. When switch
 [BLOCK TEXT]
 41
-[SAVE] page=198 file=q_51 num=0
-[SAVE] page=198 file=q_52 num=0
-[SAVE] page=198 file=q_53 num=1
-[SAVE] page=198 file=q_54 num=1
-[SAVE] page=198 file=q_55 num=1
-[SAVE] page=198 file=q_56 num=1
+[BLOCK TEXT]
+I1>I2>I3
+I3>I2>I1
+I2>I3>I1
+I2>I1>I3
+[BLOCK TEXT]
+A
+[BLOCK TEXT]
+B
+[BLOCK TEXT]
+C
+[BLOCK TEXT]
+D
+[FALLBACK] Using line split
+[SAVE] page=30 file=q_19 num=38
+[SAVE] page=30 file=q_20 num=39
+[SAVE] page=30 file=q_21 num=40
+[SAVE] page=30 file=q_22 num=41
 
-=== PAGE 199 ===
-[BROKEN TOP DETECTED] True
-
---- TEXT SPLIT CHECK ---
-[BLOCK TEXT]
-199
-[BLOCK TEXT]
-(1)
-[BLOCK TEXT]
-(2)
-[BLOCK TEXT]
-(3)
-[BLOCK TEXT]
-(4)
-[BLOCK TEXT]
-1
-[BLOCK TEXT]
-2
-[BLOCK TEXT]
-3
-[BLOCK TEXT]
-4
-[BLOCK TEXT]
-1
-[BLOCK TEXT]
-2
-[BLOCK TEXT]
-3
-[BLOCK TEXT]
-4
-[BLOCK TEXT]
-1
-[BLOCK TEXT]
-2
-[BLOCK TEXT]
-3
-[BLOCK TEXT]
-4
-[BLOCK TEXT]
-1
-[BLOCK TEXT]
-2
-[BLOCK TEXT]
-3
-[BLOCK TEXT]
-4
-[BLOCK TEXT]
-A
-[BLOCK TEXT]
-B
-[BLOCK TEXT]
-C
-[BLOCK TEXT]
-D
-[BLOCK TEXT]
-A
-[BLOCK TEXT]
-B
-[BLOCK TEXT]
-C
-[BLOCK TEXT]
-D
-[BLOCK TEXT]
-A
-[BLOCK TEXT]
-B
-[BLOCK TEXT]
-C
-[BLOCK TEXT]
-D
-[BLOCK TEXT]
-A
-[BLOCK TEXT]
-B
-[BLOCK TEXT]
-C
-[BLOCK TEXT]
-D
-[BLOCK TEXT]
-A
-[BLOCK TEXT]
-B
-[BLOCK TEXT]
-C
-[BLOCK TEXT]
-D
-[BLOCK TEXT]
-v. The medium is in a state of excitation
-[BLOCK TEXT]
-vi. The energy of the incident photon is in the X-ray range
-[BLOCK TEXT]
-vii. The energy of the incident photon is in the visible light range
-[BLOCK TEXT]
-vii. The energy of the incident photon is in the visible light range
-[BLOCK TEXT]
-viii. In which processes is the law of conservation of momentum 
-satisfied?
-[SAVE] page=199 file=q_57 num=1
-[SAVE] page=199 file=q_58 num=1
-[SAVE] page=199 file=q_59 num=1
-[SAVE] page=199 file=q_60 num=1
-[SAVE] page=199 file=q_61 num=1
-
-=== PAGE 200 ===
-[BROKEN TOP DETECTED] False
+=== PAGE 31 ===
+[LAYOUT] UNKNOWN_LAYOUT
+[FALLBACK] Using text split
 
 --- TEXT SPLIT CHECK ---
 [BLOCK TEXT]
-200
+31
+Final Revision ch . 1
 [BLOCK TEXT]
-The following figures represent a diagram of a helium-neon laser 
-device. Which one produces the hig
+In the opposite electric circuit, the ammeter reading when the three 
+switches (K1 , K2 and K3) are 
+[BLOCK TEXT]
+In the opposite electric circuit, three identical electric bulbs are glowing, 
+so when switch K is c
 [BLOCK TEXT]
 42
 [BLOCK TEXT]
 43
-The following figure illustrates the production of laser from (He-Ne)
-[MATCHED Q] 43
 [BLOCK TEXT]
-gas. Which of the following choices represents the atom that is excited
+K1 , K2 and K3 
+K1 only
 [BLOCK TEXT]
-through collisions and the electronic transition resulting from the
+K1 or K3
 [BLOCK TEXT]
-electric discharge?
+K2 or K3
 [BLOCK TEXT]
-The atom 
-excited by 
-collisions
+remains unchanged
 [BLOCK TEXT]
-The transition 
-resulting from 
-electric discharge
+decreases
+[BLOCK TEXT]
+vanishes
+[BLOCK TEXT]
+increases
+[BLOCK TEXT]
 A
-Atom (X)
-Transition (1)
 [BLOCK TEXT]
 B
-Atom (Y)
-Transition (1)
 [BLOCK TEXT]
 C
-Atom (Y)
-Transition (3)
 [BLOCK TEXT]
 D
-Atom (X)
-Transition (3)
-[SAVE] page=200 file=q_62 num=42
-[SAVE] page=200 file=q_63 num=43
+[BLOCK TEXT]
+A
+[BLOCK TEXT]
+B
+[BLOCK TEXT]
+C
+[BLOCK TEXT]
+D
+[BLOCK TEXT]
+In which of the following electric circuits does the lightbulb brightness 
+decrease when switch K is
+[BLOCK TEXT]
+A
+B
+C
+D
+[BLOCK TEXT]
+In the opposite electric circuit, when the switch K is closed, so the 
+readings of the ammeter and v
+[BLOCK TEXT]
+Voltmeter reading (V)
+Ammeter reading (I)
+[BLOCK TEXT]
+A
+Increases
+Decreases
+[BLOCK TEXT]
+B
+Decreases
+Decreases
+[BLOCK TEXT]
+C
+Decreases 
+Increases
+[BLOCK TEXT]
+d
+Increases
+Increases
+[FALLBACK] Using line split
+[SAVE] page=31 file=q_23 num=42
+[SAVE] page=31 file=q_24 num=43
+[SAVE] page=31 file=q_25 num=44
+[SAVE] page=31 file=q_26 num=45
 
-=== PAGE 201 ===
-[BROKEN TOP DETECTED] False
-
---- TEXT SPLIT CHECK ---
-[BLOCK TEXT]
-201
-[BLOCK TEXT]
-44
-The opposite figure illustrates the process of laser photon production
-[MATCHED Q] 44
-[BLOCK TEXT]
-from a (He, Ne) gas. Which choice can represent transitions (2) and (3)
-[BLOCK TEXT]
-when a photon falls on an excited neon atom?
-[BLOCK TEXT]
-Transition (2)
-Transition (3)
-[BLOCK TEXT]
-A
-Excitation of Neon 
-atoms
-production of 
-incoherent photons
-B
-Stimulated 
-emission of Neon 
-atoms
-[BLOCK TEXT]
-production of coherent 
-photons
-[BLOCK TEXT]
-C
-Stimulated 
-emission of Neon 
-atoms
-[BLOCK TEXT]
-production of 
-incoherent photons
-[BLOCK TEXT]
-D
-Excitation of Neon 
-atoms
-production of coherent 
-photons
-[BLOCK TEXT]
-Increasing the reflectivity of the semitransparent mirror slightly 
-will lead to all of the followin
-[BLOCK TEXT]
-The opposite figure represents 
-the 
-amplification 
-laser 
-photons. Which of the following 
-statemen
-[BLOCK TEXT]
-45
-[BLOCK TEXT]
-46
-[BLOCK TEXT]
-Increasing the number of successive reflections inside the
-[BLOCK TEXT]
-resonant cavity
-[BLOCK TEXT]
-Increasing the path length of the photons inside the cavity
-[BLOCK TEXT]
-Increasing the intensity of laser radiation inside the cavity
-[BLOCK TEXT]
-Decreasing the thermal energy absorbed by the tube wall
-[BLOCK TEXT]
-Each photon reflected by the mirrors generates a new photon with
-[BLOCK TEXT]
-the same frequency and direction.
-[BLOCK TEXT]
-The reflectivity of the semi-transparent mirror is effective in
-[BLOCK TEXT]
-determining the radiation intensity.
-[BLOCK TEXT]
-The photon emitted from the semi-transparent mirror has a higher
-[BLOCK TEXT]
-frequency than the reflected photon.
-[BLOCK TEXT]
-Spontaneous emission occurs for some atoms during the laser
-[BLOCK TEXT]
-production process.
-[BLOCK TEXT]
-A
-[BLOCK TEXT]
-B
-[BLOCK TEXT]
-C
-[BLOCK TEXT]
-D
-[BLOCK TEXT]
-A
-[BLOCK TEXT]
-B
-[BLOCK TEXT]
-C
-[BLOCK TEXT]
-D
-[SAVE] page=201 file=q_64 num=44
-[SAVE] page=201 file=q_65 num=45
-[SAVE] page=201 file=q_66 num=46
-
-=== PAGE 202 ===
-[BROKEN TOP DETECTED] False
+=== PAGE 32 ===
+[LAYOUT] UNKNOWN_LAYOUT
+[FALLBACK] Using text split
 
 --- TEXT SPLIT CHECK ---
 [BLOCK TEXT]
-202
+32
+Final Revision ch . 1
 [BLOCK TEXT]
-In the laser production process, four atoms are excited to the 
-energy level (N), which is a meta-st
+Lesson 3
 [BLOCK TEXT]
-47
+In the opposite electric circuit, if the resistance of each bulb is 2r, where 
+r is the internal res
 [BLOCK TEXT]
-The electron that spent t1 = 55 x 10-5 s in the meta-stable energy
+ii) The voltmeter reading when the filament of one of the two bulbs burns 
+out equals…..
 [BLOCK TEXT]
-level
+VB
 [BLOCK TEXT]
-The electron that spent t2 = 65 x 10-5 s in the meta-stable energy
+VB
 [BLOCK TEXT]
-level
+VB
 [BLOCK TEXT]
-The electron that spent t3 = 75 x 10-5 s in the meta -stable energy
+VB
 [BLOCK TEXT]
-level
+VB
 [BLOCK TEXT]
-The electron that spent t4 = 85 x 10-5 s in the meta -stable energy
+VB
 [BLOCK TEXT]
-level
+VB
 [BLOCK TEXT]
-A
+VB
 [BLOCK TEXT]
-B
-[BLOCK TEXT]
-C
-[BLOCK TEXT]
-D
-[BLOCK TEXT]
-The monochromaticity of laser rays is due to the fact that
-48
-[BLOCK TEXT]
-all the atoms of the active medium get excited to one unstable
-[BLOCK TEXT]
-energy level
-[BLOCK TEXT]
-all the atoms of the active medium are in the ground energy level
-[BLOCK TEXT]
-all the emitted photons by stimulated emission have the same
-[BLOCK TEXT]
-energy
-[BLOCK TEXT]
-all the emitted photons are amplified when they pass between the
-[BLOCK TEXT]
-two reflecting mirrors
-[BLOCK TEXT]
-A
-[BLOCK TEXT]
-B
-[BLOCK TEXT]
-C
-[BLOCK TEXT]
-D
-[BLOCK TEXT]
-The opposite diagram represents a helium-neon laser device. 
-Which component of the diagram represen
-[BLOCK TEXT]
-49
-[BLOCK TEXT]
-Component (1).
-[BLOCK TEXT]
-Component (2).
-[BLOCK TEXT]
-Component (3).
-[BLOCK TEXT]
-Components (1), (2).
-[BLOCK TEXT]
-A
-[BLOCK TEXT]
-B
-[BLOCK TEXT]
-C
-[BLOCK TEXT]
-D
-[SAVE] page=202 file=q_67 num=47
-[SAVE] page=202 file=q_68 num=48
-[SAVE] page=202 file=q_69 num=49
-
-=== PAGE 203 ===
-[BROKEN TOP DETECTED] True
-
---- TEXT SPLIT CHECK ---
-[BLOCK TEXT]
-203
-[BLOCK TEXT]
-The opposite figure shows the structure of helium-neon laser, 
-if the laser beam is emitted from mir
-[BLOCK TEXT]
-The opposite figure represents a helium-neon laser, so when 
-component (x) stops working
-[BLOCK TEXT]
-The opposite schematic diagram shows a helium-neon gas laser in 
-which four photons (A, B, C and D) 
-[BLOCK TEXT]
-The opposite graph represents the relation between the path 
-difference and the phase difference for
-[BLOCK TEXT]
-50
-[BLOCK TEXT]
-51
-[BLOCK TEXT]
-52
-[BLOCK TEXT]
-53
-[BLOCK TEXT]
-greater
-[BLOCK TEXT]
-less
-[BLOCK TEXT]
-equal
-[BLOCK TEXT]
-cannot be determined
-[BLOCK TEXT]
-the emitted radiation intensity decreases
-[BLOCK TEXT]
-the radiation frequency decreases
-[BLOCK TEXT]
-the emitted radiation speed decreases
-[BLOCK TEXT]
-no laser beam is generated
-[BLOCK TEXT]
-Photon A
-[BLOCK TEXT]
-Photon B
-[BLOCK TEXT]
-Photon C
-[BLOCK TEXT]
-Photon D
-[BLOCK TEXT]
-694.7 nm
-[BLOCK TEXT]
-632.8 nm
-[BLOCK TEXT]
-347.3 nm
-[BLOCK TEXT]
-781.5 nm
+1
 [BLOCK TEXT]
 A
 [BLOCK TEXT]
@@ -1830,377 +673,135 @@ C
 [BLOCK TEXT]
 D
 [BLOCK TEXT]
-A
+1
 [BLOCK TEXT]
-B
+5
 [BLOCK TEXT]
-C
+1
 [BLOCK TEXT]
-D
-[BLOCK TEXT]
-A
-[BLOCK TEXT]
-B
-[BLOCK TEXT]
-C
-[BLOCK TEXT]
-D
-[SAVE] page=203 file=q_70 num=50
-[SAVE] page=203 file=q_71 num=51
-[SAVE] page=203 file=q_72 num=52
-[SAVE] page=203 file=q_73 num=53
-
-=== PAGE 204 ===
-[BROKEN TOP DETECTED] False
-
---- TEXT SPLIT CHECK ---
-[BLOCK TEXT]
-204
-[BLOCK TEXT]
-From the basic components of the laser is using energy sources 
-to excite the atoms of the active me
-[BLOCK TEXT]
-54
-[BLOCK TEXT]
-Statement (1)
-[BLOCK TEXT]
-Statement (1, 2)
-[BLOCK TEXT]
-Statement (1, 3)
-[BLOCK TEXT]
-Statement (2, 3)
-[BLOCK TEXT]
-A
-[BLOCK TEXT]
-B
-[BLOCK TEXT]
-C
-[BLOCK TEXT]
-D
-[BLOCK TEXT]
-The opposite figure shows the structure of the helium-neon laser. 
-When the device is turned on, a l
-[BLOCK TEXT]
-The optical pumping process in the laser aims to achieve
-[BLOCK TEXT]
-The following statements are correct for producing a laser beam 
-except
-[BLOCK TEXT]
-55
-[BLOCK TEXT]
-57
-[BLOCK TEXT]
-56
-[BLOCK TEXT]
-A mirror with 99.5% reflectivity
-[BLOCK TEXT]
-A semi-transparent mirror with 98% reflectivity
-[BLOCK TEXT]
-A transparent glass plate
-[BLOCK TEXT]
-An opaque surface
-[BLOCK TEXT]
-the stable state
-[BLOCK TEXT]
-the population inversion state
-[BLOCK TEXT]
-the equilibrium state
-[BLOCK TEXT]
-the amplification of the laser beam
-[BLOCK TEXT]
-the spontaneous emission takes place in some atoms during the
-[BLOCK TEXT]
-production process
-[BLOCK TEXT]
-the intensity of a laser beam changes according to the refractive
-[BLOCK TEXT]
-index of the semi-transparent mirror
-[BLOCK TEXT]
-the production of laser doesn’t require an external source of energy
-[BLOCK TEXT]
-the active medium atoms in a laser contain a metastable state
-[BLOCK TEXT]
-A
-[BLOCK TEXT]
-B
-[BLOCK TEXT]
-C
-[BLOCK TEXT]
-D
-[BLOCK TEXT]
-A
-[BLOCK TEXT]
-B
-[BLOCK TEXT]
-C
-[BLOCK TEXT]
-D
-[BLOCK TEXT]
-A
-[BLOCK TEXT]
-B
-[BLOCK TEXT]
-C
-[BLOCK TEXT]
-D
-[SAVE] page=204 file=q_74 num=54
-[SAVE] page=204 file=q_75 num=0
-[SAVE] page=204 file=q_76 num=56
-[SAVE] page=204 file=q_77 num=57
-
-=== PAGE 205 ===
-[BROKEN TOP DETECTED] False
-
---- TEXT SPLIT CHECK ---
-[BLOCK TEXT]
-205
-[BLOCK TEXT]
-In laser action, the step that follows the pumping process is the 
-achievement of
-[BLOCK TEXT]
-The opposite figure shows how the hologram 
-image is formed. From the figure, the image 
-formed on t
-[BLOCK TEXT]
-58
-[BLOCK TEXT]
-60
-[BLOCK TEXT]
-the stable state
-[BLOCK TEXT]
-the population inversion state
-[BLOCK TEXT]
-the equilibrium state of atoms
-[BLOCK TEXT]
-the amplification of the laser beam
-[BLOCK TEXT]
-A two-dimensional colored image
-[BLOCK TEXT]
-A Coded image in the form of interference fringes between
-[BLOCK TEXT]
-beams B and C
-[BLOCK TEXT]
-A Coded image in the form of interference fringes between
-[BLOCK TEXT]
-beams A and B
-[BLOCK TEXT]
-A three-dimensional colored image
-[BLOCK TEXT]
-A
-[BLOCK TEXT]
-B
-[BLOCK TEXT]
-C
-[BLOCK TEXT]
-D
-[BLOCK TEXT]
-A
-[BLOCK TEXT]
-B
-[BLOCK TEXT]
-C
-[BLOCK TEXT]
-D
-[BLOCK TEXT]
-59
-In holography, the reference beams and the reflected beams from the
-[MATCHED Q] 59
-[BLOCK TEXT]
-surface of the object
-[BLOCK TEXT]
-Similar in
-different
-[BLOCK TEXT]
-A
-Light intensity and phase
-Wavelength
-[BLOCK TEXT]
-B
-Wavelength
-Wavelength
-[BLOCK TEXT]
-C
-Light intensity and phase
-Light intensity and phase
-[BLOCK TEXT]
-D
-Wavelength
-Light intensity and phase
-[BLOCK TEXT]
-For a laser beam in holography, if the phase difference between 
-rays reflected from two points on t
-[BLOCK TEXT]
-61
-[BLOCK TEXT]
-A
-[BLOCK TEXT]
-B
-[BLOCK TEXT]
-C
-[BLOCK TEXT]
-D
-[BLOCK TEXT]
-λ
 4
-λ
+[BLOCK TEXT]
+4
+[BLOCK TEXT]
+5
+[BLOCK TEXT]
+4
+[BLOCK TEXT]
+5
+[BLOCK TEXT]
+3
+[BLOCK TEXT]
+4
+[BLOCK TEXT]
+5
+[BLOCK TEXT]
+4
+[BLOCK TEXT]
+5
+[BLOCK TEXT]
+6
+[BLOCK TEXT]
+In the opposite electric circuit, if the pointer of the galvanometer settles 
+at zero, the reading o
+[BLOCK TEXT]
+A battery of electromotive force 18 V is connected to two identical 
+electric bulbs that are connect
+[BLOCK TEXT]
 2
 [BLOCK TEXT]
-4λ
+3
 [BLOCK TEXT]
-2λ
-[SAVE] page=205 file=q_78 num=58
-[SAVE] page=205 file=q_79 num=59
-[SAVE] page=205 file=q_80 num=60
-[SAVE] page=205 file=q_81 num=61
+3.5 A
+[BLOCK TEXT]
+2.5 A
+[BLOCK TEXT]
+2 A
+[BLOCK TEXT]
+1.5 A
+[BLOCK TEXT]
+0.25 Ω
+[BLOCK TEXT]
+0.5 Ω
+[BLOCK TEXT]
+0.75 Ω
+[BLOCK TEXT]
+1 Ω
+[BLOCK TEXT]
+A
+[BLOCK TEXT]
+B
+[BLOCK TEXT]
+C
+[BLOCK TEXT]
+D
+[BLOCK TEXT]
+A
+[BLOCK TEXT]
+B
+[BLOCK TEXT]
+C
+[BLOCK TEXT]
+D
+[FALLBACK] Using line split
+[SAVE] page=32 file=q_27 num=1
+[SAVE] page=32 file=q_28 num=1
+[SAVE] page=32 file=q_29 num=2
+[SAVE] page=32 file=q_30 num=3
 
-=== PAGE 206 ===
-[BROKEN TOP DETECTED] True
-
---- TEXT SPLIT CHECK ---
-[BLOCK TEXT]
-206
-[BLOCK TEXT]
-The opposite figure represents two rays reflected from the surface 
-of the object in holography. The
-[BLOCK TEXT]
-Laser beams are used in the treatment of retinal detachment 
-because the laser
-[BLOCK TEXT]
-The process of measuring long distances using laser rays depends 
-on the property
-[BLOCK TEXT]
-The laser is used in healing the retina detachment in the eye 
-depending on
-[BLOCK TEXT]
-62
-[BLOCK TEXT]
-63
-[BLOCK TEXT]
-64
-[BLOCK TEXT]
-65
-[BLOCK TEXT]
-2 π
-[BLOCK TEXT]
-3 π
-[BLOCK TEXT]
-4 π
-[BLOCK TEXT]
-8 π
-[BLOCK TEXT]
-Is monochromatic
-[BLOCK TEXT]
-obeys the inverse square law
-[BLOCK TEXT]
-Has the same phase
-[BLOCK TEXT]
-Has high energy
-[BLOCK TEXT]
-the spectral purity of the laser
-[BLOCK TEXT]
-the collimation of laser rays
-[BLOCK TEXT]
-the thermal effect of laser rays
-[BLOCK TEXT]
-the high speed of laser rays
-[BLOCK TEXT]
-the coherence of its photons
-[BLOCK TEXT]
-its thermal effect
-[BLOCK TEXT]
-its spectral purity
-[BLOCK TEXT]
-its high speed
-[BLOCK TEXT]
-A
-[BLOCK TEXT]
-B
-[BLOCK TEXT]
-C
-[BLOCK TEXT]
-D
-[BLOCK TEXT]
-A
-[BLOCK TEXT]
-B
-[BLOCK TEXT]
-C
-[BLOCK TEXT]
-D
-[BLOCK TEXT]
-A
-[BLOCK TEXT]
-B
-[BLOCK TEXT]
-C
-[BLOCK TEXT]
-D
-[BLOCK TEXT]
-A
-[BLOCK TEXT]
-B
-[BLOCK TEXT]
-C
-[BLOCK TEXT]
-D
-[BLOCK TEXT]
-The following diagrams show the distribution of active medium 
-atoms among their energy levels, whic
-[BLOCK TEXT]
-66
-[BLOCK TEXT]
-A
-B
-C
-D
-[SAVE] page=206 file=q_82 num=62
-[SAVE] page=206 file=q_83 num=63
-[SAVE] page=206 file=q_84 num=64
-[SAVE] page=206 file=q_85 num=65
-[SAVE] page=206 file=q_86 num=66
-
-=== PAGE 207 ===
-[BROKEN TOP DETECTED] False
+=== PAGE 33 ===
+[LAYOUT] UNKNOWN_LAYOUT
+[FALLBACK] Using text split
 
 --- TEXT SPLIT CHECK ---
 [BLOCK TEXT]
-207
+33
+Final Revision ch . 1
 [BLOCK TEXT]
-67
-In a helium-neon laser, the helium atoms and neon atoms are excited by
-[MATCHED Q] 67
+In the opposite electric circuit , the voltmeter reading equals…….
 [BLOCK TEXT]
-Excitation Helium Atoms
-Excitation Neon Atoms
+A metallic wire of 30 m length and 0.3 cm2 cross-sectional area is 
+connected to a battery of emf 18
+[BLOCK TEXT]
+In the opposite electric circuit, If the reading of the voltameter (V1) is 46 
+V , then the reading 
+[BLOCK TEXT]
+4
+[BLOCK TEXT]
+5
+[BLOCK TEXT]
+6
+[BLOCK TEXT]
+V = VB / IR
+[BLOCK TEXT]
+V = VB + IR
+[BLOCK TEXT]
+V = IR
+[BLOCK TEXT]
+V = IR / 2
+[BLOCK TEXT]
+4×10-7 Ω.m
+[BLOCK TEXT]
+2×10-7 Ω.m
+[BLOCK TEXT]
+9×10-6 Ω.m
+[BLOCK TEXT]
+3×10-6 Ω.m
+[BLOCK TEXT]
+40 V
+[BLOCK TEXT]
+36 V
+[BLOCK TEXT]
+32 V
+[BLOCK TEXT]
+24 V
 [BLOCK TEXT]
 A
-Optical pumping
-Chemical Reactions
 [BLOCK TEXT]
 B
-Electric Discharge
-Chemical Reactions
 [BLOCK TEXT]
 C
-Optical pumping
-Collision with Helium Atoms
 [BLOCK TEXT]
 D
-Electric Discharge
-Collision with Helium Atoms
-[BLOCK TEXT]
-The following figures represent some steps for obtaining a laser 
-beam through the meta-stable level
-[BLOCK TEXT]
-68
-[BLOCK TEXT]
-2⟶3⟶4⟶1
-[BLOCK TEXT]
-3⟶2⟶1⟶4
-[BLOCK TEXT]
-3⟶2⟶4⟶1
-[BLOCK TEXT]
-2⟶3⟶1⟶4
 [BLOCK TEXT]
 A
 [BLOCK TEXT]
@@ -2209,5 +810,320 @@ B
 C
 [BLOCK TEXT]
 D
-[SAVE] page=207 file=q_87 num=67
-[SAVE] page=207 file=q_88 num=68
+[BLOCK TEXT]
+A
+[BLOCK TEXT]
+B
+[BLOCK TEXT]
+C
+[BLOCK TEXT]
+D
+[BLOCK TEXT]
+A battery of 6 V emf and internal resistance of 1 is connected with an 
+ammeter of negligible resist
+[BLOCK TEXT]
+7
+[BLOCK TEXT]
+Value of R
+Value of the rheostat
+[BLOCK TEXT]
+A
+9 Ω
+36 Ω
+[BLOCK TEXT]
+B
+4 Ω
+40 Ω
+[BLOCK TEXT]
+C
+4 Ω
+48 Ω
+[BLOCK TEXT]
+d
+9 Ω
+50 Ω
+[FALLBACK] Using line split
+[SAVE] page=33 file=q_31 num=4
+[SAVE] page=33 file=q_32 num=5
+[SAVE] page=33 file=q_33 num=40
+[SAVE] page=33 file=q_34 num=7
+
+=== PAGE 34 ===
+[LAYOUT] UNKNOWN_LAYOUT
+[FALLBACK] Using text split
+
+--- TEXT SPLIT CHECK ---
+[BLOCK TEXT]
+34
+Final Revision ch . 1
+[BLOCK TEXT]
+In the opposite electric circuit. If the voltmeter reading is 12 V when the 
+slider is at the midpoi
+[BLOCK TEXT]
+If an electric source is connected to a 3 Ω resistor, an electric current 
+of intensity 3 A passes t
+[BLOCK TEXT]
+8
+[BLOCK TEXT]
+9
+[BLOCK TEXT]
+12 V
+[BLOCK TEXT]
+15 V
+[BLOCK TEXT]
+18 V
+[BLOCK TEXT]
+20 V
+[BLOCK TEXT]
+0.75 A
+[BLOCK TEXT]
+1A
+[BLOCK TEXT]
+1.25 A
+[BLOCK TEXT]
+1.5 A
+[BLOCK TEXT]
+A
+[BLOCK TEXT]
+B
+[BLOCK TEXT]
+C
+[BLOCK TEXT]
+D
+[BLOCK TEXT]
+A
+[BLOCK TEXT]
+B
+[BLOCK TEXT]
+C
+[BLOCK TEXT]
+D
+[BLOCK TEXT]
+In the opposite electric circuit , the value of the resistance (R) and the 
+electromotive force of t
+[BLOCK TEXT]
+resistance (R)
+Emf (VB)
+[BLOCK TEXT]
+A
+8 Ω
+12 V
+[BLOCK TEXT]
+B
+9 Ω
+16 V
+[BLOCK TEXT]
+C
+ 12 Ω
+18 V
+[BLOCK TEXT]
+d
+16 Ω
+24 V
+[FALLBACK] Using line split
+[SAVE] page=34 file=q_35 num=12
+[SAVE] page=34 file=q_36 num=9
+[SAVE] page=34 file=q_37 num=12
+
+=== PAGE 35 ===
+[LAYOUT] UNKNOWN_LAYOUT
+[FALLBACK] Using text split
+
+--- TEXT SPLIT CHECK ---
+[BLOCK TEXT]
+35
+Final Revision ch . 1
+[BLOCK TEXT]
+If you know that the voltmeter readings are : ( V1= 1 V, V2 = 2 V, V3 = 4 V) 
+, then the relation be
+[BLOCK TEXT]
+r2 < r1 < r3
+[BLOCK TEXT]
+r2 > r3 > r1
+[BLOCK TEXT]
+r1 > r2 > r3
+[BLOCK TEXT]
+r1 < r2 < r3
+[BLOCK TEXT]
+A
+[BLOCK TEXT]
+B
+[BLOCK TEXT]
+C
+[BLOCK TEXT]
+D
+[BLOCK TEXT]
+The following figures represent parts of three closed electric circuits 
+with equal external resista
+[BLOCK TEXT]
+In the opposite electric circuit, if the voltmeter reading is 3 V , then the 
+internal resistance (r
+[BLOCK TEXT]
+The opposite graph shows the voltage (V) and the intensity current (I) 
+for two batteries (1) , (2) 
+[BLOCK TEXT]
+12
+[BLOCK TEXT]
+14
+[BLOCK TEXT]
+r = R/4
+[BLOCK TEXT]
+r = R/3
+[BLOCK TEXT]
+r = R/2
+[BLOCK TEXT]
+r = R
+[BLOCK TEXT]
+r1 > r2
+r1 = r2
+(VB)1 > (VB)2
+(VB)1 = (VB)2
+[BLOCK TEXT]
+A
+[BLOCK TEXT]
+B
+[BLOCK TEXT]
+C
+[BLOCK TEXT]
+D
+[BLOCK TEXT]
+A
+[BLOCK TEXT]
+B
+[BLOCK TEXT]
+C
+[BLOCK TEXT]
+D
+[BLOCK TEXT]
+The opposite graph represents the relation between the voltage (V) 
+across the terminals of an elect
+[BLOCK TEXT]
+13
+[BLOCK TEXT]
+Electromotive force 
+of the Cell (V)
+internal resistance of 
+the cell (Ω)
+[BLOCK TEXT]
+A
+1
+10
+[BLOCK TEXT]
+B
+1.5
+12
+[BLOCK TEXT]
+C
+2
+14
+[BLOCK TEXT]
+d
+3
+18
+[FALLBACK] Using line split
+[SAVE] page=35 file=q_38 num=11
+[SAVE] page=35 file=q_39 num=12
+[SAVE] page=35 file=q_40 num=13
+[SAVE] page=35 file=q_41 num=14
+
+=== PAGE 36 ===
+[LAYOUT] UNKNOWN_LAYOUT
+[FALLBACK] Using text split
+
+--- TEXT SPLIT CHECK ---
+[BLOCK TEXT]
+36
+Final Revision ch . 1
+[BLOCK TEXT]
+Figure (1) represents an electric circuit through which an electric 
+current passes, and figure (2) 
+[BLOCK TEXT]
+Which of the following choices represents the value of the electromotive 
+force (VB) of the used bat
+[BLOCK TEXT]
+15
+[BLOCK TEXT]
+VB (V)
+r (Ω)
+[BLOCK TEXT]
+A
+10
+2
+[BLOCK TEXT]
+B
+10
+1
+[BLOCK TEXT]
+C
+12
+2
+[BLOCK TEXT]
+d
+12
+1
+[BLOCK TEXT]
+Two batteries a and b each are connected separately in a closed electric 
+circuit. The opposite grap
+[BLOCK TEXT]
+passing through it. The ratio between the electromotive forces
+[BLOCK TEXT]
+of the two batteries and the ratio between their internal resistances 
+respectively are ……..
+[BLOCK TEXT]
+،
+[BLOCK TEXT]
+،
+[BLOCK TEXT]
+،
+[BLOCK TEXT]
+،
+[BLOCK TEXT]
+16
+[BLOCK TEXT]
+A
+[BLOCK TEXT]
+B
+[BLOCK TEXT]
+C
+[BLOCK TEXT]
+D
+[BLOCK TEXT]
+5
+[BLOCK TEXT]
+2
+[BLOCK TEXT]
+2
+[BLOCK TEXT]
+3
+[BLOCK TEXT]
+5
+[BLOCK TEXT]
+8
+[BLOCK TEXT]
+5
+[BLOCK TEXT]
+8
+[BLOCK TEXT]
+2
+[BLOCK TEXT]
+3
+[BLOCK TEXT]
+5
+[BLOCK TEXT]
+2
+[BLOCK TEXT]
+5
+[BLOCK TEXT]
+4
+[BLOCK TEXT]
+5
+[BLOCK TEXT]
+4
+[BLOCK TEXT]
+(VB)a
+(VB)b
+(ra)
+(rb)
+[FALLBACK] Using line split
+[SAVE] page=36 file=q_42 num=15
+[SAVE] page=36 file=q_43 num=16
